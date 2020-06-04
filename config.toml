@@ -1,0 +1,8 @@
+baseURL = "http://albertlg.github.io/"
+languageCode = "es-es"
+title = "Yo soy Albert LG... y tu no."
+DisqusShortname = "albertlg-blog"
+theme = "ananke"
+
+[permalinks]
+  post = "/:slug/"

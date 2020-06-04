@@ -1,0 +1,24 @@
++++
+date = "2006-03-03 00:00:00"
+author = ""
+title = "A estas alturas aprendo cómo lanzar una Pop-Up"
+slug = "estas-alturas-aprendo-lanzar-pop-up-81343"
+tags = [ "estándares web","maquetación web","seo","usabilidad" ]
++++
+<p>Y es m&aacute;s: no me da verg&uuml;enza reconocerlo. :P<br /> El mundo del webmaster es un no parar de aprender y reaprender cosas...
+quiz&aacute; por eso me guste. Incluso los hay que se enorgullecen cuando me
+ense&ntilde;an algo que no sab&iacute;a (eh <a title="Blog de Rodrigo Mantill&aacute;n" href="http://www.pandeblog.net/" target="_blank">Rodrigo</a>?), y los que me piden que siga escribiendo m&aacute;s y escuchando menos m&uacute;sica (eh <a title="Blog de Tom&aacute;s Casquero" href="http://tomcask.blogspot.com/" target="_blank">Tito Tommy</a>?).</p>
+<p>En f&iacute;n, a lo que &iacute;bamos: lanzar ventanas Pop-Up con JavaScript. Pues
+resulta que, independientemente de las discusiones acerca de usar o no
+una pop-up, hay un problema que las corrompe sistem&aacute;ticamente, que las
+hace perversas, que agrede a usuarios avanzados y principiantes en su
+navegaci&oacute;n, confunde a los buscadores, y genera ruido en el c&oacute;digo.
+Este problema es que, existiendo varias formas de lanzar una Pop-Up con
+c&oacute;digo Javascript, las m&aacute;s usadas son las incorrectas.</p>
+<p><strong>La forma correcta de lanzar una ventana Pop-Up con Javascript</strong></p>
+<blockquote>El siguiente es el c&oacute;digo a utilizar para lanzar una Pop-Up:<br /> &lt;a
+href="/index.htm" target="_blank" onClick="window.open(this.href,
+this.target, 'width=300,height=400'); return false;"&gt;Lanzar
+correctamente&lt;/a&gt;<br /> <a onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;" href="http://www.albertlg.com/blog/archivos/archivos/categorias/usabilidad/la_relatividad_de_la_usabilidad.html" target="_blank">Lanzar correctamente</a><br /></blockquote>
+<p><br /> Simplemente cambiar en href="/index.htm" el nombre del archivo .htm que se abrir&aacute; en la ventana nueva, y cambiar los valores de width y height seg&uacute;n el ancho y alto deseados (en p&iacute;xeles).</p>
+<p>Para m&aacute;s informaci&oacute;n: <a title="Pop-ups usables en Javascript" href="http://www.nosolousabilidad.com/articulos/popups_javascript.htm" target="_blank"><acronym title="No S&oacute;lo Usabilidad">NSU</acronym></a>.</p>
