@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>analítica web on Yo soy Albert LG... y tu no.</title>
+    <link>http://albertlg.github.io/tags/anal%C3%ADtica-web/</link>
+    <description>Recent content in analítica web on Yo soy Albert LG... y tu no.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 08 Jun 2008 21:26:32 +0000</lastBuildDate>
+    
+	<atom:link href="http://albertlg.github.io/tags/anal%C3%ADtica-web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tunea tu cuenta de Google Analytics</title>
+      <link>http://albertlg.github.io/tunea-cuenta-google-analytics-95005/</link>
+      <pubDate>Sun, 08 Jun 2008 21:26:32 +0000</pubDate>
+      
+      <guid>http://albertlg.github.io/tunea-cuenta-google-analytics-95005/</guid>
+      <description>Supongo que muchos de vosotros deb&amp;eacute;is utilizar como navegador a Firefox (Win/Mac) para surfear por Internet. Si es as&amp;iacute;, y adem&amp;aacute;s conoc&amp;eacute;is el plugin Greasemonkey, est&amp;aacute;is de enhorabuena, ya que os voy a presentar un par de scripts para GreaseMonkey que os permitir&amp;aacute;n sacarle el m&amp;aacute;ximo jugo a vuestras cuentas de Google Analytics:
+El primero os permitir&amp;aacute; integrar Google Analytics con Google Docs: algo l&amp;oacute;gico y esperable, &amp;iquest;no? Pues ah&amp;iacute; va el enlace: http://spanishgringo.</description>
+    </item>
+    
+  </channel>
+</rss>

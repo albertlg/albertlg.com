@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>estándares web on Yo soy Albert LG... y tu no.</title>
+    <link>http://albertlg.github.io/tags/est%C3%A1ndares-web/</link>
+    <description>Recent content in estándares web on Yo soy Albert LG... y tu no.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Fri, 03 Mar 2006 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://albertlg.github.io/tags/est%C3%A1ndares-web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A estas alturas aprendo cómo lanzar una Pop-Up</title>
+      <link>http://albertlg.github.io/estas-alturas-aprendo-lanzar-pop-up-81343/</link>
+      <pubDate>Fri, 03 Mar 2006 00:00:00 +0000</pubDate>
+      
+      <guid>http://albertlg.github.io/estas-alturas-aprendo-lanzar-pop-up-81343/</guid>
+      <description>Y es m&amp;aacute;s: no me da verg&amp;uuml;enza reconocerlo. :P
+El mundo del webmaster es un no parar de aprender y reaprender cosas...quiz&amp;aacute; por eso me guste. Incluso los hay que se enorgullecen cuando meense&amp;ntilde;an algo que no sab&amp;iacute;a (eh Rodrigo?), y los que me piden que siga escribiendo m&amp;aacute;s y escuchando menos m&amp;uacute;sica (eh Tito Tommy?).
+En f&amp;iacute;n, a lo que &amp;iacute;bamos: lanzar ventanas Pop-Up con JavaScript. Puesresulta que, independientemente de las discusiones acerca de usar o nouna pop-up, hay un problema que las corrompe sistem&amp;aacute;ticamente, que lashace perversas, que agrede a usuarios avanzados y principiantes en sunavegaci&amp;oacute;n, confunde a los buscadores, y genera ruido en el c&amp;oacute;digo.</description>
+    </item>
+    
+    <item>
+      <title>Estándares web</title>
+      <link>http://albertlg.github.io/estandares-web-81344/</link>
+      <pubDate>Wed, 11 Aug 2004 00:00:00 +0000</pubDate>
+      
+      <guid>http://albertlg.github.io/estandares-web-81344/</guid>
+      <description>Web Standards ProjectWeb Standards Group</description>
+    </item>
+    
+  </channel>
+</rss>

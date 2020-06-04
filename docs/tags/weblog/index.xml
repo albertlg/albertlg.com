@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>weblog on Yo soy Albert LG... y tu no.</title>
+    <link>http://albertlg.github.io/tags/weblog/</link>
+    <description>Recent content in weblog on Yo soy Albert LG... y tu no.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sat, 11 Sep 2004 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://albertlg.github.io/tags/weblog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Etiquetas de Movable Type</title>
+      <link>http://albertlg.github.io/etiquetas-movable-type-81901/</link>
+      <pubDate>Sat, 11 Sep 2004 00:00:00 +0000</pubDate>
+      
+      <guid>http://albertlg.github.io/etiquetas-movable-type-81901/</guid>
+      <description>Aqu&amp;iacute; tenemos un enlace con la mayor&amp;iacute;a de las etiquetas para plantillas de MT:
+Urban Design</description>
+    </item>
+    
+  </channel>
+</rss>

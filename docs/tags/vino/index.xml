@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vino on Yo soy Albert LG... y tu no.</title>
+    <link>http://albertlg.github.io/tags/vino/</link>
+    <description>Recent content in vino on Yo soy Albert LG... y tu no.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Fri, 02 Oct 2009 21:24:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://albertlg.github.io/tags/vino/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Del software al vino</title>
+      <link>http://albertlg.github.io/software-al-vino-351701/</link>
+      <pubDate>Fri, 02 Oct 2009 21:24:00 +0000</pubDate>
+      
+      <guid>http://albertlg.github.io/software-al-vino-351701/</guid>
+      <description>Llevo los últimos 3 años de mi vida profesional dedicados a posicionar programas en los principales buscadores, como SEO Manager de Softonic, el portal internacional de descargas de software. Se trata de la mejor empresa en la que trabajar en España según sus empleados (entre los que me cuento). Y eso de que haya sido premiada con tal galardón en 2009 no es casualidad, no. Experiencias como la que os voy a contar ahora lo argumentan.</description>
+    </item>
+    
+  </channel>
+</rss>

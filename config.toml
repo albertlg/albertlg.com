@@ -3,6 +3,12 @@ languageCode = "es-es"
 title = "Yo soy Albert LG... y tu no."
 DisqusShortname = "albertlg-blog"
 theme = "ananke"
+paginate = 5
+pluralizelisttitles = false
+canonifyurls = true
+publishDir = "docs"
 
 [permalinks]
   post = "/:slug/"
+
+
