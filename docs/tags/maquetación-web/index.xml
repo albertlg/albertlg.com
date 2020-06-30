@@ -1,74 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>maquetación web on Yo soy Albert LG... y tu no.</title>
-    <link>http://albertlg.github.io/tags/maquetaci%C3%B3n-web/</link>
-    <description>Recent content in maquetación web on Yo soy Albert LG... y tu no.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es-es</language>
-    <lastBuildDate>Fri, 03 Mar 2006 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://albertlg.github.io/tags/maquetaci%C3%B3n-web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>A estas alturas aprendo cómo lanzar una Pop-Up</title>
-      <link>http://albertlg.github.io/estas-alturas-aprendo-lanzar-pop-up-81343/</link>
-      <pubDate>Fri, 03 Mar 2006 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/estas-alturas-aprendo-lanzar-pop-up-81343/</guid>
-      <description>Y es m&amp;aacute;s: no me da verg&amp;uuml;enza reconocerlo. :P
-El mundo del webmaster es un no parar de aprender y reaprender cosas...quiz&amp;aacute; por eso me guste. Incluso los hay que se enorgullecen cuando meense&amp;ntilde;an algo que no sab&amp;iacute;a (eh Rodrigo?), y los que me piden que siga escribiendo m&amp;aacute;s y escuchando menos m&amp;uacute;sica (eh Tito Tommy?).
-En f&amp;iacute;n, a lo que &amp;iacute;bamos: lanzar ventanas Pop-Up con JavaScript. Puesresulta que, independientemente de las discusiones acerca de usar o nouna pop-up, hay un problema que las corrompe sistem&amp;aacute;ticamente, que lashace perversas, que agrede a usuarios avanzados y principiantes en sunavegaci&amp;oacute;n, confunde a los buscadores, y genera ruido en el c&amp;oacute;digo.</description>
-    </item>
-    
-    <item>
-      <title>Lista de comprobación de estándares web</title>
-      <link>http://albertlg.github.io/lista-comprobacion-estandares-web-81337/</link>
-      <pubDate>Tue, 10 Aug 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/lista-comprobacion-estandares-web-81337/</guid>
-      <description>He traducido la &#34;checklist&#34; original de A Web Standards Checklist, en MaxDesign.
-Antes de empezar, aclaremos conceptos:
-&amp;iquest;Qu&amp;eacute; son los est&amp;aacute;ndares web?
-La expresi&amp;oacute;n &#39;est&amp;aacute;ndares web&#39; puede significar cosas diferentes seg&amp;uacute;n para qui&amp;eacute;n. Para algunos no es otra cosa que construir sitios web sin tablas, para otros se trata de hacerlo usando c&amp;oacute;digo v&amp;aacute;lido. De cualquier manera, el concepto es mucho m&amp;aacute;s amplio que esto. Los est&amp;aacute;ndares web podr&amp;iacute;an ser definidos como:</description>
-    </item>
-    
-    <item>
-      <title>MOZiE, el imprescindible</title>
-      <link>http://albertlg.github.io/mozie-imprescindible-81877/</link>
-      <pubDate>Tue, 08 Jun 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/mozie-imprescindible-81877/</guid>
-      <description>Esta herramienta nos va a solucionar mucho las cosas a los maquetadores:
-MOZiE.
-B&amp;aacute;sicamente, MOZiE es una aplicaci&amp;oacute;n gratuita para entornos Windows que nos permite comparar la renderizaci&amp;oacute;n de una p&amp;aacute;gina web en Mozilla e Internet Explorer simult&amp;aacute;neamente. Aunque nos ofrece otras funcionalidades, no menos&amp;uacute;tiles, como por ejemplo la emulaci&amp;oacute;n de resoluciones de pantalla.</description>
-    </item>
-    
-    <item>
-      <title>Testeo de estándares y accesibilidad</title>
-      <link>http://albertlg.github.io/testeo-estandares-accesibilidad-81878/</link>
-      <pubDate>Wed, 02 Jun 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/testeo-estandares-accesibilidad-81878/</guid>
-      <description>Joe Clark nos proporciona una lista de enlaces para el testeo de est&amp;aacute;ndares y accesibilidad.
-Lo he encontrado leyendo webstandards.org.</description>
-    </item>
-    
-    <item>
-      <title>CSS: Modelo de caja 3D</title>
-      <link>http://albertlg.github.io/css-modelo-caja-3d-81879/</link>
-      <pubDate>Thu, 20 May 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/css-modelo-caja-3d-81879/</guid>
-      <description>Hoy he encontrado este diagrama...
-Muy clarificador, &amp;iquest;no cre&amp;eacute;is?. &amp;iexcl;Ay! Si te hubiese conocido antes...
-Lo he encontrado leyendo hicksdesign.co.uk.
-[!] 02-05-04:
-Por cierto, Jon Hicks lo ha actualizado (ha a&amp;ntilde;adido l&amp;iacute;neas para delimitar mejor las zonas y ha cambiado laimagen de fondo para hacerla m&amp;aacute;s obvia). Y podeis encontrar una versi&amp;oacute;n interactiva del modelo.
-Otros recursos CSS:
-W3C Box ModelTheNoodleIncident Box LessonsTantek Box Model HackCSS-Discuss Box Model HackBrainJar CSS PositioningWPDFD Issue 54Listamatic: IE Box Model and Doctypes ModesQuirksMode Box Model TweakingJessey CSS Box ModelCopySense Box Border TestY lo que vendr&amp;aacute;:</description>
-    </item>
-    
-  </channel>
-</rss>

@@ -7,6 +7,10 @@ paginate = 5
 pluralizelisttitles = false
 canonifyurls = true
 publishDir = "docs"
+disableLanguages = [""]
+
+[outputs]
+    home = ["html", "json"]
 
 [permalinks]
   post = "/:slug/"

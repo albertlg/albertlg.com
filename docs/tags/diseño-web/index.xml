@@ -1,70 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>diseño web on Yo soy Albert LG... y tu no.</title>
-    <link>http://albertlg.github.io/tags/dise%C3%B1o-web/</link>
-    <description>Recent content in diseño web on Yo soy Albert LG... y tu no.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es-es</language>
-    <lastBuildDate>Tue, 10 Aug 2004 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://albertlg.github.io/tags/dise%C3%B1o-web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Lista de comprobación de estándares web</title>
-      <link>http://albertlg.github.io/lista-comprobacion-estandares-web-81337/</link>
-      <pubDate>Tue, 10 Aug 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/lista-comprobacion-estandares-web-81337/</guid>
-      <description>He traducido la &#34;checklist&#34; original de A Web Standards Checklist, en MaxDesign.
-Antes de empezar, aclaremos conceptos:
-&amp;iquest;Qu&amp;eacute; son los est&amp;aacute;ndares web?
-La expresi&amp;oacute;n &#39;est&amp;aacute;ndares web&#39; puede significar cosas diferentes seg&amp;uacute;n para qui&amp;eacute;n. Para algunos no es otra cosa que construir sitios web sin tablas, para otros se trata de hacerlo usando c&amp;oacute;digo v&amp;aacute;lido. De cualquier manera, el concepto es mucho m&amp;aacute;s amplio que esto. Los est&amp;aacute;ndares web podr&amp;iacute;an ser definidos como:</description>
-    </item>
-    
-    <item>
-      <title>Las &#39;normas&#39; de la creatividad en el diseño web</title>
-      <link>http://albertlg.github.io/normas-creatividad-diseno-web-81338/</link>
-      <pubDate>Sat, 31 Jul 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/normas-creatividad-diseno-web-81338/</guid>
-      <description>He encontrado (v&amp;iacute;a meyerweb.com) un interesante estudio realizado por Fran&amp;ccedil;ois Briatte.En &amp;eacute;l analiza 10 sitios web (quiz&amp;aacute; un &amp;aacute;mbito demasiado peque&amp;ntilde;o y detem&amp;aacute;ticas similares: weblogs de dise&amp;ntilde;o web) mediante una encuestacomparativa respecto a 25 puntos diferentes.
-Accede a la comparativa
-
-La conclusi&amp;oacute;n (o mejor subt&amp;iacute;tulo): &amp;ldquo;El 75% del dise&amp;ntilde;o web es normativa, el resto son meros colores e im&amp;aacute;genes&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Lorem ipsum...</title>
-      <link>http://albertlg.github.io/lorem-ipsum-81339/</link>
-      <pubDate>Wed, 02 Jun 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/lorem-ipsum-81339/</guid>
-      <description>Todos conoc&amp;iacute;amos el recurso lipsum.com (o no).
-Ahora he encontrado una versi&amp;oacute;n &#34;mejorada&#34;, con m&amp;aacute;s opciones: lorem-ipsum.info.
-Quiz&amp;aacute; la m&amp;aacute;s destacable (de las nuevas opciones que nos ofrece este recurso), sea la posibilidad de cambiar el charset.</description>
-    </item>
-    
-    <item>
-      <title>Libros de estilo</title>
-      <link>http://albertlg.github.io/libros-estilo-81340/</link>
-      <pubDate>Sat, 15 May 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/libros-estilo-81340/</guid>
-      <description>Un recurso imprescindible: WebStyleGuide.com</description>
-    </item>
-    
-    <item>
-      <title>Diseño</title>
-      <link>http://albertlg.github.io/diseno-81342/</link>
-      <pubDate>Tue, 13 Apr 2004 00:00:00 +0000</pubDate>
-      
-      <guid>http://albertlg.github.io/diseno-81342/</guid>
-      <description>Una filosof&amp;iacute;a que comparto:
-&amp;ldquo;Design constructs a visual language for the purpose of communication. It organizes and gives form to a message in a way that adds value and meaning. It functions to organize, clarify, persuade, and add drama to an otherwise overlooked idea.
-Design plays a primary role in the interpretation of a message. It creates the crucial persistent impression.It encourages examination and generates interest. Accessible,understandable information and beauty of form can engage observers andarrest their attention.</description>
-    </item>
-    
-  </channel>
-</rss>
