@@ -24,3 +24,15 @@
   for = "index.xml"
   [headers.values]
     Content-Type = "application/rss+xml"
+
+[[redirects]]
+  from = "https://albertlg.netlify.com/*"
+  to = "https://albertlg.com/:splat"
+  status = 301
+  force = true #COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://blog.albertlg.com/*"
+  to = "https://albertlg.com/:splat"
+  status = 301
+  force = true #COMMENT: ensure that we always redirect
