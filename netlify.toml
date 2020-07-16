@@ -19,3 +19,15 @@
   to = "https://albertlg.com/:splat"
   status = 301
   force = true #COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog"
+  to = "https://albertlg.com/"
+  status = 301
+  force = true #COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://albertlg.com/"
+  status = 301
+  force = true #COMMENT: ensure that we always redirect
