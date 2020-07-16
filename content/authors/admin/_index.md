@@ -45,6 +45,9 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/albertlg
+- icon: instagram
+  icon_pack: fab
+  link: https://instagram.com/albertlg
 - icon: github
   icon_pack: fab
   link: https://github.com/albertlg
