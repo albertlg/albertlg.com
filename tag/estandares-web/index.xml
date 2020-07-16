@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>estándares web | Blog de Albert L.G.</title><link>https://albertlg.com/tag/estandares-web/</link><atom:link href="https://albertlg.com/tag/estandares-web/index.xml" rel="self" type="application/rss+xml"/><description>estándares web</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Albert López © 2020</copyright><lastBuildDate>Fri, 03 Mar 2006 00:00:00 +0000</lastBuildDate><image><url>https://albertlg.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url><title>estándares web</title><link>https://albertlg.com/tag/estandares-web/</link></image><item><title>A estas alturas aprendo cómo lanzar una Pop-Up</title><link>https://albertlg.com/estas-alturas-aprendo-lanzar-pop-up-81343/</link><pubDate>Fri, 03 Mar 2006 00:00:00 +0000</pubDate><guid>https://albertlg.com/estas-alturas-aprendo-lanzar-pop-up-81343/</guid><description>&lt;p>Y es m&amp;aacute;s: no me da verg&amp;uuml;enza reconocerlo. :P&lt;br /> El mundo del webmaster es un no parar de aprender y reaprender cosas...
+quiz&amp;aacute; por eso me guste. Incluso los hay que se enorgullecen cuando me
+ense&amp;ntilde;an algo que no sab&amp;iacute;a (eh &lt;a title="Blog de Rodrigo Mantill&amp;aacute;n" href="http://www.pandeblog.net/" target="_blank">Rodrigo&lt;/a>?), y los que me piden que siga escribiendo m&amp;aacute;s y escuchando menos m&amp;uacute;sica (eh &lt;a title="Blog de Tom&amp;aacute;s Casquero" href="http://tomcask.blogspot.com/" target="_blank">Tito Tommy&lt;/a>?).&lt;/p>
+&lt;p>En f&amp;iacute;n, a lo que &amp;iacute;bamos: lanzar ventanas Pop-Up con JavaScript. Pues
+resulta que, independientemente de las discusiones acerca de usar o no
+una pop-up, hay un problema que las corrompe sistem&amp;aacute;ticamente, que las
+hace perversas, que agrede a usuarios avanzados y principiantes en su
+navegaci&amp;oacute;n, confunde a los buscadores, y genera ruido en el c&amp;oacute;digo.
+Este problema es que, existiendo varias formas de lanzar una Pop-Up con
+c&amp;oacute;digo Javascript, las m&amp;aacute;s usadas son las incorrectas.&lt;/p>
+&lt;p>&lt;strong>La forma correcta de lanzar una ventana Pop-Up con Javascript&lt;/strong>&lt;/p>
+&lt;blockquote>El siguiente es el c&amp;oacute;digo a utilizar para lanzar una Pop-Up:&lt;br /> &amp;lt;a
+href="https://albertlg.com/index.htm" target="_blank" onClick="window.open(this.href,
+this.target, 'width=300,height=400'); return false;"&amp;gt;Lanzar
+correctamente&amp;lt;/a&amp;gt;&lt;br /> &lt;a onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;" href="http://www.albertlg.com/blog/archivos/archivos/categorias/usabilidad/la_relatividad_de_la_usabilidad.html" target="_blank">Lanzar correctamente&lt;/a>&lt;br />&lt;/blockquote>
+&lt;p>&lt;br /> Simplemente cambiar en href="https://albertlg.com/index.htm" el nombre del archivo .htm que se abrir&amp;aacute; en la ventana nueva, y cambiar los valores de width y height seg&amp;uacute;n el ancho y alto deseados (en p&amp;iacute;xeles).&lt;/p>
+&lt;p>Para m&amp;aacute;s informaci&amp;oacute;n: &lt;a title="Pop-ups usables en Javascript" href="http://www.nosolousabilidad.com/articulos/popups_javascript.htm" target="_blank">&lt;acronym title="No S&amp;oacute;lo Usabilidad">NSU&lt;/acronym>&lt;/a>.&lt;/p></description></item><item><title>Estándares web</title><link>https://albertlg.com/estandares-web-81344/</link><pubDate>Wed, 11 Aug 2004 00:00:00 +0000</pubDate><guid>https://albertlg.com/estandares-web-81344/</guid><description>&lt;ul>
+&lt;li>&lt;a title="The Web Standards Project" href="http://www.webstandards.org/" target="_blank">Web Standards Project&lt;/a>&lt;/li>
+&lt;li>&lt;a title="Web Standards Group" href="http://webstandardsgroup.org/" target="_blank">Web Standards Group&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
