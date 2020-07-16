@@ -18,7 +18,7 @@ organizations:
   url: "https://www.drinksco.es"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: No se encuentra nada si no se busca algo.
 
 interests:
 - SEO
@@ -67,4 +67,4 @@ user_groups:
 - Visitors
 ---
 
-...
+No se encuentra nada si no se busca algo.
