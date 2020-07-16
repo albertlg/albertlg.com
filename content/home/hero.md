@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = false  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Academic"
+title = "No se encuentra nada si no se busca algo."
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 #hero_media = "albertlopez-herobanner.jpg"

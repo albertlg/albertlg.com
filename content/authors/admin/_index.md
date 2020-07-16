@@ -42,12 +42,21 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:albert@albertlg.com'  # For a direct email link, use "mailto:test@example.org".
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/albertlg/
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/albertlg
 - icon: instagram
   icon_pack: fab
   link: https://instagram.com/albertlg
+- icon: flickr
+  icon_pack: fab
+  link: https://www.flickr.com/photos/albertlg
+- icon: facebook
+  icon_pack: fab
+  link: https://www.facebook.com/albertlg
 - icon: github
   icon_pack: fab
   link: https://github.com/albertlg
@@ -67,4 +76,4 @@ user_groups:
 - Visitors
 ---
 
-No se encuentra nada si no se busca algo.
+🔎 No se encuentra nada si no se busca algo.
