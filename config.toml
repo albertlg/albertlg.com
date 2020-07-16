@@ -1,18 +1,7 @@
-baseURL = "https://albertlg.github.io/blog.albertlg.com/"
-languageCode = "es-es"
-title = "Yo soy Albert LG... y tú no."
-DisqusShortname = "albertlg-blog"
-theme = "ananke"
-paginate = 5
-pluralizelisttitles = false
-canonifyurls = true
-publishDir = "docs"
-disableLanguages = [""]
-
-[outputs]
-    home = ["html", "json"]
-
-[permalinks]
-  post = "/:slug/"
-
-
+# Academic Website Builder
+# https://sourcethemes.com/academic/
+#
+# The presence of this file is for compatibility with Blogdown and Forestry.
+# If you are not using those tools, this file may be deleted.
+#
+# The actual configuration files are stored in the `config/_default/` folder.
