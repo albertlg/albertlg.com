@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Head of SEO & Content
+role: Head of Content & SEO
 
 # Organizations/Affiliations
 organizations:
@@ -21,17 +21,18 @@ organizations:
 bio: No es troba res si no es busca quelcom.
 
 interests:
-- SEO
-- Web Analytics
-- Content Management
-- Online Marketplaces
-- Social Media
-- Artificial Intelligence
+- Optimització per a buscadors (SEO)
+- Analítica web
+- Gestió de continguts
+- Marketplaces online
+- Xarxes socials
+- Intel·ligència artificial
+- Automatitzacions
 
 education:
   courses:
   - course: Enginyeria Informàtica
-    institution: Universitat Autònoma de Barcelona
+    institution: Universitat Autònoma de Barcelona (UAB)
     year: 2002
 
 # Social/Academic Networking
