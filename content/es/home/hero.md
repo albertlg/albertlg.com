@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = false  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "No se encuentra nada si no se busca algo."
+title = "Yo soy Albert L.G. y tú no."
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 #hero_media = "albertlopez-herobanner.jpg"
@@ -25,7 +25,7 @@ title = "No se encuentra nada si no se busca algo."
   
   # Background image.
    image = "albertlopez-herobanner.jpg"  # Name of image in `static/img/`.
-   image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+   image_darken = 0.8  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
    image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
    image_position = "center"  # Options include `left`, `center` (default), or `right`.
    image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
@@ -36,19 +36,22 @@ title = "No se encuentra nada si no se busca algo."
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
-[cta]
-  url = "https://sourcethemes.com/academic/docs/install/"
-  label = "Get Started"
-  icon_pack = "fas"
-  icon = "download"
-  
-[cta_alt]
-  url = "https://sourcethemes.com/academic/"
-  label = "View Documentation"
+#[cta]
+#  url = "https://sourcethemes.com/academic/docs/install/"
+#  label = "Get Started"
+#  icon_pack = "fas"
+#  icon = "download"
+
+#[cta_alt]
+#  url = "https://sourcethemes.com/academic/"
+#  label = "View Documentation"
 
 # Note. An optional note to show underneath the links.
-[cta_note]
-  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
+#[cta_note]
+#  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
+...
 
-**Yo soy Albert L.G. Y tú no.**
+🔎 No se **encuentra** nada si no se **busca** algo.
+
+...
