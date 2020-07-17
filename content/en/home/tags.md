@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 120  # Order that this section will appear.
 
-title = "Temas populares"
-subtitle = "Basado en los tags de mis posts"
+title = "Popular Topics"
+subtitle = "Based on my post tags"
 
 [content]
   # Choose the taxonomy from `config.toml` to display (e.g. tags, categories)

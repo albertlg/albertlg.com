@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 130  # Order that this section will appear.
 
-title = "Contacto"
-subtitle = "Escríbeme... pero aviso: leo ocasionalmente el correo personal"
+title = "Contact"
+subtitle = "Write me... but notice: I occasionally read personal email"
 
 # Automatically link email and phone?
 autolink = true

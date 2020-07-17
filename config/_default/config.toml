@@ -14,7 +14,7 @@ baseurl = "https://albertlg.com/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "Albert López &copy; {year}"
+copyright = "Created with ❤ by: Albert L.G. &copy; {year}"
 
 # Site publishing directory
 publishDir = "docs"

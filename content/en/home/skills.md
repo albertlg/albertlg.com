@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Skills"
-subtitle = "Cómo me defino (o me definen)"
+subtitle = "How I define myself (or others define me)"
 
 # Showcase personal skills or business features.
 # 
