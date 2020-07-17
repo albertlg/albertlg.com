@@ -15,12 +15,6 @@ subtitle = "How I define myself (or others define me)"
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "basketball-ball"
-  icon_pack = "fas"
-  name = "Team engagement"
-  description = "99%"
-
-[[feature]]
   icon = "fist-raised"
   icon_pack = "fas"
   name = "Tenacious"
@@ -31,24 +25,48 @@ subtitle = "How I define myself (or others define me)"
   icon_pack = "fas"
   name = "Detail oriented"
   description = "99,99%"
-  
+
+[[feature]]
+  icon = "glass-cheers" # Alternative: hands-helping
+  icon_pack = "fas"
+  name = "Convivial attitude"
+  description = "98%"
+
+[[feature]]
+  icon = "basketball-ball"
+  icon_pack = "fas"
+  name = "Team engagement"
+  description = "99%"
+
+[[feature]]
+  icon = "brain"
+  icon_pack = "fas"
+  name = "Apprenticeship"
+  description = "10%"
+
+[[feature]]
+  icon = "seedling" # Alternative: biking
+  icon_pack = "fas"
+  name = "Eco friendly"
+  description = "80%"
+
+[[feature]]
+  icon = "utensils"
+  icon_pack = "fas"
+  name = "Gourmand"
+  description = "100%"  
+
 [[feature]]
   icon = "heartbeat"
   icon_pack = "fas"
   name = "Music"
-  description = "100%"  
+  description = "78%"  
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
   description = "42,8%"
-
-[[feature]]
-  icon = "biking"
-  icon_pack = "fas"
-  name = "Eco friendly"
-  description = "80%"
 
 
 # Uncomment to use emoji icons.

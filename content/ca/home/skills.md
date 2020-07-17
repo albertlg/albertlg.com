@@ -15,40 +15,58 @@ subtitle = "Com em defineixo (o em defineixen)"
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "basketball-ball"
-  icon_pack = "fas"
-  name = "Team engagement"
-  description = "99%"
-
-[[feature]]
   icon = "fist-raised"
   icon_pack = "fas"
-  name = "Tenacious"
+  name = "Tenaç"
   description = "101%"
 
 [[feature]]
   icon = "asterisk"
   icon_pack = "fas"
-  name = "Detail oriented"
+  name = "Orientat al detall"
   description = "99,99%"
-  
+
+[[feature]]
+  icon = "glass-cheers" # Alternative: hands-helping
+  icon_pack = "fas"
+  name = "Actitud convivial"
+  description = "98%"
+
+[[feature]]
+  icon = "basketball-ball"
+  icon_pack = "fas"
+  name = "Compromís amb l'equip"
+  description = "99%"
+
+[[feature]]
+  icon = "brain"
+  icon_pack = "fas"
+  name = "Aprenentatge"
+  description = "10%"
+
+[[feature]]
+  icon = "seedling" # Alternative: biking
+  icon_pack = "fas"
+  name = "Respectuós amb el medi ambient"
+  description = "80%"
+
+[[feature]]
+  icon = "utensils"
+  icon_pack = "fas"
+  name = "Gastrònom"
+  description = "100%"  
+
 [[feature]]
   icon = "heartbeat"
   icon_pack = "fas"
-  name = "Music"
-  description = "100%"  
+  name = "Música"
+  description = "78%"  
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
-  name = "Photography"
+  name = "Fotografia"
   description = "42,8%"
-
-[[feature]]
-  icon = "biking"
-  icon_pack = "fas"
-  name = "Eco friendly"
-  description = "80%"
 
 
 # Uncomment to use emoji icons.
