@@ -18,13 +18,13 @@ organizations:
   url: "https://www.drinksco.es"
 
 # Short bio (displayed in user profile at end of posts)
-bio: No se encuentra nada si no se busca algo.
+bio: No es troba res si no es busca quelcom.
 
 interests:
 - SEO
 - Web Analytics
 - Content Management
-- Marketplace
+- Online Marketplaces
 - Social Media
 - Artificial Intelligence
 
@@ -76,4 +76,4 @@ user_groups:
 - Visitors
 ---
 
-🔎 No se encuentra nada si no se busca algo.
+🔎 No es troba res si no es busca quelcom.

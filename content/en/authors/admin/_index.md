@@ -18,19 +18,19 @@ organizations:
   url: "https://www.drinksco.es"
 
 # Short bio (displayed in user profile at end of posts)
-bio: No se encuentra nada si no se busca algo.
+bio: Nothing is found if something is not sought.
 
 interests:
 - SEO
 - Web Analytics
 - Content Management
-- Marketplace
+- Online Marketplaces
 - Social Media
 - Artificial Intelligence
 
 education:
   courses:
-  - course: Enginyeria Informàtica
+  - course: Informatics Engineering
     institution: Universitat Autònoma de Barcelona
     year: 2002
 
@@ -76,4 +76,4 @@ user_groups:
 - Visitors
 ---
 
-🔎 No se encuentra nada si no se busca algo.
+🔎 Nothing is found if something is not sought.

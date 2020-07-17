@@ -24,7 +24,7 @@ interests:
 - SEO
 - Web Analytics
 - Content Management
-- Marketplace
+- Online Marketplaces
 - Social Media
 - Artificial Intelligence
 
