@@ -8,6 +8,7 @@ Simple: https://albertlg.com 🙋🏻‍♂️
 - 💡 Based on the [**Academic** theme](https://themes.gohugo.io/academic/).
 - ☕️ Automatically build & deployed using [**Github Actions**](https://github.com/features/actions)
 - ⬆️ Served through [**Netlify**](https://www.netlify.com), including content management, assets post-procesing and distribution from global CDN.
+
 Statically generated, so 🔝 performant, and 100% free. 💸
 
 [![Screenshot](https://albertlg.com/img/albertlopez-herobanner.jpg)](https://albertlg.com)
