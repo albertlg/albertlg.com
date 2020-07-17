@@ -7,15 +7,15 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
-title = "Artículos recientes"
-subtitle = "Últimos posts de mi blog (como ves, escribo poco)"
+title = "Latest articles"
+subtitle = "My latest blog posts (as you can see, I write little often)"
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 5
+  count = 4
   
   # Choose how many pages you would like to offset by
   offset = 0

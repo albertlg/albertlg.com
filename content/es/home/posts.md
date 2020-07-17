@@ -15,7 +15,7 @@ subtitle = "Últimos posts de mi blog (como ves, escribo poco)"
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 5
+  count = 4
   
   # Choose how many pages you would like to offset by
   offset = 0
