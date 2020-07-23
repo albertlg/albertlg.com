@@ -34,9 +34,10 @@
         {{ with $person.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
-        <h3>
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
-          <span>{{ .name }}</span>
+		<h3>
+          {{ with .url }}<a href="{{ . }}" title="Drinks&Co" target="_blank" rel="noopener">{{ end }}
+		  <img src="/img/logo-drinks-co.svg" alt="{{ .name }} logo" />
+		  <!-- <span>{{ .name }}</span> -->
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}

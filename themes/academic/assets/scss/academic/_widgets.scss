@@ -302,6 +302,13 @@ a.hero-cta-alt:hover {
   margin: 0px 0 10px 0;
 }
 
+.portrait-title img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 ul.network-icon {
   display: inline-flex;
   flex-direction: row;
