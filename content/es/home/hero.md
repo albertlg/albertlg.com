@@ -53,7 +53,13 @@ title = "Albert L.G. en la red..."
 #[cta_note]
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
-
-Yo soy **Albert L.G.** y tú no.
-
-<a class="twitter-timeline" data-width="48%" data-height="200" data-dnt="true" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div style="display: block; width: 100%;">
+    <div style="display: block; width: 100%">
+        Yo soy **Albert L.G.** y tú no.
+    </div>
+    <div style="display: inline-block; text-align: right; width: 100%">
+        <div style="display: inline-block; text-align: right; width: 48%; height: auto; padding: 1em;">
+            <a class="twitter-timeline" data-width="48%" data-height="200" data-dnt="true" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+	</div>
+</div>
