@@ -2,8 +2,8 @@
   "name": "Blog de Albert L.G.",
   "short_name": "Blog de Albert L.G.",
   "lang": "en-us",
-  "theme_color": "#3f51b5",
-  "background_color": "#3f51b5",
+  "theme_color": "#0028ff",
+  "background_color": "#0028ff",
   "icons": [{
     "src": "/images/icon_hueef13b754959ed35710324e55864239e_4654_192x192_fill_lanczos_center_2.png",
     "sizes": "192x192",
