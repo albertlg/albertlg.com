@@ -56,4 +56,4 @@ title = "Albert L.G. en la red..."
 
 Yo soy **Albert L.G.** y tú no.
 
-<a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-width="48%" data-height="200" data-dnt="true" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
