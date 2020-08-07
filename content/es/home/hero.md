@@ -5,7 +5,7 @@ title = "Albert L.G. en la red..."
 weight = 10
 widget = "hero"
 [design]
-columns = "2"
+columns = ""
 show_social = false
 [design.background]
 image = "herobg.jpg"
