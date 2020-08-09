@@ -77,4 +77,4 @@ user_groups:
 - Visitors
 ---
 
-🔎 Nothing is found if something is not sought.
+Responsible for the Content area and Search Engine Optimization at Drinks&Co Marketplace (formerly Uvinum), and one of its 3 co-founders together with Nico Bour and Albert Garcia, with more than 20 years of experience in internet business. For more than 10 years he has focused his professional career in the Wine and Spirits sector, turning a personal passion into a professional one.

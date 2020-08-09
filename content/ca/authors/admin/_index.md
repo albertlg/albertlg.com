@@ -77,4 +77,4 @@ user_groups:
 - Visitors
 ---
 
-🔎 No es troba res si no es busca quelcom.
+Responsable de l'àrea de continguts i posicionament en cercadors a Drinks&Co Marketplace (abans Uvinum), i un dels seus 3 co-fundadors al costat de Nico Bour i Albert Garcia, amb més de 20 anys d'experiència en negocis d'internet. Des de fa més de 10 anys ha centrat la seva trajectòria professional en el sector de vins i destil·lats, convertint una passió personal en professional.
