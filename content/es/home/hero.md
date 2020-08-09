@@ -8,7 +8,7 @@ weight = 10  # Order that this section will appear.
 title = "Albert L.G. en la red..."
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
-hero_media = ""
+hero_media = "1x1-00000000.png"
 
 [design]
   columns = "2"
