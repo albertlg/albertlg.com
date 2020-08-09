@@ -18,7 +18,7 @@ organizations:
   url: "https://www.drinksco.es"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Nothing is found if something is not sought.
+bio: Responsible for the Content area and Search Engine Optimization at Drinks&Co Marketplace (formerly Uvinum), and one of its 3 co-founders together with Nico Bour and Albert Garcia, with more than 20 years of experience in internet business. For more than 10 years he has focused his professional career in the Wine and Spirits sector, turning a personal passion into a professional one.
 
 interests:
 - Search Engines Optimization (SEO)

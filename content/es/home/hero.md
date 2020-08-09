@@ -54,4 +54,5 @@ hero_media = "1x1-00000000.png"
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
 
-Yo soy **Albert L.G.** y tú no.
+🔎 No se encuentra nada si no se busca algo.
+Yo soy **Albert López Gálvez** y tú no.

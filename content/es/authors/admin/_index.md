@@ -18,7 +18,7 @@ organizations:
   url: "https://www.drinksco.es"
 
 # Short bio (displayed in user profile at end of posts)
-bio: No se encuentra nada si no se busca algo.
+bio: Responsable del área de contenidos y posicionamiento en buscadores en Drinks&Co Marketplace (antes Uvinum), y uno de sus 3 co-fundadores junto a Nico Bour y a Albert Garcia, con más de 20 años de experiencia en negocios de internet. Desde hace más de 10 años ha centrado su trayectoria profesional en el sector de vinos y destilados, convirtiendo una pasión personal en profesional.
 
 interests:
 - Optimización para buscadores (SEO)
