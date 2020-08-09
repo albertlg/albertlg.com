@@ -54,7 +54,7 @@ title = "Albert L.G. en la red..."
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
 <div style="display: block; width: 100%;">
-    <div style="display: block; width: 100%">
+    <div style="display: block; width: 100%" markdown="1">
         Yo soy **Albert L.G.** y tú no.
     </div>
     <div style="display: inline-block; text-align: right; width: 100%">
