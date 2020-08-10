@@ -1,9 +1,10 @@
 +++
-date = "2011-03-20 13:15:00"
 author = ""
+date = 2011-03-20T13:15:00Z
+slug = -1181-08-01T00:00:00Z
+tags = ["filosofía", "reflexiones", "covertura", "uvinum"]
 title = "Tricefalia. Reflexiones de una esponja"
-slug = "tricefalia-reflexiones-esponja-1181188"
-tags = [ "filosofía","reflexiones" ]
+
 +++
 Ya lo dice la canción: “[_3 is a magic number. Yes it is, is a magic number_](http://open.spotify.com/track/5STLuc2HvoD573BtHxxnUA)”. Y digo “dice”, en presente, porque las canciones nos hablan **ahora** (en el momento en que las escuchas), las buenas canciones no pasan de moda, perduran, evolucionan con nuevas versiones, se adaptan.
 
