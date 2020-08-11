@@ -1,7 +1,7 @@
 +++
 author = "Albert López"
 date = 2011-03-20T13:15:00Z
-slug = -1181-08-01T00:00:00Z
+slug = tricefalia-reflexiones-esponja-1181188
 tags = ["filosofía", "reflexiones", "covertura", "uvinum"]
 title = "Tricefalia. Reflexiones de una esponja"
 
