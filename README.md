@@ -4,10 +4,11 @@
 
 Simple: https://albertlg.com 🙋🏻‍♂️
 
-- :man_technologist: Built with [**Hugo**](https://gohugo.io).
+- 👨‍💻 Built with [**Hugo**](https://gohugo.io).
 - 💡 Based on the [**Academic** theme](https://themes.gohugo.io/academic/).
+- 👷 Content managed with [**Forestry**](https://forestry.io).
 - ☕️ Automatically build & deployed using [**Github Actions**](https://github.com/features/actions)
-- ⬆️ Served through [**Netlify**](https://www.netlify.com), including content management, assets post-procesing and distribution from global CDN.
+- ⬆️ Served through [**Netlify**](https://www.netlify.com), including assets post-procesing and distribution from global CDN.
 
 Statically generated, so 🔝 performant, and 100% free. 💸
 
