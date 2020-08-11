@@ -1,5 +1,5 @@
 +++
-author = ""
+author = "Albert López"
 date = 2011-03-20T13:15:00Z
 slug = -1181-08-01T00:00:00Z
 tags = ["filosofía", "reflexiones", "covertura", "uvinum"]
