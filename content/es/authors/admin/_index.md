@@ -28,6 +28,8 @@ interests:
 - Redes sociales
 - Inteligencia artificial
 - Automatizaciones
+- Criptomonedas (Blockchain)
+- Realidad Virtual
 
 education:
   courses:

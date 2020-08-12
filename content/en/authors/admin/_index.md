@@ -28,6 +28,8 @@ interests:
 - Social Media
 - Artificial Intelligence
 - Automations
+- Cryptocoins (Blockchain)
+- Virtual Reality
 
 education:
   courses:
