@@ -36,9 +36,9 @@
         {{ range $person.organizations }}
 		<h3>
           {{ with .url }}<a href="{{ . }}" title="CryptoAdvisor&Co" target="_blank" rel="noopener">{{ end }}
-		  <img src="/img/logo-cryptoadvisor.png" alt="{{ .name }} logo" />
+		  <img src="/img/logo-rounded.png" alt="{{ .name }} logo" />
 		  <!-- <span>{{ .name }}</span> -->
-          {{ if .url }}</a>{{ end }}
+          {{ if .url }} CryptoAdvisor.club</a>{{ end }}
         </h3>
         {{ end }}
       </div>
