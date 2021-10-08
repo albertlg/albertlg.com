@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Head of Content & SEO
+role: SEO, Content Marketing & Web Analytics Advisor
 
 # Organizations/Affiliations
 organizations:
-- name: Drinks&Co
-  url: "https://www.drinksco.es"
+- name: CryptoAdvisor.club
+  url: "https://cryptoadvisor.club"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Responsible for the Content area and Search Engine Optimization at Drinks&Co Marketplace (formerly Uvinum), and one of its 3 co-founders together with Nico Bour and Albert Garcia, with more than 20 years of experience in internet business. For more than 10 years he has focused his professional career in the Wine and Spirits sector, turning a personal passion into a professional one.
@@ -70,7 +70,7 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "albert.lopez@uvinum.com"
+email: "albert@albertlg.com"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
