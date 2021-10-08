@@ -18,12 +18,23 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Crypto Education Strategy"
+  company = "CryptoAdvisor.club"
+  company_url = "https://cryptoadvisor.club"
+  location = "Barcelona"
+  date_start = "2021-10-01"
+  date_end = ""
+  description = """
+  I’ve worked with Albert Lombarte and Albert García several times, co-founding successful projects like Obolog, Splitweet, or Uvinum. Again, we share common interests, and I can complement our knowledge and strengths as a team. The main purpose of getting involved in the project is to implement the content and education plan that will complement the current proposal, and that leads us to the vision of the project: to help people to enter, explore and take advantage of the world of investment in cryptocurrencies, and learn in a practical way from the hand of our virtual assistant.
+  """
+
+[[experience]]
   title = "Head of Content & SEO"
   company = "Drinks&Co Marketplace"
   company_url = "https://www.drinksco.es"
   location = "Barcelona & Madrid"
   date_start = "2018-08-01"
-  date_end = ""
+  date_end = "2021-06-30"
   description = """
   After selling Uvinum to Pernod Ricard, a new & exciting challenge is starting! I'm leading the Content & SEO at Drinks&Co (new brand) and managing the team. Let's disrupt worldwide the wine & spirits sector thanks to our marketplace!
   """

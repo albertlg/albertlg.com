@@ -18,12 +18,23 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Crypto Education Strategy"
+  company = "CryptoAdvisor.club"
+  company_url = "https://cryptoadvisor.club"
+  location = "Barcelona"
+  date_start = "2021-10-01"
+  date_end = ""
+  description = """
+  He treballat diverses vegades amb Albert Lombarte i Albert García, co-fundant projectes d'èxit com Obolog, Splitweet o Uvinum. De nou, compartim interessos comuns i puc complementar els nostres coneixements i punts forts com a equip. El principal objectiu d'implicar-me en el projecte és el d'implementar el pla de continguts i formació que ha de complementar la proposta actual, i que ens porta a la visió de el projecte: ajudar a la gent a introduir-se, explorar i aprofitar el món de la inversió en moneda digital, i aprendre d'una forma pràctica de la mà del nostre assistent virtual.
+  """
+
+[[experience]]
   title = "Head of Content & SEO"
   company = "Drinks&Co Marketplace"
   company_url = "https://www.drinksco.es"
   location = "Barcelona & Madrid"
   date_start = "2018-08-01"
-  date_end = ""
+  date_end = "2021-06-30"
   description = """
   Després de vendre Uvinum a Pernod Ricard, comença un nou i emocionant desafiament! Liderant l'àrea de continguts i SEO a Drinks&Co (nova marca) i dirigint l'equip. Anem a revolucionar el sector de vins i destil·lats a tot el món gràcies al nostre markeplace!
   """
