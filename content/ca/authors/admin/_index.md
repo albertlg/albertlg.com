@@ -85,4 +85,10 @@ user_groups:
 - Visitors
 ---
 
-Responsable de l'àrea de continguts i posicionament en cercadors a Drinks&Co Marketplace (abans Uvinum), i un dels seus 3 co-fundadors al costat de Nico Bour i Albert Garcia, amb més de 20 anys d'experiència en negocis d'internet. Des de fa més de 10 anys ha centrat la seva trajectòria professional en el sector de vins i destil·lats, convertint una passió personal en professional.
+Cap al 1998 em vaig topar amb Internet mentre estudiava enginyeria informàtica, i a l'any 2000 el seu efecte ja m'hi tenia treballant. He estat dissenyador, maquetador, programador, especialista en usabilitat, SEO, emprenedor, directiu, mentor, consultor... Total, que segurament hagi participat al 99% de tot allò que abasta un negoci a internet, i sempre amb passió, entusiasme i EQUIP!
+
+Al llarg de la meva carrera he tingut la sort de poder envoltar-me de gent millor que jo i, gràcies a una incessant curiositat i eterna set d'aprendre, sempre m'han mogut allò nou, allò inexplorat, l'optimització i el mesurament, i en especial l'experiència d'usuari i el posicionament de continguts per convertir.
+
+De moment, he treballat a Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la qual vaig ser orgullós creador i cofundador), Drinks&Co Marketplace, i he col·laborat amb mooooltes startups. Avui estic implicat a CryptoAdvisor.club i estic bussejant al nou món cripte (criptomonedes, criptoactius, NFTs, Web3, metavers, DeFi, etc).
+
+Troba'm si busques alguna cosa.
