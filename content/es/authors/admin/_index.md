@@ -18,7 +18,13 @@ organizations:
   url: "https://cryptoadvisor.club"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Responsable del área de contenidos y posicionamiento en buscadores en Drinks&Co Marketplace (antes Uvinum), y uno de sus 3 co-fundadores junto a Nico Bour y a Albert Garcia, con más de 20 años de experiencia en negocios de internet. Desde hace más de 10 años ha centrado su trayectoria profesional en el sector de vinos y destilados, convirtiendo una pasión personal en profesional.
+bio: Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática, y en el año 2000 su efecto ya me tenía trabajando en ello. He sido diseñador, maquetador, programador, especialista en usabilidad, SEO, emprendedor, directivo, mentor, consultor... Total, que seguramente haya participado al 99% de todo lo que abarca un negocio en internet, y siempre con pasión, entusiasmo y EQUIPO!
+
+A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos.
+
+Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Hoy estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+
+Encuéntrame si buscas algo.
 
 interests:
 - Optimización para buscadores (SEO)
