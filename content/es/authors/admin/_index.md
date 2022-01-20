@@ -18,13 +18,14 @@ organizations:
   url: "https://cryptoadvisor.club"
 
 # Short bio (displayed in user profile at end of posts)
-bio: "Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática, y en el año 2000 su efecto ya me tenía trabajando en ello. He sido diseñador, maquetador, programador, especialista en usabilidad, SEO, emprendedor, directivo, mentor, consultor... Total, que seguramente haya participado al 99% de todo lo que abarca un negocio en internet, y siempre con pasión, entusiasmo y EQUIPO!
-
-A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
-
-Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Hoy estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
-
-Encuéntrame si buscas algo."
+bio: |-
+    Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática, y en el año 2000 su efecto ya me tenía trabajando en ello. He sido diseñador, maquetador, programador, especialista en usabilidad, SEO, emprendedor, directivo, mentor, consultor... Total, que seguramente haya participado al 99% de todo lo que abarca un negocio en internet, y siempre con pasión, entusiasmo y EQUIPO!
+	
+	A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
+	
+	Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Hoy estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+	
+	Encuéntrame si buscas algo.
 
 interests:
 - Optimización para buscadores (SEO)
