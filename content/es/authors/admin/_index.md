@@ -14,8 +14,10 @@ role: SEO, Content Marketing & Web Analytics Advisor
 
 # Organizations/Affiliations
 organizations:
-- name: CryptoAdvisor.club
-  url: "https://cryptoadvisor.club"
+- name: Mindset Digital
+  url: "https://mindsetdigital.io/"
+#- name: CryptoAdvisor.club
+#  url: "https://cryptoadvisor.club"
 
 # Short bio (displayed in user profile at end of posts)
 bio: |-
@@ -23,7 +25,9 @@ bio: |-
   
   A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
   
-  Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Hoy estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+  Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Actualmente estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+  
+  Hoy, mi aventura profesional continúa evolucionando. Además de mi implicación en CryptoAdvisor.club, me he unido como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y Jan Almuni, estamos expandiendo los horizontes del marketing y la presencia digital. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine, Logoteo, Escaperoos y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo. Estoy siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este dinámico mundo digital. Si estás buscando innovación, creatividad y experiencia, ¡aquí me tienes!
   
   Encuéntrame si buscas algo.
 
@@ -90,6 +94,8 @@ Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática
 
 A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
 
-Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Hoy estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Actualmente estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+
+Hoy, mi aventura profesional continúa evolucionando. Además de mi implicación en CryptoAdvisor.club, me he unido como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y Jan Almuni, estamos expandiendo los horizontes del marketing y la presencia digital. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine, Logoteo, Escaperoos y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo. Estoy siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este dinámico mundo digital. Si estás buscando innovación, creatividad y experiencia, ¡aquí me tienes!
 
 Encuéntrame si buscas algo.

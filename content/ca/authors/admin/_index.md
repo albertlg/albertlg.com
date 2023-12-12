@@ -14,8 +14,10 @@ role: SEO, Content Marketing & Web Analytics Advisor
 
 # Organizations/Affiliations
 organizations:
-- name: CryptoAdvisor.club
-  url: "https://cryptoadvisor.club"
+- name: Mindset Digital
+  url: "https://mindsetdigital.io/"
+#- name: CryptoAdvisor.club
+#  url: "https://cryptoadvisor.club"
 
 # Short bio (displayed in user profile at end of posts)
 bio: |-
@@ -23,7 +25,9 @@ bio: |-
   
   Al llarg de la meva carrera he tingut la sort de poder envoltar-me de gent millor que jo i, gràcies a una incessant curiositat i eterna set d'aprendre, sempre m'han mogut allò nou, allò inexplorat, l'optimització i el mesurament, i en especial l'experiència d'usuari i el posicionament de continguts per convertir.
   
-  De moment, he treballat a Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la qual vaig ser orgullós creador i cofundador), Drinks&Co Marketplace, i he col·laborat amb mooooltes startups. Avui estic implicat a CryptoAdvisor.club i estic bussejant al nou món cripto (criptomonedes, criptoactius, NFTs, Web3, metavers, DeFi, etc).
+  De moment, he treballat a Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la qual vaig ser orgullós creador i cofundador), Drinks&Co Marketplace, i he col·laborat amb mooooltes startups. Actualment estic implicat a CryptoAdvisor.club i estic bussejant al nou món cripto (criptomonedes, criptoactius, NFTs, Web3, metavers, DeFi, etc).
+  
+  Avui, la meva aventura professional continua evolucionant. A més de la meva implicació a CryptoAdvisor.club, m'he unit com a soci i SEO Manager a Mindset Digital, una agència boutique de creixement digital a Barcelona. Al costat d'Hugo Palomar i Jan Almuni, estem expandint els horitzons del màrqueting i la presència digital. I com si això no fos prou, també estic immers en diversos 'side projects' que prometen ser emocionants. Entre ells es troben VinomadaWine, Logoteo, Escaperoos i LeGoodAnfitrión, una aplicació mòbil que estem desenvolupant amb gran entusiasme. Estic sempre en moviment, buscant constantment noves oportunitats i desafiaments que em permetin continuar creixent i aprenent en aquest món digital dinàmic. Si busques innovació, creativitat i experiència, aquí em tens!
   
   Troba'm si busques alguna cosa.
 
@@ -90,6 +94,8 @@ Cap al 1998 em vaig topar amb Internet mentre estudiava enginyeria informàtica,
 
 Al llarg de la meva carrera he tingut la sort de poder envoltar-me de gent millor que jo i, gràcies a una incessant curiositat i eterna set d'aprendre, sempre m'han mogut allò nou, allò inexplorat, l'optimització i el mesurament, i en especial l'experiència d'usuari i el posicionament de continguts per convertir.
 
-De moment, he treballat a Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la qual vaig ser orgullós creador i cofundador), Drinks&Co Marketplace, i he col·laborat amb mooooltes startups. Avui estic implicat a CryptoAdvisor.club i estic bussejant al nou món cripto (criptomonedes, criptoactius, NFTs, Web3, metavers, DeFi, etc).
+De moment, he treballat a Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la qual vaig ser orgullós creador i cofundador), Drinks&Co Marketplace, i he col·laborat amb mooooltes startups. Actualment estic implicat a CryptoAdvisor.club i estic bussejant al nou món cripto (criptomonedes, criptoactius, NFTs, Web3, metavers, DeFi, etc).
+
+Avui, la meva aventura professional continua evolucionant. A més de la meva implicació a CryptoAdvisor.club, m'he unit com a soci i SEO Manager a Mindset Digital, una agència boutique de creixement digital a Barcelona. Al costat d'Hugo Palomar i Jan Almuni, estem expandint els horitzons del màrqueting i la presència digital. I com si això no fos prou, també estic immers en diversos 'side projects' que prometen ser emocionants. Entre ells es troben VinomadaWine, Logoteo, Escaperoos i LeGoodAnfitrión, una aplicació mòbil que estem desenvolupant amb gran entusiasme. Estic sempre en moviment, buscant constantment noves oportunitats i desafiaments que em permetin continuar creixent i aprenent en aquest món digital dinàmic. Si busques innovació, creativitat i experiència, aquí em tens!
 
 Troba'm si busques alguna cosa.

@@ -18,6 +18,17 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "CMO & SEO Manager"
+  company = "Mindset Digital"
+  company_url = "https://mindsetdigital.io"
+  location = "Barcelona"
+  date_start = "2022-09-01"
+  date_end = ""
+  description = """
+  Des del 2022 i aprofitant la meva experiència en SEO, màrqueting de continguts i ús d'intenligència artificial generativa, m'he unit com a soci, CMO i SEO Manager de Mindset Digital, l'agència boutique de creixement digital a Barcelona. Al costat d'Hugo Palomar i Jan Almuni, estem expandint els horitzons del màrqueting i la presència digital a través de les nostres especialitats: estratègia digital, màrqueting automation i SEO.
+  """
+
+[[experience]]
   title = "Crypto Education Strategy"
   company = "CryptoAdvisor.club"
   company_url = "https://cryptoadvisor.club"
