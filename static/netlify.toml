@@ -41,7 +41,37 @@
 # ==========
 
 [[redirects]]
+  from = "/ca/tricefalia-reflexiones-esponja-1181188/"
+  to = "/ca/tricefalia-reflexions-esponja/"
+  status = 301
+  force = false
+
+[[redirects]]
   from = "/ca/software-al-vino-351701/"
   to = "/ca/del-software-al-vi/"
   status = 301
   force = false
+
+#[[redirects]]
+#  from = ""
+#  to = ""
+#  status = 301
+#  force = false
+
+[[redirects]]
+  from = "/en/tricefalia-reflexiones-esponja-1181188/"
+  to = "/en/tricefalia-reflections-sponge/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/software-al-vino-351701/"
+  to = "/en/from-software-to-wine/"
+  status = 301
+  force = false
+
+#[[redirects]]
+#  from = ""
+#  to = ""
+#  status = 301
+#  force = false
