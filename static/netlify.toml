@@ -8,6 +8,10 @@
   [headers.values]
     Content-Type = "application/rss+xml"
 
+# ==========
+# REDIRECCIONES DE DOMINIOS
+# ==========
+
 [[redirects]]
   from = "https://albertlg.netlify.com/*"
   to = "https://albertlg.com/:splat"
@@ -31,3 +35,13 @@
   to = "https://albertlg.com/"
   status = 301
   force = true #COMMENT: ensure that we always redirect
+
+# ==========
+# REDIRECCIONES ESPECÍFICAS
+# ==========
+
+[[redirects]]
+  from = "/ca/software-al-vino-351701/"
+  to = "/ca/del-software-al-vi/"
+  status = 301
+  force = false
