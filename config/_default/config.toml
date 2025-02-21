@@ -17,7 +17,7 @@ baseurl = "https://albertlg.com/"
 copyright = "Created with ❤ by: Albert L.G. &copy; {year}"
 
 # Site publishing directory
-publishDir = "docs"
+publishDir = "public"
 
 ############################
 ## Advanced options below ##
