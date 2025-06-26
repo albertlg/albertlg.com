@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = false  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 
-title = "Academic Kickstart"
+title = "Wowchemy Kickstart"
 subtitle = ""
 
 [design]
@@ -50,21 +50,21 @@ subtitle = ""
  css_class = ""
 +++
 
-Welcome to the **Academic Kickstart** template!
+Welcome to the **Wowchemy Kickstart** template!
 
-Follow our [Getting Started](https://sourcethemes.com/academic/docs/get-started/) and [Page Builder](https://sourcethemes.com/academic/docs/widgets/) guides to easily personalize the template and then [add your own content](https://sourcethemes.com/academic/docs/managing-content/).
+Follow our [Getting Started](https://wowchemy.com/docs/get-started/) and [Page Builder](https://wowchemy.com/docs/content/writing-markdown-latex/) guides to easily personalize the template and then [add your own content](https://wowchemy.com/docs/managing-content/).
 
-For inspiration, check out [the Markdown files](https://sourcethemes.com/academic/docs/install/#demo-content) which power the [personal demo](https://academic-demo.netlify.com/). The easiest way to publish your new site to the internet is with [Netlify](https://sourcethemes.com/academic/docs/deployment/).
+For inspiration, check out [the Markdown files](https://wowchemy.com/docs/install/#demo-content) which power the [personal demo](https://demo.wowchemy.com/). The easiest way to publish your new site to the internet is with [Netlify](https://wowchemy.com/docs/hugo-tutorials/deployment/).
 
-- [View the documentation](https://sourcethemes.com/academic/docs/)
-- [Ask a question](http://discuss.gohugo.io/)
-- [Request a feature or report a bug](https://github.com/gcushen/hugo-academic/issues)
-- Updating? View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
-- Support development of Academic:
+- [View the documentation](https://wowchemy.com/docs/)
+- [Ask a question](https://github.com/wowchemy/wowchemy-hugo-modules/discussions)
+- [Request a feature or report a bug](https://github.com/wowchemy/wowchemy-hugo-modules/issues)
+- Updating? View the [Update Guide](https://wowchemy.com/docs/update/) and [Release Notes](https://wowchemy.com/updates/)
+- Support development of Wowchemy:
   - [Donate a coffee](https://paypal.me/cushen)
   - [Become a backer on Patreon](https://www.patreon.com/cushen)
-  - [Decorate your laptop or journal with an Academic sticker](https://www.redbubble.com/people/neutreno/works/34387919-academic)
-  - [Wear the T-shirt](https://academic.threadless.com/)
+  - [Decorate your laptop or journal with a Wowchemy sticker](https://www.redbubble.com/people/wowchemy/works/34387919-wowchemy)
+  - [Wear the T-shirt](https://wowchemy.threadless.com/)
 
 {{% alert note %}}
 This homepage section is an example of adding [elements](https://sourcethemes.com/academic/docs/writing-markdown-latex/) to the [*Blank* widget](https://sourcethemes.com/academic/docs/widgets/).
