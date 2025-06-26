@@ -1,5 +1,5 @@
 #---
-#COMMENT: Use the netlify.toml file stored at /static folder
+#COMMENT: Use the netlify.toml file stored in the static folder
 #---
 
 [build]
