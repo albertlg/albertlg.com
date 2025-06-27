@@ -58,4 +58,4 @@ hero_media = "1x1-00000000.png"
 Jo sóc l'**Albert L.G.** i tu no.
 
 <a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
