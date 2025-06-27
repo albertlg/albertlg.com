@@ -56,3 +56,6 @@ hero_media = "1x1-00000000.png"
 
 🔎 Nothing is found if something is not sought.
 I am **Albert López Gálvez** and you are not.
+
+<a class="twitter-timeline" data-width="400" data-height="400" data-theme="dark" href="https://twitter.com/albertlg?ref_src=twsrc%5Etfw">Tweets by albertlg</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
