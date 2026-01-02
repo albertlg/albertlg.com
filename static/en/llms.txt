@@ -2,7 +2,7 @@
 
 > Personal blog by Albert López Gálvez, SEO consultant with experience since 1998 in digital projects, content strategy, web analytics, and optimization for search engines and large language models (LLMs).
 
-This site contains articles, reflections, and personal projects related to SEO, digital analytics, online business, and, more recently, the intersection between traditional SEO and SEO for LLMs.  
+This site contains articles, reflections, and personal projects related to SEO, digital analytics, online business, and, more recently, the intersection between traditional SEO and SEO for LLMs (AI).  
 Content combines professional experience, strategic analysis, and continuous experimentation.
 
 ## Main page
