@@ -3,7 +3,7 @@
 > Blog personal de Albert López Gálvez, consultor en SEO, marketing de contenidos y analítica web, con experiencia desde 1998 en proyectos digitales y optimización para buscadores y modelos de lenguaje (LLMs).
 
 Este sitio recoge artículos, reflexiones y proyectos personales relacionados con SEO, contenidos, analítica digital y negocio online.  
-En los últimos años, el foco se ha desplazado progresivamente hacia la intersección entre SEO clásico y SEO para LLMs, combinando análisis estratégico, experimentación y aprendizaje continuo.
+En los últimos años, el foco se ha desplazado progresivamente hacia la intersección entre SEO clásico y SEO para LLMs (IA), combinando análisis estratégico, experimentación y aprendizaje continuo.
 
 ## Página principal
 
