@@ -22,12 +22,14 @@
 
   {{/* Generate page description. */}}
   {{ $desc := "" }}
-  {{ if .Params.summary }}
+  {{ if .Params.description }}
+    {{ $desc = .Params.description }}
+  {{ else if .Params.summary }}
     {{ $desc = .Params.summary }}
   {{ else if .Params.abstract }}
     {{ $desc = .Params.abstract }}
   {{ else if .IsPage }}
-    {{ $desc = .Summary }}
+    {{ $desc = .Summary | plainify }}
   {{ else if site.Params.description }}
     {{ $desc = site.Params.description }}
   {{ else }}
@@ -35,12 +37,15 @@
   {{ end }}
   <meta name="description" content="{{ $desc }}">
 
+  {{/* hreflang alternates */}}
   {{ if .IsTranslated }}
-      {{ range .AllTranslations }}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
-      {{ end }}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
-    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+    {{ range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+    {{ end }}
+    {{/* Include current page too */}}
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+    {{/* Default */}}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
   {{ end }}
 
   {{ partial "functions/parse_theme" . }}
