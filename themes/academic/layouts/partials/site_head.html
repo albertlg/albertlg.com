@@ -42,10 +42,14 @@
     {{ range .AllTranslations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
     {{ end }}
-    {{/* Include current page too */}}
-  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
-    {{/* Default */}}
+
+    {{/* x-default -> Spanish version if it exists */}}
+    {{ $es := .AllTranslations | where "Lang" "es" | first 1 }}
+    {{ with $es }}
   <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+    {{ else }}
+  <link rel="alternate" hreflang="x-default" href="{{ $.Permalink }}" />
+    {{ end }}
   {{ end }}
 
   {{ partial "functions/parse_theme" . }}
