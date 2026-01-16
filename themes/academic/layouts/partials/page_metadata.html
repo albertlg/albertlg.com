@@ -15,38 +15,17 @@
 
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
-    {{/* Fecha de publicación: por defecto, la de .Date, pero si hay `date` en Params, la usamos explícitamente */}}
-    {{ $published := $page.Date }}
-    {{ with $page.Params.date }}
-      {{ $published = time . }}
-    {{ end }}
 
-    {{/* Fecha de actualización: por defecto = publicada; si hay `lastmod` en Params, la usamos */}}
-    {{ $updated := $published }}
+    {{/* Usamos siempre el `lastmod` del front matter si existe.
+         Si no existe, usamos la fecha actual como fallback. */}}
+    {{ $updated := now }}
     {{ with $page.Params.lastmod }}
       {{ $updated = time . }}
     {{ end }}
 
-    {{/* DEBUG: inspeccionar qué ve Hugo */}}
-    {{ printf "<!-- params.date=%v params.lastmod=%v -->" $page.Params.date $page.Params.lastmod | safeHTML }}
-    {{ printf "<!-- Date=%v Lastmod=%v -->" $page.Date $page.Lastmod | safeHTML }}
-    {{ printf "<!-- published=%s updated=%s -->"
-      ($published.Format "2006-01-02T15:04:05Z07:00")
-      ($updated.Format   "2006-01-02T15:04:05Z07:00")
-      | safeHTML }}
+    {{ $date := $updated.Format site.Params.date_format }}
+    {{ $date }}
 
-    {{ if eq $page.Type "publication" }}
-      {{/* Para publicaciones, mantenemos el formato especial original */}}
-      {{ $date := $published.Format (site.Params.publications.date_format | default "January, 2006") }}
-      {{ $date }}
-    {{ else }}
-      {{/* Si la fecha de actualización es distinta de la de publicación, mostramos "Última actualización" */}}
-      {{ if ne $updated $published }}
-        {{ i18n "last_updated" }}
-      {{ end }}
-      {{ $date := $updated.Format site.Params.date_format }}
-      {{ $date }}
-    {{ end }}
   </span>
   {{ end }}
 
