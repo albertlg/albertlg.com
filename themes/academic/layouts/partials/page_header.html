@@ -15,7 +15,7 @@
 {{end}}
 
 {{/* Header image */}}
-{{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
+{{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) (ne .Params.header.hide_banner true) }}
 <div class="article-header">
   {{ $img_src := urls.Parse .Params.header.image }}
   {{ if $img_src.Scheme }}
