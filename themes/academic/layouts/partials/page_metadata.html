@@ -27,6 +27,14 @@
       {{ $updated = time . }}
     {{ end }}
 
+    {{/* DEBUG: inspeccionar qué ve Hugo */}}
+    {{ printf "<!-- params.date=%q params.lastmod=%q -->" $page.Params.date $page.Params.lastmod | safeHTML }}
+    {{ printf "<!-- Date=%#v Lastmod=%#v -->" $page.Date $page.Lastmod | safeHTML }}
+    {{ printf "<!-- published=%s updated=%s -->"
+      ($published.Format "2006-01-02T15:04:05Z07:00")
+      ($updated.Format   "2006-01-02T15:04:05Z07:00")
+      | safeHTML }}
+
     {{ if eq $page.Type "publication" }}
       {{/* Para publicaciones, mantenemos el formato especial original */}}
       {{ $date := $published.Format (site.Params.publications.date_format | default "January, 2006") }}
