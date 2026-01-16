@@ -1,0 +1,23 @@
+name: Daily Netlify Scheduled Build
+
+on:
+  schedule:
+    # Cron en UTC. 
+    # "0 12 * * *" = todos los días a las 12:00 UTC.
+    # Con Europe/Madrid:
+    # - invierno: 13:00 local
+    # - verano: 14:00 local
+    - cron: "0 11 * * *"
+
+  # Opcional: para poder lanzarlo a mano desde GitHub si quieres probarlo
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Netlify build hook
+        run: |
+          curl -X POST -d '{}' "$NETLIFY_BUILD_HOOK"
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
