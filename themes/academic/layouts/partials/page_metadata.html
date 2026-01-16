@@ -13,19 +13,18 @@
   {{ end }}
   {{ end }}
 
-  <span style="color:red;">[DEBUG-FECHA]</span>
-
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
-    {{/* Fecha de publicación (front matter `date`) */}}
+    {{/* Fecha de publicación: por defecto, la de .Date, pero si hay `date` en Params, la usamos explícitamente */}}
     {{ $published := $page.Date }}
+    {{ with $page.Params.date }}
+      {{ $published = time . }}
+    {{ end }}
 
-    {{/* Por defecto, la fecha mostrada es la de publicación */}}
+    {{/* Fecha de actualización: por defecto = publicada; si hay `lastmod` en Params, la usamos */}}
     {{ $updated := $published }}
-
-    {{/* Si hay `lastmod` en el front matter, la usamos como fecha de actualización */}}
     {{ with $page.Params.lastmod }}
-      {{ $updated = . }}
+      {{ $updated = time . }}
     {{ end }}
 
     {{ if eq $page.Type "publication" }}
@@ -42,7 +41,6 @@
     {{ end }}
   </span>
   {{ end }}
-
 
   {{ if and (eq $is_list 1) (eq $page.Type "publication") }}
   <span class="middot-divider"></span>
