@@ -39,7 +39,22 @@
         </div>
 
         <div class="body-footer">
-          <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
+
+          {{/* Fecha de publicación: por defecto .Date, pero si hay `date` en Params, la usamos explícitamente */}}
+          {{ $published := .Date }}
+          {{ with .Params.date }}
+            {{ $published = time . }}
+          {{ end }}
+
+          {{/* Fecha de actualización: por defecto = publicada; si hay `lastmod` en Params, la usamos */}}
+          {{ $updated := $published }}
+          {{ with .Params.lastmod }}
+            {{ $updated = time . }}
+          {{ end }}
+
+          <p>
+            {{ i18n "last_updated" }} {{ $updated.Format site.Params.date_format }}
+          </p>
 
           {{ partial "page_edit" . }}
 
