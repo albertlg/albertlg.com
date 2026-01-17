@@ -1,0 +1,21 @@
+{{/* Recibe un time.Time y devuelve una fecha con el mes traducido según el idioma del site */}}
+
+{{- $d := . -}}
+{{- $lang := site.Language.Lang -}}
+
+{{- $day := time.Format "2" $d -}}
+{{- $year := time.Format "2006" $d -}}
+{{- $monthNum := int (time.Format "1" $d) -}}
+
+{{- if eq $lang "es" -}}
+  {{- $months := slice "" "enero" "febrero" "marzo" "abril" "mayo" "junio" "julio" "agosto" "septiembre" "octubre" "noviembre" "diciembre" -}}
+  {{- printf "%s %s %s" $day (index $months $monthNum) $year -}}
+
+{{- else if eq $lang "ca" -}}
+  {{- $months := slice "" "gener" "febrer" "març" "abril" "maig" "juny" "juliol" "agost" "setembre" "octubre" "novembre" "desembre" -}}
+  {{- printf "%s %s %s" $day (index $months $monthNum) $year -}}
+
+{{- else -}}
+  {{- $months := slice "" "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" -}}
+  {{- printf "%s %s %s" $day (index $months $monthNum) $year -}}
+{{- end -}}
