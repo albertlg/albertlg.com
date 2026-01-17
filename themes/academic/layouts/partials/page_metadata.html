@@ -16,18 +16,15 @@
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
 
-    {{/* Usamos siempre el `lastmod` del front matter si existe.
-         Si no existe, usamos la fecha actual como fallback. */}}
-    {{ $updated := now }}
-    {{ with $page.Params.lastmod }}
-      {{ $updated = time . }}
-    {{ end }}
-
+    {{/* Usamos siempre .Lastmod, que ya respeta el front matter `lastmod`
+         según la prioridad definida en [frontmatter].lastmod */}}
+    {{ $updated := $page.Lastmod }}
     {{ $date := $updated.Format site.Params.date_format }}
     {{ $date }}
 
   </span>
   {{ end }}
+
 
   {{ if and (eq $is_list 1) (eq $page.Type "publication") }}
   <span class="middot-divider"></span>
