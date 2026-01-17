@@ -20,15 +20,11 @@
       {{ $published := $page.Date }}
       {{ $updated := $page.Lastmod }}
 
-      {{/* Usamos el formato definido en params.toml,
-           por defecto :date_long (localizado según el idioma de la página) */}}
-      {{ $dateFormat := site.Params.date_format | default ":date_long" }}
-
       {{ if ne $updated $published }}
         {{ i18n "last_updated" }}
-        {{ time.Format $dateFormat $updated }}
+        {{ partial "format_date" $updated }}
       {{ else }}
-        {{ time.Format $dateFormat $published }}
+        {{ partial "format_date" $published }}
       {{ end }}
 
     </span>
