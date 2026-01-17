@@ -16,17 +16,20 @@
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
 
-    {{/* Fecha de publicación y de última modificación */}}
+    {{/* Publicado vs última actualización */}}
     {{ $published := $page.Date }}
     {{ $updated := $page.Lastmod }}
 
+    {{/* Formato de fecha: por defecto, Hugo :date_long (localizado) */}}
+    {{ $dateFormat := site.Params.date_format | default ":date_long" }}
+
     {{ if ne $updated $published }}
-      {{/* Cuando lastmod es distinta de date → mostramos “Última actualización” */}}
+      {{/* Cuando lastmod es distinta de date → mostramos “Última actualización” traducido */}}
       {{ i18n "last_updated" }}
-      {{ $updated.Format site.Params.date_format }}
+      {{ time.Format $dateFormat $updated }}
     {{ else }}
-      {{/* Cuando son iguales → mostramos solo la fecha */}}
-      {{ $published.Format site.Params.date_format }}
+      {{/* Cuando son iguales → mostramos solo la fecha de publicación */}}
+      {{ time.Format $dateFormat $published }}
     {{ end }}
 
   </span>
