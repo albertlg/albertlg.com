@@ -14,25 +14,24 @@
   {{ end }}
 
   {{ if not (in (slice "talk" "page") $page.Type) }}
-  <span class="article-date">
+    <span class="article-date">
 
-    {{/* Publicado vs última actualización */}}
-    {{ $published := $page.Date }}
-    {{ $updated := $page.Lastmod }}
+      {{/* Fechas de publicación y última actualización */}}
+      {{ $published := $page.Date }}
+      {{ $updated := $page.Lastmod }}
 
-    {{/* Formato de fecha: por defecto, Hugo :date_long (localizado) */}}
-    {{ $dateFormat := site.Params.date_format | default ":date_long" }}
+      {{/* Usamos el formato definido en params.toml,
+           por defecto :date_long (localizado según el idioma de la página) */}}
+      {{ $dateFormat := site.Params.date_format | default ":date_long" }}
 
-    {{ if ne $updated $published }}
-      {{/* Cuando lastmod es distinta de date → mostramos “Última actualización” traducido */}}
-      {{ i18n "last_updated" }}
-      {{ time.Format $dateFormat $updated }}
-    {{ else }}
-      {{/* Cuando son iguales → mostramos solo la fecha de publicación */}}
-      {{ time.Format $dateFormat $published }}
-    {{ end }}
+      {{ if ne $updated $published }}
+        {{ i18n "last_updated" }}
+        {{ time.Format $dateFormat $updated }}
+      {{ else }}
+        {{ time.Format $dateFormat $published }}
+      {{ end }}
 
-  </span>
+    </span>
   {{ end }}
 
   {{ if and (eq $is_list 1) (eq $page.Type "publication") }}
