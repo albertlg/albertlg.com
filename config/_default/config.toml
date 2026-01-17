@@ -75,6 +75,9 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 [frontmatter]
   lastmod = ["lastmod", ":git", "date"]
 
+[params]
+  date_format = ":date_long"
+
 [imaging]
   resampleFilter = "lanczos"
   quality = 90
