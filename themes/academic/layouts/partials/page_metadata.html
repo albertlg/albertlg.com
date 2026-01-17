@@ -16,15 +16,21 @@
   {{ if not (in (slice "talk" "page") $page.Type) }}
   <span class="article-date">
 
-    {{/* Usamos siempre .Lastmod, que ya respeta el front matter `lastmod`
-         según la prioridad definida en [frontmatter].lastmod */}}
+    {{/* Fecha de publicación y de última modificación */}}
+    {{ $published := $page.Date }}
     {{ $updated := $page.Lastmod }}
-    {{ $date := $updated.Format site.Params.date_format }}
-    {{ $date }}
+
+    {{ if ne $updated $published }}
+      {{/* Cuando lastmod es distinta de date → mostramos “Última actualización” */}}
+      {{ i18n "last_updated" }}
+      {{ $updated.Format site.Params.date_format }}
+    {{ else }}
+      {{/* Cuando son iguales → mostramos solo la fecha */}}
+      {{ $published.Format site.Params.date_format }}
+    {{ end }}
 
   </span>
   {{ end }}
-
 
   {{ if and (eq $is_list 1) (eq $page.Type "publication") }}
   <span class="middot-divider"></span>
