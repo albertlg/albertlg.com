@@ -14,20 +14,26 @@
   {{ end }}
 
   {{ if not (in (slice "talk" "page") $page.Type) }}
-    <span class="article-date">
+  <span class="article-date">
 
-      {{/* Fechas de publicación y última actualización */}}
-      {{ $published := $page.Date }}
-      {{ $updated := $page.Lastmod }}
+    {{/* Parámetros tal como vienen en el front matter (strings) */}}
+    {{ $publishedParam := $page.Params.date | default "" }}
+    {{ $updatedParam   := $page.Params.lastmod | default "" }}
 
-      {{ if ne $updated $published }}
-        {{ i18n "last_updated" }}
-        {{ partial "format_date" $updated }}
-      {{ else }}
-        {{ partial "format_date" $published }}
-      {{ end }}
+    {{/* Tiempos procesados por Hugo */}}
+    {{ $published := $page.Date }}
+    {{ $updated   := $page.Lastmod }}
 
-    </span>
+    {{/* Decidimos si hay “actualización” sólo si lastmod existe y
+         es distinto a date en el front matter */}}
+    {{ if and $updatedParam (ne $updatedParam $publishedParam) }}
+      {{ i18n "last_updated" }}
+      {{ partial "format_date" (dict "time" $updated "page" $page) }}
+    {{ else }}
+      {{ partial "format_date" (dict "time" $published "page" $page) }}
+    {{ end }}
+
+  </span>
   {{ end }}
 
   {{ if and (eq $is_list 1) (eq $page.Type "publication") }}
