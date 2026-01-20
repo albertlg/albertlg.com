@@ -21,15 +21,9 @@ organizations:
 
 # Short bio (displayed in user profile at end of posts)
 bio: |-
-  Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática, y en el año 2000 su efecto ya me tenía trabajando en ello. He sido diseñador, maquetador, programador, especialista en usabilidad, SEO, emprendedor, directivo, mentor, consultor... Total, que seguramente haya participado al 99% de todo lo que abarca un negocio en internet, y siempre con pasión, entusiasmo y EQUIPO!
-  
-  A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
-  
-  Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Actualmente estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
-  
-  Hoy, mi aventura profesional continúa evolucionando. Además de mi implicación en CryptoAdvisor.club, me he unido como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y Jan Almuni, estamos expandiendo los horizontes del marketing y la presencia digital. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine, Logoteo, Escaperoos y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo. Estoy siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este dinámico mundo digital. Si estás buscando innovación, creatividad y experiencia, ¡aquí me tienes!
-  
-  Encuéntrame si buscas algo.
+  Desde 1998 vivo en la intersección entre tecnología, contenidos y búsqueda. He sido diseñador, programador, SEO y emprendedor en proyectos como Solostocks, Softonic, Uvinum y Drinks&Co.
+
+  Hoy soy socio y SEO Manager en Mindset Digital, donde impulso estrategias de SEO para LLMs y sigo explorando nuevas ideas y side projects. Siempre aprendiendo, siempre optimizando.
 
 interests:
 - Optimización para buscadores (SEO)
@@ -94,8 +88,8 @@ Allá por 1998 me topé con Internet mientras estudiaba ingeniería informática
 
 A lo largo de mi carrera he tenido la suerte de poder rodearme de gente mejor que yo y, gracias a una incesante curiosidad y eterna sed de aprender, siempre me han movido lo nuevo, lo inexplorado, la optimización y la medición, y en especial la experiencia de usuario y el posicionamiento de contenidos para convertir.
 
-Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Actualmente estoy implicado en CryptoAdvisor.club y estoy buceando en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
+Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Recientemente he estado implicado en CryptoAdvisor.club y he buceado en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
 
-Hoy, mi aventura profesional continúa evolucionando. Además de mi implicación en CryptoAdvisor.club, me he unido como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y Jan Almuni, estamos expandiendo los horizontes del marketing y la presencia digital. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine, Logoteo, Escaperoos y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo. Estoy siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este dinámico mundo digital. Si estás buscando innovación, creatividad y experiencia, ¡aquí me tienes!
+Hoy, mi aventura profesional continúa evolucionando. Desde 2022 he unido mi experiencia a la eclosión de la IA (inteligencia artificial), y entré como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y equipo (Iván González, Jordi Gost...), estamos expandiendo los horizontes del marketing y la presencia digital gracias al SEO para LLMs. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine (con Juan Manuel Gonzalvo), Logoteo (con Miquel Pascual) y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo. Estoy siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este dinámico mundo digital. Si estás buscando innovación, creatividad y experiencia, ¡aquí me tienes!
 
 Encuéntrame si buscas algo.
