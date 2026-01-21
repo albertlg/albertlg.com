@@ -21,15 +21,9 @@ organizations:
 
 # Short bio (displayed in user profile at end of posts)
 bio: |-
-  Back in 1998 I came across the Internet while studying computer engineering, and by 2000 its effect had me working on it. I have been a designer, frontend developer, programmer, usability specialist, SEO, entrepreneur, manager, mentor, consultant... In short, I have surely participated in 99% of everything that an internet business encompasses, and always with passion, enthusiasm and TEAM!
-  
-  Throughout my career I have been lucky enough to be able to surround myself with people better than me and, thanks to an incessant curiosity and eternal thirst for learning, I have always been moved by the new, the unexplored, optimization and measurement, and especially the user experience and the positioning of content to convert.
-  
-  So far, I have worked at Solostocks (Grupo Intercom), Softonic, Uvinum (a brand I was the proud creator and co-founder of), Drinks&Co Marketplace, and I have collaborated with maaaany startups. Nowadays I am involved in CryptoAdvisor.club and I am diving into the new crypto world (cryptocurrencies, cryptoassets, NFTs, Web3, metaverse, DeFi, etc).
-  
-  Today, my professional journey continues to evolve. In addition to my involvement with CryptoAdvisor.club, I have joined as a partner and SEO Manager at Mindset Digital, a boutique digital growth agency in Barcelona. Alongside Hugo Palomar and Jan Almuni, we are expanding the horizons of marketing and digital presence. And as if that weren't enough, I am also immersed in several 'side projects' that promise to be exciting. Among them are VinomadaWine, Logoteo, Escaperoos, and LeGoodAnfitrión, a mobile app that we are developing with great enthusiasm. I am always on the move, constantly seeking new opportunities and challenges that allow me to continue growing and learning in this dynamic digital world. If you're looking for innovation, creativity, and experience, you've found me!
-  
-  Find me if you are looking for something.
+  Since 1998 I’ve lived at the intersection of technology, content and search. I’ve worked as a designer, developer, SEO and entrepreneur in projects like Solostocks, Softonic, Uvinum and Drinks&Co.
+
+  Today I’m partner and SEO Manager at Mindset Digital, driving SEO for LLMs and exploring new projects. Always learning, always optimizing.
 
 interests:
 - Search Engines Optimization (SEO)
@@ -90,12 +84,12 @@ user_groups:
 - Visitors
 ---
 
-Back in 1998 I came across the Internet while studying computer engineering, and by 2000 its effect had me working on it. I have been a designer, frontend developer, programmer, usability specialist, SEO, entrepreneur, manager, mentor, consultant... In short, I have surely participated in 99% of everything that an internet business encompasses, and always with passion, enthusiasm and TEAM!
+Around 1998 I stumbled upon the Internet while studying computer engineering, and by 2000 it had already pulled me into the industry. I’ve been a designer, developer, UX specialist, SEO, entrepreneur, executive, mentor, consultant… In short, I’ve probably taken part in 99% of what makes an online business work — always with passion, enthusiasm, and TEAM spirit.
 
-Throughout my career I have been lucky enough to be able to surround myself with people better than me and, thanks to an incessant curiosity and eternal thirst for learning, I have always been moved by the new, the unexplored, optimization and measurement, and especially the user experience and the positioning of content to convert.
+Throughout my career I’ve been lucky to surround myself with people smarter than me. Thanks to endless curiosity and a constant hunger to learn, I’ve always been driven by what’s new, unexplored, optimizable and measurable — especially user experience and content positioning with conversion in mind.
 
-So far, I have worked at Solostocks (Grupo Intercom), Softonic, Uvinum (a brand I was the proud creator and co-founder of), Drinks&Co Marketplace, and I have collaborated with maaaany startups. Nowadays I am involved in CryptoAdvisor.club and I am diving into the new crypto world (cryptocurrencies, cryptoassets, NFTs, Web3, metaverse, DeFi, etc).
+I’ve worked at Solostocks (Grupo Intercom), Softonic, Uvinum (which I proudly created and co-founded), Drinks&Co Marketplace, and I’ve collaborated with many startups. More recently I was involved in CryptoAdvisor.club and dove deep into the crypto world (cryptocurrencies, crypto assets, NFTs, Web3, metaverse, DeFi, etc.).
 
-Today, my professional journey continues to evolve. In addition to my involvement with CryptoAdvisor.club, I have joined as a partner and SEO Manager at Mindset Digital, a boutique digital growth agency in Barcelona. Alongside Hugo Palomar and Jan Almuni, we are expanding the horizons of marketing and digital presence. And as if that weren't enough, I am also immersed in several 'side projects' that promise to be exciting. Among them are VinomadaWine, Logoteo, Escaperoos, and LeGoodAnfitrión, a mobile app that we are developing with great enthusiasm. I am always on the move, constantly seeking new opportunities and challenges that allow me to continue growing and learning in this dynamic digital world. If you're looking for innovation, creativity, and experience, you've found me!
+Today my professional journey keeps evolving. Since 2022 I’ve combined my experience with the rise of AI, joining Mindset Digital as partner and SEO Manager — a boutique digital growth agency in Barcelona. Together with Hugo Palomar and the team (Iván González, Jordi Gost…), we’re expanding the horizons of marketing and digital presence through SEO for LLMs. On top of that, I’m also immersed in several side projects that I’m truly excited about: VinomadaWine (with Juan Manuel Gonzalvo), Logoteo (with Miquel Pascual) and LeGoodAnfitrión, a mobile app we’re building with huge enthusiasm. Always moving, always exploring new opportunities and challenges to keep growing and learning in this dynamic digital world. If you’re looking for innovation, creativity and experience, here I am!
 
 Find me if you are looking for something.
