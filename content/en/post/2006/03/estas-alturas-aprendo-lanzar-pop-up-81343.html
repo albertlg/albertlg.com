@@ -1,24 +1,18 @@
 +++
-date = "2006-03-03 00:00:00"
-author = ""
-title = "A estas alturas aprendo cómo lanzar una Pop-Up"
+date = "2006-03-03T00:00:00+01:00"
+lastmod = "2006-03-03T00:00:00+01:00"
+author = "Albert L.G."
+title = "At this point, I’m learning how to launch a pop-up"
 slug = "estas-alturas-aprendo-lanzar-pop-up-81343"
-tags = [ "estándares web","maquetación web","seo","usabilidad" ]
+tags = [ "web standards","web layout","seo","usability" ]
 +++
-<p>Y es m&aacute;s: no me da verg&uuml;enza reconocerlo. :P<br /> El mundo del webmaster es un no parar de aprender y reaprender cosas...
-quiz&aacute; por eso me guste. Incluso los hay que se enorgullecen cuando me
-ense&ntilde;an algo que no sab&iacute;a (eh <a title="Blog de Rodrigo Mantill&aacute;n" href="http://www.pandeblog.net/" target="_blank">Rodrigo</a>?), y los que me piden que siga escribiendo m&aacute;s y escuchando menos m&uacute;sica (eh <a title="Blog de Tom&aacute;s Casquero" href="http://tomcask.blogspot.com/" target="_blank">Tito Tommy</a>?).</p>
-<p>En f&iacute;n, a lo que &iacute;bamos: lanzar ventanas Pop-Up con JavaScript. Pues
-resulta que, independientemente de las discusiones acerca de usar o no
-una pop-up, hay un problema que las corrompe sistem&aacute;ticamente, que las
-hace perversas, que agrede a usuarios avanzados y principiantes en su
-navegaci&oacute;n, confunde a los buscadores, y genera ruido en el c&oacute;digo.
-Este problema es que, existiendo varias formas de lanzar una Pop-Up con
-c&oacute;digo Javascript, las m&aacute;s usadas son las incorrectas.</p>
-<p><strong>La forma correcta de lanzar una ventana Pop-Up con Javascript</strong></p>
-<blockquote>El siguiente es el c&oacute;digo a utilizar para lanzar una Pop-Up:<br /> &lt;a
+
+<p>What’s more: I’m not ashamed to admit it. :P<br /> The webmaster world is a never-ending cycle of learning and relearning things… maybe that’s why I like it so much. Some even take pride in teaching me something I didn’t know (hey <a title="Rodrigo Mantillán’s blog" href="http://www.pandeblog.net/" target="_blank">Rodrigo</a>?), while others ask me to keep writing more and listening to less music (hey <a title="Tomás Casquero’s blog" href="http://tomcask.blogspot.com/" target="_blank">Tito Tommy</a>?).</p>
+<p>Anyway, back to the point: launching pop-up windows with JavaScript. It turns out that, regardless of the debate about whether pop-ups should be used at all, there’s a problem that systematically corrupts them, makes them harmful, attacks both advanced and novice users during navigation, confuses search engines, and generates noise in the code. The issue is that, although there are several ways to launch a pop-up using JavaScript, the most commonly used ones are the wrong ones.</p>
+<p><strong>The correct way to launch a pop-up window with JavaScript</strong></p>
+<blockquote>The following is the code you should use to launch a pop-up:<br /> &lt;a
 href="/index.htm" target="_blank" onClick="window.open(this.href,
-this.target, 'width=300,height=400'); return false;"&gt;Lanzar
-correctamente&lt;/a&gt;<br /> <a onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;" href="http://www.albertlg.com/blog/archivos/archivos/categorias/usabilidad/la_relatividad_de_la_usabilidad.html" target="_blank">Lanzar correctamente</a><br /></blockquote>
-<p><br /> Simplemente cambiar en href="/index.htm" el nombre del archivo .htm que se abrir&aacute; en la ventana nueva, y cambiar los valores de width y height seg&uacute;n el ancho y alto deseados (en p&iacute;xeles).</p>
-<p>Para m&aacute;s informaci&oacute;n: <a title="Pop-ups usables en Javascript" href="http://www.nosolousabilidad.com/articulos/popups_javascript.htm" target="_blank"><acronym title="No S&oacute;lo Usabilidad">NSU</acronym></a>.</p>
+this.target, 'width=300,height=400'); return false;"&gt;Launch
+correctly&lt;/a&gt;<br /> <a onclick="window.open(this.href, this.target, 'width=300,height=400'); return false;" href="http://www.albertlg.com/blog/archivos/archivos/categorias/usabilidad/la_relatividad_de_la_usabilidad.html" target="_blank">Launch correctly</a><br /></blockquote>
+<p><br /> Simply change href="/index.htm" to the name of the .htm file you want to open in the new window, and adjust the width and height values according to the desired dimensions (in pixels).</p>
+<p>For more information: <a title="Usable pop-ups in JavaScript" href="http://www.nosolousabilidad.com/articulos/popups_javascript.htm" target="_blank"><acronym title="No Sólo Usabilidad">NSU</acronym></a>.</p>
