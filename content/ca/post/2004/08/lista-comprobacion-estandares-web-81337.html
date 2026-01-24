@@ -12,11 +12,8 @@ tags = [ "disseny web","internet","maquetació web" ]
 <p>Abans de començar, aclarim conceptes:</p>
 
 <ul style="font-size: 0.9em;">
-<li>
-<strong style="font-size: 1.2em;">Què són els estàndards web?</strong><br /><br />
-L’expressió “estàndards web” pot significar coses diferents segons qui l’utilitzi. Per a alguns no és res més que <strong>construir llocs web sense taules</strong>, per a d’altres es tracta de fer-ho <strong>utilitzant codi vàlid</strong>. En qualsevol cas, el concepte és molt més ampli.<br /><br />
-
-Els estàndards web es poden definir com:<br /><br />
+<li><strong style="font-size: 1.2em;">Què són els estàndards web?</strong><br /><br />
+L’expressió “estàndards web” pot significar coses diferents segons per a qui. Per a alguns no és res més que <strong>construir llocs web sense taules</strong>, per a d’altres es tracta de fer-ho <strong>utilitzant codi vàlid</strong>. Sigui com sigui, el concepte és molt més ampli que això. Els estàndards web podrien definir-se com:<br /><br />
 
 <ul style="border-left: 1px solid #cccccc;">
 L’adhesió als estàndards (<acronym title="HyperText Markup Language">HTML</acronym>, <acronym title="eXtensible HyperText Markup Language">XHTML</acronym>, <acronym title="eXtensible Markup Language">XML</acronym>, <acronym title="Cascading Style Sheet">CSS</acronym>, <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym>, <acronym title="Document Object Model">DOM</acronym>, <acronym title="MATHematical Markup Language">MathML</acronym>, <acronym title="Scalable Vector Graphics">SVG</acronym>, etc.) i la recerca de les millors pràctiques (codi vàlid, codi accessible, codi semànticament correcte, <acronym title="Uniform Resource Locator">URL</acronym>s amigables per a l’usuari, etc.).
@@ -25,33 +22,108 @@ L’adhesió als estàndards (<acronym title="HyperText Markup Language">HTML</a
 <br />En altres paraules:<br /><br />
 
 <ul style="border-left: 1px solid #cccccc;">
-Un lloc web construït d’acord amb els estàndards web ha de ser lleuger, net, basat en <acronym title="Cascading Style Sheet">CSS</acronym>, accessible, usable i amigable amb els motors de cerca.
+Un lloc construït d’acord amb els estàndards web hauria de ser lleuger, net, basat en <acronym title="Cascading Style Sheet">CSS</acronym>, accessible, usable i amigable amb els motors de cerca.
 </ul>
 </li>
 
 <br />
 
-<li>
-<strong style="font-size: 1.2em;">Sobre la llista</strong><br /><br />
-No es tracta d’una llista tancada. Probablement hi ha molts punts que s’hi podrien afegir. Simplement és un punt de partida.<br /><br />
-
-Entre els seus usos pràctics hi ha:<br /><br />
+<li><strong style="font-size: 1.2em;">Sobre la llista</strong><br /><br />
+No es tracta d’una llista tancada. Probablement hi ha molts punts que es podrien afegir. Simplement és un punt de partida. Entre els seus usos pràctics, inclou:<br /><br />
 
 <ul>
-<li>Mostrar l’amplitud dels estàndards web.</li>
-<li>Servir com a eina pràctica per als desenvolupadors durant la fase de producció de llocs web.</li>
-<li>Ajudar els desenvolupadors interessats en la migració cap als estàndards web.</li>
+<li>Demostrar l’amplitud dels estàndards web.</li>
+<li>Com a eina pràctica per als desenvolupadors durant la fase de producció de llocs web.</li>
+<li>Com a ajuda per als desenvolupadors interessats en la migració cap als estàndards web.</li>
 </ul>
 
 <br />La llista es divideix en 6 categories:<br /><br />
 
 <ul style="list-style-type: decimal;">
 <li>Qualitat del codi</li>
-<li>Grau de separació entre contingut i presentació</li>
-<li>Accessibilitat per als usuaris</li>
-<li>Accessibilitat per als dispositius</li>
+<li>Grau de separació entre el contingut i la presentació</li>
+<li>Accessibilitat per a usuaris</li>
+<li>Accessibilitat per a dispositius</li>
 <li>Usabilitat bàsica</li>
 <li>Gestió del lloc</li>
 </ul>
 </li>
+</ul>
+
+<p>La llista de comprovacions:</p>
+
+<ul style="font-size: 0.9em;">
+
+<li><strong style="font-size: 1.2em;">Qualitat del codi</strong><br /><br />
+1. Utilitza el lloc un doctype correcte?<br />
+2. Utilitza el lloc un joc de caràcters (<acronym title="Character Set">charset</acronym>)?<br />
+3. Utilitza el lloc codi <acronym title="(eXtensible) HyperText Markup Language">(X)HTML</acronym> vàlid?<br />
+4. Utilitza el lloc codi <acronym title="Cascading Style Sheet">CSS</acronym> vàlid?<br />
+5. Utilitza el lloc “hacks” en el codi CSS?<br />
+6. Utilitza el lloc classes o identificadors innecessaris?<br />
+7. El codi està ben estructurat?<br />
+8. Conté el lloc enllaços trencats?<br />
+9. Com respon el lloc en termes de velocitat i pes de les pàgines?<br />
+10. Té el lloc errors de JavaScript?
+</li>
+
+<br />
+
+<li><strong style="font-size: 1.2em;">Grau de separació entre el contingut i la presentació</strong><br /><br />
+1. Utilitza el lloc CSS per a tots els aspectes de presentació (tipografia, colors, marges, vores, etc.)?<br />
+2. Totes les imatges decoratives es troben dins del codi CSS o apareixen al codi (X)HTML?
+</li>
+
+<br />
+
+<li><strong style="font-size: 1.2em;">Accessibilitat per a usuaris</strong><br /><br />
+1. S’utilitzen atributs “alt” per a totes les imatges descriptives?<br />
+2. Utilitza el lloc unitats relatives en lloc d’absolutes per a la mida del text?<br />
+3. Es trenquen alguns aspectes del disseny si s’augmenta la mida de la font?<br />
+4. Utilitza el lloc menús de salt visibles?<br />
+5. Utilitza el lloc formularis accessibles?<br />
+6. Utilitza el lloc taules accessibles?<br />
+7. Hi ha prou contrastos de color?<br />
+8. S’utilitza el color només per a informació crítica?<br />
+9. Existeix un retard en la resposta dels menús desplegables (per a usuaris amb habilitats motores reduïdes)?<br />
+10. Són tots els enllaços descriptius?
+</li>
+
+<br />
+
+<li><strong style="font-size: 1.2em;">Accessibilitat per a dispositius</strong><br /><br />
+1. Funciona el lloc acceptablement en navegadors moderns i antics?<br />
+2. El contingut és accessible amb el CSS desactivat o no suportat?<br />
+3. El contingut és accessible amb les imatges desactivades o no suportades?<br />
+4. Funciona el lloc en navegadors de text com Lynx?<br />
+5. Funciona correctament el lloc en impressió?<br />
+6. Funciona el lloc en dispositius de mà?<br />
+7. Inclou el lloc metadades detallades?<br />
+8. Funciona el lloc en diferents mides de finestra del navegador?
+</li>
+
+<br />
+
+<li><strong style="font-size: 1.2em;">Usabilitat bàsica</strong><br /><br />
+1. Existeix una jerarquia visual clara?<br />
+2. Els nivells d’encapçalament són fàcils de distingir?<br />
+3. Té el lloc una navegació fàcil d’entendre?<br />
+4. Utilitza el lloc una navegació consistent?<br />
+5. Estan els enllaços subratllats?<br />
+6. Utilitza el lloc un llenguatge coherent i apropiat?<br />
+7. Disposa el lloc d’un mapa del lloc i una pàgina de contacte fàcils de trobar?<br />
+8. En llocs grans, hi ha una eina de cerca?<br />
+9. Hi ha un enllaç a la pàgina principal a totes les pàgines del lloc?<br />
+10. Es defineixen clarament els enllaços visitats amb un color únic?
+</li>
+
+<br />
+
+<li><strong style="font-size: 1.2em;">Gestió del lloc</strong><br /><br />
+1. Té el lloc una pàgina d’error 404 útil i significativa que funcioni a qualsevol profunditat?<br />
+2. Utilitza el lloc URL amigables?<br />
+3. Funcionen les URL sense “www”?<br />
+4. Disposa el lloc d’un favicon?
+</li>
+
 </ul>
