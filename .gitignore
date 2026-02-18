@@ -5,6 +5,10 @@
 resources/
 public/
 .hugo_build.lock
+hugo_stats.json
+
+# Node
+node_modules/
 
 # Claude
 CLAUDE.md

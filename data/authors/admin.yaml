@@ -1,0 +1,133 @@
+schema: hugoblox/author/v1
+slug: admin
+is_owner: true
+name:
+  display: Albert López
+  given: Albert
+  family: López
+status:
+  icon: ""
+role: SEO, Content Marketing & LLMs (IA) Advisor
+bio: |
+  Desde 1998 vivo en la intersección entre tecnología, contenidos y búsqueda.
+  He sido diseñador, programador, SEO y emprendedor en proyectos como
+  Solostocks, Softonic, Uvinum y Drinks&Co. Hoy soy socio y SEO Manager en
+  Mindset Digital, donde impulso estrategias de SEO para LLMs y sigo
+  explorando nuevas ideas y side projects. Siempre aprendiendo, siempre
+  optimizando.
+
+affiliations:
+  - name: Mindset Digital
+    url: https://mindsetdigital.io/
+    logo: logos/mindset-digital.png
+
+links:
+  - icon: at-symbol
+    url: mailto:albert@albertlg.com
+    label: Email
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/albertlg/
+  - icon: brands/x
+    url: https://twitter.com/albertlg
+  - icon: brands/instagram
+    url: https://instagram.com/albertlg
+  - icon: brands/github
+    url: https://github.com/albertlg
+  - icon: brands/facebook
+    url: https://www.facebook.com/albertlg
+
+interests:
+  - Optimización para buscadores (SEO)
+  - Analítica web
+  - Gestión de contenidos
+  - Marketplaces online
+  - Redes sociales
+  - Inteligencia artificial
+  - Automatizaciones
+  - Criptomonedas (Blockchain)
+  - Realidad Virtual
+
+education:
+  - degree: Enginyeria Informàtica
+    institution: Universitat Autònoma de Barcelona (UAB)
+    end: "2002-06-30"
+
+experience:
+  - role: CMO & SEO Manager
+    org: Mindset Digital
+    url: https://mindsetdigital.io
+    location: Barcelona
+    start: "2022-09-01"
+    summary: |
+      Desde 2022 y aprovechando mi experiencia en SEO, marketing de contenidos y uso de intenligencia artificial generativa, me he unido como socio, CMO y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y Jan Almuni, estamos expandiendo los horizontes del marketing y la presencia digital a través de nuestras especialidades: estrategia digital, marketing automation y SEO.
+  - role: Crypto Education Strategy
+    org: CryptoAdvisor.club
+    url: https://cryptoadvisor.club
+    location: Barcelona
+    start: "2021-10-01"
+    summary: |
+      He trabajado varias veces con Albert Lombarte y Albert García, co-fundando proyectos de éxito como Obolog, Splitweet o Uvinum. De nuevo, compartimos intereses comunes y puedo complementar nuestros conocimientos y puntos fuertes como equipo. El principal objetivo de implicarme en el proyecto es el de implementar el plan de contenidos y formación que ha de complementar la propuesta actual, y que nos lleva a la visión del proyecto: ayudar a la gente a introducirse, explorar y aprovechar el mundo de la inversión en criptomonedas, y aprender de una forma práctica de la mano de nuestro asistente virtual.
+  - role: Head of Content & SEO
+    org: Drinks&Co Marketplace
+    url: https://www.drinksco.es
+    location: Barcelona & Madrid
+    start: "2018-08-01"
+    end: "2021-06-30"
+    summary: |
+      Después de vender Uvinum a Pernod Ricard, ¡comienza un nuevo y emocionante desafío! Liderando el área de Contenidos y SEO en Drinks&Co (nueva marca) y dirijiendo al equipo. ¡Vamos a revolucionar el sector de los vinos y destilados en todo el mundo gracias a nuestro marketplace!
+  - role: CCO (Chief Content officer) & co-founder
+    org: Uvinum (Verticomm Network, SL)
+    url: https://www.uvinum.es
+    location: Barcelona
+    start: "2009-09-01"
+    end: "2018-08-01"
+    summary: |
+      Durante casi 10 años, contribuí a crear y gestionar todo lo relacionado con el contenido y el SEO de Uvinum, el marketplace internacional de vinos y licores adquirido por Pernod Ricard en 2018. Ha sido una aventura emprendedora increíble: pensar y desarrollar la plataforma, construir el equipo, enseñando al sector de 'vinos y destilados' a apreciar la venta del comercio electrónico a través de un marketplace, traduciendo los contenidos a 11 idiomas (para 15 países), creando una marca desde cero y posicionándola en los buscadores de cada mercado... ¡Una gran aventura que, con suerte, no tendrá fin!
+  - role: Co-founder & SMO/SEO
+    org: Splitweet
+    url: https://hootsuite.com/es/
+    location: Badalona (Barcelona)
+    start: "2008-09-01"
+    end: "2012-11-01"
+    summary: |
+      Co-fundé Splitweet.com, una herramienta de monitoreo de marca multi-idioma y multi-cuenta para Twitter, junto a Albert García & Albert Lombarte (ex-compañeros de Softonic). Vendimos esta herramienta a Hootsuite 4 años después. Fue una divertida aventura de un proyecto paralelo que empezamos en una noche en casa (no era un garaje, pero como si lo fuera).
+  - role: SEO Manager
+    org: Softonic
+    url: https://www.softonic.es
+    location: Cerdanyola del Vallès & Barcelona
+    start: "2006-11-01"
+    end: "2010-02-01"
+    summary: |
+      3 años como especialista SEO en Softonic.com, donde pude gestionar mi primer equipo SEO e integrar los conceptos de optimización en buscadores en un equipo internacional, en todas sus áreas de trabajo (marketing, desarrollo, contenidos...). Me brindó la oportunidad de dar autoresponsabilidad y enfoque orientado a resultados a mi trabajo. Grandes logros allí: tráfico orgánico x6 en España y x15 en los sitios internacionales como mínimo.
+  - role: Webmaster & SEO
+    org: SoloStocks (Comercio Digital, SA)
+    url: https://www.solostocks.com
+    location: Sant Cugat del Vallés (Barcelona)
+    start: "2000-12-01"
+    end: "2006-11-01"
+    summary: |
+      6 años en Solostocks.com (Grupo Intercom), un B2B online de ofertas de clasificados, me permitió aprender y desarrollar mi conocimiento en áreas como programación web, experiencia de usuario (UX), gestión de contenidos y optimización de motores de búsqueda (SEO). Considero este período como una escuela de crecimiento profesional, la principal semilla de mi carrera.
+
+skills:
+  - name: Profesional
+    items:
+      - label: Tenaz
+        level: 5
+      - label: Orientado al detalle
+        level: 5
+      - label: Actitud convivial
+        level: 5
+      - label: Compromiso con el equipo
+        level: 5
+  - name: Personal
+    items:
+      - label: Aprendizaje
+        level: 3
+      - label: Medio ambiente
+        level: 4
+      - label: Gastrónomo
+        level: 5
+      - label: Música
+        level: 4
+      - label: Fotografía
+        level: 3

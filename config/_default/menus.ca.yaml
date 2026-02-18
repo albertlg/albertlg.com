@@ -1,0 +1,7 @@
+main:
+  - name: Bloc
+    url: /post/
+    weight: 20
+  - name: Contacte
+    url: "#contact"
+    weight: 30
