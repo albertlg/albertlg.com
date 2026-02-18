@@ -10,6 +10,7 @@
   HUGO_VERSION = "0.155.3"
   HUGO_ENABLEGITINFO = "true"
   GO_VERSION = "1.23.4"
+  NODE_VERSION = "22"
 
 [context.production.environment]
   HUGO_ENV = "production"
