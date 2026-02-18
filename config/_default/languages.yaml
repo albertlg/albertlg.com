@@ -1,0 +1,11 @@
+es:
+  languageCode: "es-es"
+  contentDir: "content/es"
+
+en:
+  languageCode: "en-us"
+  contentDir: "content/en"
+
+ca:
+  languageCode: "ca-es"
+  contentDir: "content/ca"

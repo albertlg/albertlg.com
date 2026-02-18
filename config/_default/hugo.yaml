@@ -1,0 +1,95 @@
+# Configuration of Hugo
+# Guide: https://docs.hugoblox.com/tutorial/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+
+# Website name
+title: "Blog de Albert L.G."
+
+# Website URL
+baseURL: "https://albertlg.com/"
+
+# Site publishing directory
+publishDir: public
+
+# Copyright notice
+copyright: "Created with ❤ by: Albert L.G. &copy; {year}"
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: es
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## ADVANCED
+############################
+
+build:
+  writeStats: true
+enableGitInfo: false
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: "<sup>^</sup>"
+ignoreFiles: ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.old/"]
+disableAliases: true
+
+permalinks:
+  post: "/:slug/"
+  authors: "/author/:slug/"
+  tags: "/tag/:slug/"
+  categories: "/category/:slug/"
+  publication_types: "/publication-type/:slug/"
+
+outputs:
+  home: [HTML, RSS, headers, redirects, backlinks]
+  section: [HTML, RSS]
+
+imaging:
+  resampleFilter: lanczos
+  quality: 90
+  anchor: smart
+  hint: picture
+
+timeout: 600000
+
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+
+markup:
+  _merge: deep
+  highlight:
+    lineNos: false
+
+security:
+  _merge: deep
+
+sitemap:
+  _merge: deep
+
+related:
+  threshold: 80.0
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: title
+      weight: 60.0
+    - name: summary
+      weight: 50.0
+    - name: tags
+      weight: 80.0
+    - name: categories
+      weight: 70.0
+    - name: authors
+      weight: 20.0
+
+frontmatter:
+  lastmod: ["lastmod", ":git", "date"]

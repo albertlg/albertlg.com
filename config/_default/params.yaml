@@ -1,0 +1,88 @@
+hugoblox:
+  schema: "2.0"
+
+  identity:
+    name: "Albert L.G."
+    organization: ""
+    type: person
+    tagline: ""
+    description: ""
+    social:
+      twitter: "albertlg"
+
+  theme:
+    mode: system
+    pack: "default"
+    colors:
+      primary: ""
+      secondary: ""
+      neutral: ""
+
+  typography:
+    font: "sans"
+    size: "lg"
+
+  layout:
+    radius: "md"
+    spacing: "comfortable"
+    avatar_shape: circle
+
+  header:
+    enable: true
+    style: navbar
+    sticky: true
+    align: left
+    search: true
+    theme_toggle: true
+    theme_picker: true
+    language_switcher: true
+    cta:
+      enable: false
+
+  footer:
+    style: minimal
+    language_switcher: true
+    text: ""
+
+  copyright:
+    notice: "Created with ❤ by: Albert L.G. © {year}"
+    license:
+      type: custom
+
+  seo:
+    title: ""
+
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: true
+    citations:
+      style: apa
+
+  search:
+    enable: true
+
+  comments:
+    enable: true
+    provider: disqus
+    disqus:
+      shortname: "albertlg-blog"
+
+  analytics:
+    google:
+      measurement_id: "UA-129312-1"
+
+  locale:
+    date_format: ":date_long"
+    time_format: "15:04"
+    address_format: es-es
+
+  privacy:
+    enable: false
+    anonymize_analytics: false
+
+  pro:
+    hide_attribution: false

@@ -1,0 +1,30 @@
+{{/* Function to retrieve the featured image */}}
+{{/* Override: adds fallback for legacy Hugo Academic header.image field */}}
+{{/* Inputs: page context */}}
+{{/* Output: image resource, or nil if not found */}}
+
+{{/* Search for an image "*featured*" in page folder */}}
+{{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+{{ if eq $resource nil }}
+  {{/* Otherwise fall back the image file specified in front matter */}}
+  {{ $filename := "" }}
+  {{ if and .Params.image (reflect.IsMap .Params.image) }}
+    {{ $filename = .Params.image.filename }}
+  {{ end }}
+  {{/* Search in page folder */}}
+  {{ $resource = (.Resources.ByType "image").GetMatch $filename }}
+  {{/* Otherwise in `assets/media/` folder */}}
+  {{ if eq $resource nil }} {{ $resource = resources.GetMatch (path.Join "media" $filename) }} {{ end }}
+  {{/* Fallback: legacy Hugo Academic header.image field (images copied from static/img/post/ to assets/media/post-images/) */}}
+  {{ if eq $resource nil }}
+    {{ with .Params.header }}
+      {{ with .image }}
+        {{ $img_name := replaceRE "^post/" "" . }}
+        {{ $legacy_path := printf "media/post-images/%s" $img_name }}
+        {{ $resource = resources.GetMatch $legacy_path }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $resource }}
