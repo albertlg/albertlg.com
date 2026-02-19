@@ -1,11 +1,11 @@
 es:
-  languageCode: "es-es"
+  languageCode: "es"
   contentDir: "content/es"
 
 en:
-  languageCode: "en-us"
+  languageCode: "en"
   contentDir: "content/en"
 
 ca:
-  languageCode: "ca-es"
+  languageCode: "ca"
   contentDir: "content/ca"
