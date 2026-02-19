@@ -1,6 +1,8 @@
 ---
 title: ''
-summary: ''
+summary: 'Albert López Gálvez — SEO, Content Marketing & AI (LLMs) Consultant. Personal blog with insights on search, content strategy and technology.'
+seo:
+  title: 'Albert López — SEO, Content Marketing & AI Consultant | albertlg.com'
 date: 2024-01-01
 type: landing
 
@@ -11,7 +13,7 @@ sections:
   # 1 — Hero
   - block: hero
     content:
-      title: "Albert L.G. online..."
+      title: "Albert López — SEO, Content Marketing & AI Consultant"
       text: "🔎 Nothing is found if nothing is sought.<br>I am **Albert López Gálvez** and you are not."
     design:
       background:
