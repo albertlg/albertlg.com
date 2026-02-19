@@ -52,7 +52,7 @@ sections:
   - block: resume-experience
     id: experience
     content:
-      title: Experiencia
+      title: Experiencia laboral y formación
       subtitle: Mi carrera (o parte de ella)
       username: admin
 
@@ -61,7 +61,7 @@ sections:
     id: skills
     content:
       title: "Habilidades"
-      text: "Cómo me defino (o me definen)"
+      subtitle: "Cómo me defino (o me definen)"
       items:
         - icon: hero/hand-raised
           name: Tenaz
