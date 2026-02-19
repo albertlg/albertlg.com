@@ -1,6 +1,8 @@
 ---
 title: ''
-summary: ''
+summary: 'Albert López Gálvez — Consultor SEO, Content Marketing e IA (LLMs). Blog personal con reflexiones sobre posicionamiento web, estrategia de contenidos y tecnología.'
+seo:
+  title: 'Albert López — Consultor SEO, Content Marketing e IA | albertlg.com'
 date: 2024-01-01
 type: landing
 
@@ -11,7 +13,7 @@ sections:
   # 1 — Hero
   - block: hero
     content:
-      title: "Albert L.G. en la red..."
+      title: "Albert López — Consultor SEO, Content Marketing e IA"
       text: "🔎 No se encuentra nada si no se busca algo.<br>Yo soy **Albert López Gálvez** y tú no."
     design:
       background:
