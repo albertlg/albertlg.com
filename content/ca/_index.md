@@ -52,7 +52,7 @@ sections:
   - block: resume-experience
     id: experience
     content:
-      title: Experiència
+      title: Experiència laboral i formació
       subtitle: La meva carrera (o part d'ella)
       username: admin
 
@@ -61,7 +61,7 @@ sections:
     id: skills
     content:
       title: "Habilitats"
-      text: "Com em defineixo (o em defineixen)"
+      subtitle: "Com em defineixo (o em defineixen)"
       items:
         - icon: hero/hand-raised
           name: Tenaç
