@@ -1,4 +1,4 @@
-{{/* Table of Contents - Override to handle nil .Fragments on HTML pages */}}
+{{/* Table of Contents - with JS fallback for HTML posts lacking .Fragments */}}
 
 {{- $toc := .Params.toc | default true -}}
 
@@ -6,11 +6,16 @@
 {{- $on_this_page := T "on_this_page" }}
 {{- $edit_this_page := T "edit_page" }}
 
+{{/* Check if Hugo detected headings via Markdown parsing */}}
+{{- $has_fragments := and .Fragments .Fragments.Headings -}}
+
 <nav class="hb-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents">
   {{ partial "functions/get_hook" (dict "hook" "toc-start" "context" .) }}
   {{- if $toc }}
   <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4">
-    {{- if and .Fragments .Fragments.Headings -}}
+
+    {{/* Server-rendered TOC for Markdown posts */}}
+    {{- if $has_fragments -}}
     {{- with .Fragments.Headings -}}
     <p class="mb-4 font-semibold tracking-tight">{{ $on_this_page }}</p>
     {{- range . -}}
@@ -21,8 +26,13 @@
     {{- end -}}
     {{- end -}}
 
+    {{/* JS-generated TOC container for HTML posts */}}
+    {{- if not $has_fragments -}}
+    <div id="js-toc-container" data-label="{{ $on_this_page }}"></div>
+    {{- end -}}
+
     {{- $class := "" -}}
-    {{- if and .Fragments .Fragments.Headings -}}
+    {{- if $has_fragments -}}
       {{- $class = "mt-8 border-t dark:border-neutral-700 pt-8" -}}
     {{- end -}}
 
@@ -48,7 +58,50 @@
   {{ end -}}
 </nav>
 
-{{/* Render Headings */}}
+{{/* JS fallback: scan article headings and build TOC for HTML posts */}}
+{{- if and $toc (not $has_fragments) -}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var container = document.getElementById('js-toc-container');
+  if (!container) return;
+  var article = document.querySelector('article main');
+  if (!article) return;
+  var headings = article.querySelectorAll('h2, h3');
+  if (!headings.length) return;
+
+  // Add IDs to headings that lack them
+  var usedIds = {};
+  headings.forEach(function(h) {
+    if (!h.id) {
+      var base = h.textContent.trim().toLowerCase()
+        .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+      var id = base;
+      var n = 1;
+      while (usedIds[id]) { id = base + '-' + n; n++; }
+      h.id = id;
+    }
+    usedIds[h.id] = true;
+  });
+
+  // Build TOC
+  var label = container.getAttribute('data-label') || 'On this page';
+  var html = '<p class="mb-4 font-semibold tracking-tight">' + label + '</p>';
+  headings.forEach(function(h) {
+    var level = h.tagName === 'H3' ? 1 : 0;
+    var cls = level === 0
+      ? 'font-semibold'
+      : 'pl-4 rtl:pr-4';
+    html += '<ul><li class="my-2 scroll-my-6 scroll-py-6">' +
+      '<a class="' + cls + ' inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#' + h.id + '">' +
+      h.textContent.trim() +
+      '</a></li></ul>';
+  });
+  container.innerHTML = html;
+});
+</script>
+{{- end -}}
+
+{{/* Render Headings (server-side for Markdown posts) */}}
 {{- define "toc-headings" -}}
   {{- $headings := .headings -}}
   {{- $level := .level -}}
