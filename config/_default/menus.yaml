@@ -1,10 +1,19 @@
 main:
+  - name: Sobre mí
+    url: "/#about"
+    weight: 10
+  - name: Experiencia
+    url: "/#experience"
+    weight: 20
+  - name: Habilidades
+    url: "/#skills"
+    weight: 30
   - name: Blog
     url: /post/
-    weight: 20
+    weight: 40
   - name: Contacto
-    url: "#contact"
-    weight: 30
+    url: /contacto/
+    weight: 50
 
 footer:
   - name: Privacidad

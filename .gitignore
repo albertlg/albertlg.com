@@ -10,5 +10,8 @@ hugo_stats.json
 # Node
 node_modules/
 
+# Pagefind (generated at build time)
+static/pagefind/
+
 # Claude
 CLAUDE.md

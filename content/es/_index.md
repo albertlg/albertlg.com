@@ -28,6 +28,7 @@ sections:
 
   # 2 — Bio
   - block: resume-biography-3
+    id: about
     content:
       username: admin
       text: |
@@ -51,6 +52,8 @@ sections:
   - block: resume-experience
     id: experience
     content:
+      title: Experiencia
+      subtitle: Mi carrera (o parte de ella)
       username: admin
 
   # 4 — Skills
@@ -117,17 +120,4 @@ sections:
       title: "Temas populares"
       subtitle: "Basado en los tags de mis posts"
 
-  # 7 — Contact
-  - block: contact-info
-    id: contact
-    content:
-      title: Contacto
-      subtitle: "Escríbeme... pero aviso: leo ocasionalmente el correo personal"
-      email: albert@albertlg.com
-      social:
-        - icon: brands/linkedin
-          url: https://www.linkedin.com/in/albertlg/
-        - icon: brands/x
-          url: https://twitter.com/albertlg
-      show_form: true
 ---
