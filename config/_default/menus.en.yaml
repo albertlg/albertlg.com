@@ -5,3 +5,8 @@ main:
   - name: Contact
     url: "#contact"
     weight: 30
+
+footer:
+  - name: Privacy
+    url: /en/privacy/
+    weight: 10
