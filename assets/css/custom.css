@@ -1,0 +1,58 @@
+/* Hero banner: adaptive background opacity per theme mode */
+
+/* Dark mode — darken the background image for better contrast */
+.dark .blox-hero .home-section-bg.bg-image {
+  filter: brightness(0.25);
+}
+
+/* Light mode — lighten the background so text can be dark */
+:root:not(.dark) .blox-hero .home-section-bg.bg-image {
+  filter: brightness(0.55);
+}
+
+/* Light mode — override hero text colors for readability on lighter bg */
+:root:not(.dark) .blox-hero h1 {
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+:root:not(.dark) .blox-hero p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* M4: Ensure minimum 44x44px touch targets for mobile accessibility */
+
+/* Dark mode toggle button */
+button[aria-label="Toggle dark mode"],
+button[x-on\:click*="darkMode"],
+.dark-mode-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Tag links in tag cloud and post pages */
+a[href*="/tags/"],
+a[href*="/tag/"] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Language switcher links */
+nav a[hreflang] {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search button in navbar */
+button[aria-label="Search"],
+#search-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
