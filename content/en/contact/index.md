@@ -1,0 +1,30 @@
+---
+title: Contact
+slug: contact
+translationKey: contact
+date: 2024-01-01
+type: landing
+share: false
+commentable: false
+editable: false
+seo:
+  title: 'Contact Albert López — SEO, Content Marketing & AI Consultant'
+
+design:
+  spacing: '3rem'
+
+sections:
+  - block: contact-info
+    id: contact
+    content:
+      title: Contact
+      subtitle: "Write me... but notice: I occasionally read personal email"
+      email: albert@albertlg.com
+      social:
+        - icon: brands/linkedin
+          url: https://www.linkedin.com/in/albertlg/
+        - icon: brands/x
+          url: https://twitter.com/albertlg
+      show_form: true
+      form_action: /en/contact/thank-you/
+---
