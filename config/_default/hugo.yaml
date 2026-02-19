@@ -91,5 +91,10 @@ related:
     - name: authors
       weight: 20.0
 
+cascade:
+  - _target:
+      path: /post/**
+    commentable: true
+
 frontmatter:
   lastmod: ["lastmod", ":git", "date"]
