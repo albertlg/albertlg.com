@@ -52,7 +52,7 @@ sections:
   - block: resume-experience
     id: experience
     content:
-      title: Experience
+      title: Work experience and education
       subtitle: My career (or part of it)
       username: admin
 
@@ -61,7 +61,7 @@ sections:
     id: skills
     content:
       title: "Skills"
-      text: "How I define myself (or how others define me)"
+      subtitle: "How I define myself (or how others define me)"
       items:
         - icon: hero/hand-raised
           name: Tenacious
