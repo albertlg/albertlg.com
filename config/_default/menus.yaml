@@ -5,3 +5,8 @@ main:
   - name: Contacto
     url: "#contact"
     weight: 30
+
+footer:
+  - name: Privacidad
+    url: /privacidad/
+    weight: 10
