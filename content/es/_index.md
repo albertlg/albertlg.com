@@ -13,7 +13,7 @@ sections:
   # 1 — Hero
   - block: hero
     content:
-      title: "Albert López — Consultor SEO, Content Marketing e IA"
+      title: "Albert L.G. — Consultor SEO, Content Marketing e IA"
       text: "🔎 No se encuentra nada si no se busca algo.<br>Yo soy **Albert López Gálvez** y tú no."
     design:
       background:
