@@ -1,0 +1,31 @@
+{{/* Person + ProfilePage schema for homepage — generates Knowledge Panel signals */}}
+{{ if .IsHome }}
+{{ $profile := partial "functions/get_author_profile" "admin" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Person", "ProfilePage"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "name": "Albert López Gálvez",
+  "alternateName": "Albert L.G.",
+  "jobTitle": "{{ $profile.role }}",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Mindset Digital",
+    "url": "https://mindsetdigital.io/"
+  },
+  "url": "{{ site.BaseURL }}",
+  "image": "{{ (resources.Get "media/authors/admin.png").Permalink }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/albertlg/",
+    "https://twitter.com/albertlg",
+    "https://github.com/albertlg"
+  ],
+  "knowsAbout": ["SEO", "Content Marketing", "LLMs", "Inteligencia Artificial", "Marketing Digital"],
+  "knowsLanguage": ["es", "en", "ca"]
+}
+</script>
+{{ end }}
