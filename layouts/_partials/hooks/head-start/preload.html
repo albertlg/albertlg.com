@@ -1,0 +1,8 @@
+{{/* Preload critical resources for better LCP (M1) */}}
+{{ if .IsHome }}
+  {{/* Preload hero background image — LCP element on homepage */}}
+  {{ $hero_bg := resources.Get "media/herobg.jpg" }}
+  {{ with $hero_bg }}
+    <link rel="preload" as="image" href="{{ .RelPermalink }}">
+  {{ end }}
+{{ end }}

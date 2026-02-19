@@ -34,7 +34,7 @@ hugoblox:
     align: left
     search: true
     theme_toggle: true
-    theme_picker: true
+    theme_picker: false
     language_switcher: true
     cta:
       enable: false
