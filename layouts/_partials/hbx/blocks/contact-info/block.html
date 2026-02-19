@@ -1,5 +1,5 @@
 {{/* Hugo Blox: Contact Info Block */}}
-{{/* Override: adds data-netlify="true" to the contact form */}}
+{{/* Override: Netlify Forms + layout: form first, connect below */}}
 {{/* Based on: github.com/HugoBlox/kit/modules/blox@v0.11.0/blox/contact-info/block.html */}}
 
 {{/* Initialise */}}
@@ -26,52 +26,46 @@
     {{ end }}
   </div>
 
-  {{/* Contact Cards Grid */}}
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-
-    {{/* Visit Us Card */}}
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300">
-      <div class="flex items-center mb-6">
-        <div class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
-          {{ partial "functions/get_icon" (dict "name" "hero/map-pin" "attributes" "class=\"w-6 h-6 text-primary-600 dark:text-primary-400\"") }}
-        </div>
-        <h3 class="ml-4 text-2xl font-bold text-gray-900 dark:text-white">
-          {{ $block.content.visit_title | default (i18n "block_contact_visit_title" | default "Visit Us") }}
-        </h3>
-      </div>
-
-      <div class="space-y-4">
-        {{ with $block.content.address }}
-        <div class="text-gray-600 dark:text-gray-300">
-          {{ range .lines }}
-          <p>{{ . }}</p>
-          {{ end }}
-        </div>
-        {{ end }}
-
-        {{ with $block.content.office_hours }}
-        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ i18n "block_contact_office_hours" | default "Office Hours" }}</h4>
-          <div class="text-gray-600 dark:text-gray-300 space-y-1">
-            {{ range . }}
-            <p>{{ . }}</p>
-            {{ end }}
+  {{/* Contact Form */}}
+  {{ if $block.content.show_form }}
+  <div class="max-w-2xl mx-auto mb-12">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ i18n "block_contact_form_title" | default "Send us a Message" }}</h3>
+      <form name="contact" action="{{ $block.content.form_action | default "#" }}" method="POST" data-netlify="true" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_name" | default "Name" }}</label>
+            <input type="text" id="name" name="name" required
+                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_email" | default "Email" }}</label>
+            <input type="email" id="email" name="email" required
+                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
           </div>
         </div>
-        {{ end }}
-
-        {{ with $block.content.map_url }}
-        <a href="{{ . }}" target="_blank" rel="noopener"
-           class="inline-flex items-center mt-4 px-4 py-2 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors">
-          {{ partial "functions/get_icon" (dict "name" "hero/map" "attributes" "class=\"w-5 h-5 mr-2\"") }}
-          {{ i18n "block_contact_view_on_map" | default "View on Map" }}
-        </a>
-        {{ end }}
-      </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_subject" | default "Subject" }}</label>
+          <input type="text" id="subject" name="subject" required
+                 class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_message" | default "Message" }}</label>
+          <textarea id="message" name="message" rows="5" required
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"></textarea>
+        </div>
+        <button type="submit"
+                class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow hover:shadow-lg transition-all">
+          {{ i18n "block_contact_form_submit" | default "Send Message" }}
+        </button>
+      </form>
     </div>
+  </div>
+  {{ end }}
 
-    {{/* Connect Card */}}
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300">
+  {{/* Connect Section (below form) */}}
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
       <div class="flex items-center mb-6">
         <div class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
           {{ partial "functions/get_icon" (dict "name" "hero/chat-bubble-left-right" "attributes" "class=\"w-6 h-6 text-primary-600 dark:text-primary-400\"") }}
@@ -117,21 +111,6 @@
           </div>
           {{ end }}
         </div>
-
-        {{/* Prospective Members */}}
-        {{ with $block.content.prospective }}
-        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">{{ .title | default (i18n "block_contact_prospective_title" | default "Prospective Members") }}</h4>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .text }}</p>
-          {{ with .button }}
-          <a href="{{ .url }}"
-             class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow hover:shadow-lg transition-all">
-            {{ partial "functions/get_icon" (dict "name" "hero/user-plus" "attributes" "class=\"w-5 h-5 mr-2\"") }}
-            {{ .text }}
-          </a>
-          {{ end }}
-        </div>
-        {{ end }}
       </div>
     </div>
   </div>
@@ -145,40 +124,4 @@
   </div>
   {{ end }}
 
-  {{/* Contact Form (optional) - Netlify Forms enabled */}}
-  {{ if $block.content.show_form }}
-  <div class="mt-12 max-w-2xl mx-auto">
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ i18n "block_contact_form_title" | default "Send us a Message" }}</h3>
-      <form name="contact" action="{{ $block.content.form_action | default "#" }}" method="POST" data-netlify="true" class="space-y-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_name" | default "Name" }}</label>
-            <input type="text" id="name" name="name" required
-                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_email" | default "Email" }}</label>
-            <input type="email" id="email" name="email" required
-                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
-          </div>
-        </div>
-        <div>
-          <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_subject" | default "Subject" }}</label>
-          <input type="text" id="subject" name="subject" required
-                 class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_message" | default "Message" }}</label>
-          <textarea id="message" name="message" rows="5" required
-                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"></textarea>
-        </div>
-        <button type="submit"
-                class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow hover:shadow-lg transition-all">
-          {{ i18n "block_contact_form_submit" | default "Send Message" }}
-        </button>
-      </form>
-    </div>
-  </div>
-  {{ end }}
 </div>
