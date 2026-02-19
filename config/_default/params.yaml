@@ -73,7 +73,7 @@ hugoblox:
 
   analytics:
     google:
-      measurement_id: "UA-129312-1"
+      measurement_id: "G-W8TQX8YVVW"
 
   locale:
     date_format: ":date_long"
