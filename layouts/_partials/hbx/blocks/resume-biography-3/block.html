@@ -107,7 +107,7 @@
                 {{ $logo := resources.Get (printf "media/%s" .) }}
                 {{ if $logo }}
                   {{ if $hasUrl }}<a href="{{ $hasUrl }}" target="_blank" rel="noopener">{{ end }}
-                  <img src="{{ $logo.RelPermalink }}" alt="{{ $.name }}" class="h-12 w-auto" width="{{ $logo.Width }}" height="{{ $logo.Height }}">
+                  <img src="{{ $logo.RelPermalink }}" alt="{{ .name }}" class="h-12 w-auto" width="{{ $logo.Width }}" height="{{ $logo.Height }}">
                   {{ if $hasUrl }}</a>{{ end }}
                 {{ end }}
               {{ end }}
