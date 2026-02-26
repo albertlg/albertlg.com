@@ -35,7 +35,13 @@ pagination:
   pagerSize: 10
 enableEmoji: true
 enableRobotsTXT: false
+canonifyURLs: true
 footnotereturnlinkcontents: "<sup>^</sup>"
+
+minify:
+  tdewolff:
+    html:
+      keepQuotes: true
 ignoreFiles: ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.old/"]
 disableAliases: true
 
