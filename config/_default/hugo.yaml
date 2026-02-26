@@ -34,7 +34,7 @@ summaryLength: 30
 pagination:
   pagerSize: 10
 enableEmoji: true
-enableRobotsTXT: true
+enableRobotsTXT: false
 footnotereturnlinkcontents: "<sup>^</sup>"
 ignoreFiles: ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "\\.old/"]
 disableAliases: true
