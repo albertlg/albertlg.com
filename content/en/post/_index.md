@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: Recent posts
 
 # View.
 #   1 = List
@@ -12,3 +12,5 @@ header:
   caption: ""
   image: ""
 ---
+
+## Latest posts from my blog (as you can tell, I don't write much)
