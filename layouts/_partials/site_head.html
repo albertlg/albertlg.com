@@ -157,6 +157,8 @@
   {{ $twitter_card = "summary" }}
 {{ else if $featured_image }}
     {{ $og_image = $featured_image.Permalink }}
+  {{ else if .Params.images }}
+    {{ $og_image = index .Params.images 0 | absURL }}
   {{ else if $sharing_image }}
     {{ $og_image = $sharing_image.Permalink }}
   {{ else if $has_logo }}
