@@ -136,6 +136,12 @@
   {{ end }}
 
   <link rel="canonical" href="{{ .Permalink }}" />
+  {{ if not .IsPage }}
+    {{ with .Paginator }}
+      {{ with .Prev }}<link rel="prev" href="{{ .URL | absURL }}" />{{ end }}
+      {{ with .Next }}<link rel="next" href="{{ .URL | absURL }}" />{{ end }}
+    {{ end }}
+  {{ end }}
 
   {{/* Get page image for sharing. */}}
   {{ $sharing_image := resources.GetMatch (path.Join "media" "sharing.*") }}
@@ -143,35 +149,58 @@
 {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/media/logo.png" | or (fileExists "assets/media/logo.svg") }}
   {{ $og_image := "" }}
+  {{ $og_width := 0 }}
+  {{ $og_height := 0 }}
+  {{ $og_media_type := "" }}
   {{ $twitter_card := "summary_large_image" }}
 {{ if and (eq .Kind "term") (eq .Data.Singular "author") }}
   {{/* Try data-driven avatar for author term pages */}}
   {{ $termSlug := .Data.Term | urlize }}
   {{ $profile := partial "functions/get_author_profile" (dict "slug" $termSlug) }}
   {{ with $profile.avatar }}
-    {{ $og_image = (.Fill "540x540 Center").Permalink }}
+    {{ $filled := .Fill "540x540 Center" }}
+    {{ $og_image = $filled.Permalink }}
+    {{ $og_width = $filled.Width }}
+    {{ $og_height = $filled.Height }}
+    {{ $og_media_type = $filled.MediaType.Type }}
     {{ $twitter_card = "summary" }}
   {{ end }}
 {{ else if (and (eq .Kind "term") $avatar_image) }}
-  {{ $og_image = ($avatar_image.Fill "540x540 Center").Permalink }}
+  {{ $filled := $avatar_image.Fill "540x540 Center" }}
+  {{ $og_image = $filled.Permalink }}
+  {{ $og_width = $filled.Width }}
+  {{ $og_height = $filled.Height }}
+  {{ $og_media_type = $filled.MediaType.Type }}
   {{ $twitter_card = "summary" }}
 {{ else if $featured_image }}
     {{ $og_image = $featured_image.Permalink }}
+    {{ $og_width = $featured_image.Width }}
+    {{ $og_height = $featured_image.Height }}
+    {{ $og_media_type = $featured_image.MediaType.Type }}
   {{ else if .Params.images }}
     {{ $og_image = index .Params.images 0 | absURL }}
   {{ else if $sharing_image }}
     {{ $og_image = $sharing_image.Permalink }}
+    {{ $og_width = $sharing_image.Width }}
+    {{ $og_height = $sharing_image.Height }}
+    {{ $og_media_type = $sharing_image.MediaType.Type }}
   {{ else if $has_logo }}
     {{/* !CACHED! Can safely cache this site logo variant */}}
     {{ $logo_data := partialCached "functions/get_logo" (dict "constraint" "fit" "size" 300) "logo_og" }}
     {{ with $logo_data.resource }}
       {{ $og_image = .Permalink }}
+      {{ $og_width = .Width }}
+      {{ $og_height = .Height }}
+      {{ $og_media_type = .MediaType.Type }}
     {{ end }}
     {{ $twitter_card = "summary" }}
   {{ else }}
     {{ $icon_og := partial "functions/get_site_icon" 512 }}
     {{ with $icon_og.resource }}
       {{ $og_image = .Permalink }}
+      {{ $og_width = .Width }}
+      {{ $og_height = .Height }}
+      {{ $og_media_type = .MediaType.Type }}
     {{ end }}
     {{ $twitter_card = "summary" }}
   {{ end }}
@@ -195,7 +224,12 @@
   <meta property="og:description" content="{{ $desc }}" />
   {{- with $og_image -}}
     <meta property="og:image" content="{{ . }}" />
+    {{ if $og_width }}<meta property="og:image:width" content="{{ $og_width }}" />{{ end }}
+    {{ if $og_height }}<meta property="og:image:height" content="{{ $og_height }}" />{{ end }}
+    {{ if $og_media_type }}<meta property="og:image:type" content="{{ $og_media_type }}" />{{ end }}
+    <meta property="og:image:alt" content="{{ $title }}" />
     <meta property="twitter:image" content="{{ . }}" />
+    <meta property="twitter:image:alt" content="{{ $title }}" />
   {{- end -}}
   <meta property="og:locale" content="{{ .Lang }}" />
   {{ if .IsPage }}
@@ -211,6 +245,12 @@
       <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
     {{ end }}
     {{ if not .Lastmod.IsZero }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+    {{ with .GetTerms "categories" }}
+      {{ with index . 0 }}<meta property="article:section" content="{{ .LinkTitle }}" />{{ end }}
+    {{ end }}
+    {{ range .GetTerms "tags" }}
+      <meta property="article:tag" content="{{ .LinkTitle }}" />
+    {{ end }}
   {{ else }}
     <meta property="og:type" content="website" />
     {{ if not .Date.IsZero }}
