@@ -302,6 +302,8 @@
           <span data-pagefind-filter="category" style="display:none;">{{ index . 0 }}</span>
         {{ end }}
         {{ .Content }}
+        {{ partial "faqs.html" . }}
+        {{ partial "faq-schema.html" . }}
       </div>
 
       {{ partial "components/last-edited.html" . }}
