@@ -199,6 +199,9 @@
   {{- end -}}
   <meta property="og:locale" content="{{ .Lang }}" />
   {{ if .IsPage }}
+    <meta property="og:type" content="article" />
+    {{ $author_name := partial "functions/get_author_name" . }}
+    {{ with $author_name }}<meta property="article:author" content="{{ . }}" />{{ end }}
     {{ if not .PublishDate.IsZero }}
       <meta
         property="article:published_time"
@@ -209,6 +212,7 @@
     {{ end }}
     {{ if not .Lastmod.IsZero }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
   {{ else }}
+    <meta property="og:type" content="website" />
     {{ if not .Date.IsZero }}
       <meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
     {{ end }}
