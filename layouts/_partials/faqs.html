@@ -1,7 +1,7 @@
 {{- $faqs := .Params.faqs -}}
 {{- if $faqs -}}
 <section id="faqs">
-  <h2>Preguntas frecuentes (FAQs)</h2>
+  <h2>{{ with .Params.faqs_title }}{{ . }}{{ else }}FAQs{{ end }}</h2>
   <dl>
     {{- range $faqs -}}
       <dt>{{ .q }}</dt>
