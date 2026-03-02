@@ -1,11 +1,14 @@
 es:
   languageCode: "es"
   contentDir: "content/es"
-
-en:
-  languageCode: "en"
-  contentDir: "content/en"
+  weight: 1
 
 ca:
   languageCode: "ca"
   contentDir: "content/ca"
+  weight: 2
+
+en:
+  languageCode: "en"
+  contentDir: "content/en"
+  weight: 3
