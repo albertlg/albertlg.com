@@ -30,7 +30,7 @@ removePathAccents: true
 build:
   writeStats: true
 enableGitInfo: false
-summaryLength: 30
+summaryLength: 50
 pagination:
   pagerSize: 10
 enableEmoji: true
@@ -58,7 +58,7 @@ outputs:
 
 imaging:
   resampleFilter: lanczos
-  quality: 90
+  quality: 82
   anchor: smart
   hint: picture
 
