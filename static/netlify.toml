@@ -52,6 +52,192 @@
   status = 301
   force = false
 
+[[redirects]]
+  from = "/ca/tag/juegos/"
+  to = "/ca/tag/jocs/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/lista-comprobacion-estandares-web-81337/"
+  to = "/ca/llista-comprovacio-estandards-web-81337/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/tag/diario-personal/"
+  to = "/ca/tag/diari-personal/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/politica/"
+  to = "/en/tag/politics/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/diario-personal/"
+  to = "/en/tag/personal-diary/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/poesia/"
+  to = "/en/tag/poetry/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/usabilidad/"
+  to = "/en/tag/usability/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/baloncesto/"
+  to = "/tag/baloncesto/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/estandares-web/"
+  to = "/en/tag/web-standards/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/sin-clasificar/"
+  to = "/en/tag/uncategorized/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tag/filosofia/"
+  to = "/en/tag/philosophy/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/tags/cuerpo/"
+  to = "/tag/cuerpo/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/css-modelo-caja-3d-81879/*"
+  to = "/css-modelo-caja-3d-81879/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/albert-einstein-81368/*"
+  to = "/en/albert-einstein-81368/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/laura-81883/*"
+  to = "/ca/laura-81883/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/fuentes-agua-81892/*"
+  to = "/ca/fuentes-agua-81892/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/cosas-odio-gallegos-81862/*"
+  to = "/ca/cosas-odio-gallegos-81862/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/tunea-cuenta-google-analytics-95005/*"
+  to = "/tunea-cuenta-google-analytics-95005/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/coche-nuevo-80153/*"
+  to = "/ca/coche-nuevo-80153/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/hola-soy-friqui-80144/*"
+  to = "/hola-soy-friqui-80144/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/sociedad-actualr-81366/*"
+  to = "/en/sociedad-actualr-81366/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/citas-inspiradas-80112/*"
+  to = "/en/citas-inspiradas-80112/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/el-callizo-80117/*"
+  to = "/ca/el-callizo-80117/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/fuentes-agua-81892/*"
+  to = "/en/fuentes-agua-81892/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/softonic-cas-estudi-seo-smx-madrid-2009/*"
+  to = "/ca/softonic-cas-estudi-seo-smx-madrid-2009/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/ballar-mal-tambe-compta/*"
+  to = "/ca/ballar-mal-tambe-compta/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/propia-emisora-radio-musical-personalizada-81880/*"
+  to = "/ca/propia-emisora-radio-musical-personalizada-81880/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/error-delegar-criterio-ia/*"
+  to = "/error-delegar-criterio-ia/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/extension-fichero-80138/*"
+  to = "/extension-fichero-80138/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/el-valor-del-pase-extra/*"
+  to = "/el-valor-del-pase-extra/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/splitweet-multiaccount-brand-reputation-twitter/*"
+  to = "/en/splitweet-multiaccount-brand-reputation-twitter/"
+  status = 301
+  force = false
+
 #[[redirects]]
 #  from = ""
 #  to = ""
