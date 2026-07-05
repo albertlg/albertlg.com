@@ -1,17 +1,34 @@
-read_more: "Leer más"
-more_pages: "Ver más"
-more_posts: "Ver más artículos"
-posts: "artículos"
-experience: "Experiencia"
-present: "Actualmente"
-education: "Formación"
-block_contact_title: "Contacto"
-block_contact_visit_title: "Visítanos"
-block_contact_connect_title: "Conecta"
-block_contact_follow_us: "Sígueme"
-block_contact_form_title: "Envíame un mensaje"
-block_contact_form_name: "Nombre"
-block_contact_form_email: "Correo electrónico"
-block_contact_form_subject: "Asunto"
-block_contact_form_message: "Mensaje"
-block_contact_form_submit: "Enviar mensaje"
+read_more:
+  other:  "Leer más"
+more_pages:
+  other: "Ver más"
+more_posts:
+  other: "Ver más artículos"
+posts:
+  other: "artículos"
+experience:
+  other: "Experiencia"
+present:
+  other: "Actualmente"
+education:
+  other: "Formación"
+block_contact_title:
+  other: "Contacto"
+block_contact_visit_title:
+  other: "Visítanos"
+block_contact_connect_title:
+  other: "Conecta"
+block_contact_follow_us:
+  other: "Sígueme"
+block_contact_form_title:
+  other: "Envíame un mensaje"
+block_contact_form_name:
+  other: "Nombre"
+block_contact_form_email:
+  other: "Correo electrónico"
+block_contact_form_subject:
+  other: "Asunto"
+block_contact_form_message:
+  other: "Mensaje"
+block_contact_form_submit:
+  other: "Enviar mensaje"
