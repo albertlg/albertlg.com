@@ -1,17 +1,34 @@
-read_more: "Llegir més"
-more_pages: "Veure més"
-more_posts: "Veure més articles"
-posts: "articles"
-experience: "Experiència"
-present: "Actualment"
-education: "Formació"
-block_contact_title: "Contacte"
-block_contact_visit_title: "Visita'ns"
-block_contact_connect_title: "Connecta"
-block_contact_follow_us: "Segueix-me"
-block_contact_form_title: "Envia'm un missatge"
-block_contact_form_name: "Nom"
-block_contact_form_email: "Correu electrònic"
-block_contact_form_subject: "Assumpte"
-block_contact_form_message: "Missatge"
-block_contact_form_submit: "Enviar missatge"
+read_more:
+  other: "Llegir més"
+more_pages:
+  other: "Veure més"
+more_posts:
+  other: "Veure més articles"
+posts:
+  other: "articles"
+experience:
+  other: "Experiència"
+present:
+  other: "Actualment"
+education:
+  other: "Formació"
+block_contact_title:
+  other: "Contacte"
+block_contact_visit_title:
+  other: "Visita'ns"
+block_contact_connect_title:
+  other: "Connecta"
+block_contact_follow_us:
+  other: "Segueix-me"
+block_contact_form_title:
+  other: "Envia'm un missatge"
+block_contact_form_name:
+  other: "Nom"
+block_contact_form_email:
+  other: "Correu electrònic"
+block_contact_form_subject:
+  other: "Assumpte"
+block_contact_form_message:
+  other: "Missatge"
+block_contact_form_submit:
+  other: "Enviar missatge"
