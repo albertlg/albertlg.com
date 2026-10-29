@@ -1,0 +1,84 @@
+name: Build check
+
+# Builds the site with the same versions and command as Netlify and fails on
+# problems Netlify would publish silently. It does not deploy anything.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read Hugo and Node versions from netlify.toml
+        id: versions
+        run: |
+          echo "hugo=$(sed -n 's/^ *HUGO_VERSION = "\(.*\)"/\1/p' netlify.toml)" >> "$GITHUB_OUTPUT"
+          echo "node=$(sed -n 's/^ *NODE_VERSION = "\(.*\)"/\1/p' netlify.toml)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ steps.versions.outputs.node }}
+          cache: npm
+
+      - name: Install Hugo ${{ steps.versions.outputs.hugo }} extended
+        env:
+          HUGO: ${{ steps.versions.outputs.hugo }}
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/hugo.tar.gz" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO}/hugo_extended_${HUGO}_linux-amd64.tar.gz"
+          tar -xzf "$RUNNER_TEMP/hugo.tar.gz" -C "$RUNNER_TEMP" hugo
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build (same command as Netlify)
+        run: |
+          hugo --gc --minify -b https://albertlg.com/ --printPathWarnings 2>&1 | tee hugo.log
+          npx pagefind --site public
+
+      - name: Check build output
+        run: |
+          status=0
+
+          # Two pages written to the same URL (e.g. tag variants such as "música" / "musica").
+          if grep -q "Duplicate target paths" hugo.log; then
+            echo "::error::Hugo reported duplicate target paths"
+            grep -A5 "Duplicate target paths" hugo.log
+            status=1
+          fi
+
+          # Key files Netlify must publish.
+          for f in index.html ca/index.html en/index.html \
+                   llms.txt ca/llms.txt en/llms.txt \
+                   sitemap.xml _redirects _headers pagefind/pagefind.js; do
+            [ -s "public/$f" ] || { echo "::error::Missing or empty public/$f"; status=1; }
+          done
+
+          # Every albertlg.com link in llms.txt must point to a generated page or file.
+          for f in public/llms.txt public/ca/llms.txt public/en/llms.txt; do
+            for url in $(grep -oE 'https://albertlg\.com/[^ )]*' "$f" | sort -u); do
+              path="public/${url#https://albertlg.com/}"
+              [ -f "${path}index.html" ] || [ -f "$path" ] || { echo "::error::Broken link in ${f#public/}: $url"; status=1; }
+            done
+          done
+
+          exit $status
