@@ -36,3 +36,27 @@ on_this_page:
   other: "En aquesta pàgina"
 languages:
   other: "Idiomes"
+search_modal_placeholder:
+  other: "Cerca al blog…"
+search_modal_all_results:
+  other: "Tots els resultats"
+search_modal_type_post:
+  other: "Articles"
+search_modal_searching:
+  other: "Cercant…"
+search_modal_finding_for:
+  other: "Cercant resultats per a"
+search_modal_no_results:
+  other: "No s’han trobat resultats"
+search_modal_no_results_for:
+  other: "Cap resultat per a"
+search_modal_clear:
+  other: "Esborrar la cerca"
+search_modal_navigate:
+  other: "Navegar"
+search_modal_select:
+  other: "Seleccionar"
+search_modal_filters:
+  other: "filtres"
+search_modal_powered_by:
+  other: "Amb tecnologia de Hugo Blox"

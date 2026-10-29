@@ -32,3 +32,27 @@ block_contact_form_message:
   other: "Mensaje"
 block_contact_form_submit:
   other: "Enviar mensaje"
+search_modal_placeholder:
+  other: "Buscar en el blog…"
+search_modal_all_results:
+  other: "Todos los resultados"
+search_modal_type_post:
+  other: "Artículos"
+search_modal_searching:
+  other: "Buscando…"
+search_modal_finding_for:
+  other: "Buscando resultados para"
+search_modal_no_results:
+  other: "No se han encontrado resultados"
+search_modal_no_results_for:
+  other: "Sin resultados para"
+search_modal_clear:
+  other: "Borrar la búsqueda"
+search_modal_navigate:
+  other: "Navegar"
+search_modal_select:
+  other: "Seleccionar"
+search_modal_filters:
+  other: "filtros"
+search_modal_powered_by:
+  other: "Con tecnología de Hugo Blox"

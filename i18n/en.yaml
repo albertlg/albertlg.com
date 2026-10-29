@@ -1,0 +1,24 @@
+search_modal_placeholder:
+  other: "Search the blog…"
+search_modal_all_results:
+  other: "All results"
+search_modal_type_post:
+  other: "Posts"
+search_modal_searching:
+  other: "Searching…"
+search_modal_finding_for:
+  other: "Finding results for"
+search_modal_no_results:
+  other: "No results found"
+search_modal_no_results_for:
+  other: "No results for"
+search_modal_clear:
+  other: "Clear search"
+search_modal_navigate:
+  other: "Navigate"
+search_modal_select:
+  other: "Select"
+search_modal_filters:
+  other: "filters"
+search_modal_powered_by:
+  other: "Powered by Hugo Blox"
