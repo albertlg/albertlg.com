@@ -104,3 +104,6 @@ cascade:
 
 frontmatter:
   lastmod: ["lastmod", ":git", "date"]
+
+# Sentence case for auto-generated titles (e.g. tag pages): "Futuro del trabajo"
+titleCaseStyle: firstupper
