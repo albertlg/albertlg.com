@@ -22,3 +22,5 @@ search_modal_filters:
   other: "filters"
 search_modal_powered_by:
   other: "Powered by Hugo Blox"
+posts:
+  other: "articles"
