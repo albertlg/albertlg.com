@@ -14,7 +14,7 @@ sections:
   - block: hero
     content:
       title: "Albert L.G. - Expert SEO, Content Marketing i IA"
-      text: "🔎 No es troba res si no es busca alguna cosa.<br>Jo sóc l'**Albert López Gálvez** i tu no."
+      text: "🔎 No es troba res si no es busca alguna cosa.<br>Jo soc l'**Albert López Gálvez** i tu no."
     design:
       background:
         image:

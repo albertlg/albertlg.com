@@ -191,6 +191,12 @@
   force = false
 
 [[redirects]]
+  from = "/en/tag/judgment/"
+  to = "/en/tag/judgement/"
+  status = 301
+  force = false
+
+[[redirects]]
   from = "/tags/cuerpo/"
   to = "/tag/cuerpo/"
   status = 301
