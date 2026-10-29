@@ -1,7 +1,3 @@
-#---
-#COMMENT: Use the netlify.toml file stored at /static folder
-#---
-
 [build]
   command = "hugo --gc --minify -b $URL && npx pagefind --site public"
   publish = "public"

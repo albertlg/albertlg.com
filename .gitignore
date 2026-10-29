@@ -15,3 +15,8 @@ static/pagefind/
 
 # Claude
 CLAUDE.md
+
+# macOS
+.DS_Store
+# Finder duplicates such as "imagen 2.png"
+* [0-9].*

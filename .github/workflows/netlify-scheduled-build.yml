@@ -2,11 +2,10 @@ name: Daily Netlify Scheduled Build
 
 on:
   schedule:
-    # Cron en UTC. 
-    # "0 12 * * *" = todos los días a las 12:00 UTC.
+    # Cron en UTC: "0 10 * * *" = todos los días a las 10:00 UTC.
     # Con Europe/Madrid:
-    # - invierno: 13:00 local
-    # - verano: 14:00 local
+    # - invierno: 11:00 local
+    # - verano: 12:00 local
     - cron: "0 10 * * *"
 
   # Opcional: para poder lanzarlo a mano desde GitHub si quieres probarlo

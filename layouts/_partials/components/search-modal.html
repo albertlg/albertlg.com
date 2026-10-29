@@ -292,7 +292,6 @@
         try {
           this.pagefind = await import(this.pagefindModulePath);
           await this.pagefind.init();
-          console.log('✓ Pagefind initialized');
           
           // Load available filters
           await this.loadFilters();
@@ -422,14 +421,11 @@
           }
           
           const search = await this.pagefind.search(this.query, options);
-          console.log('Search results:', search);
-          console.log('Search filters:', search.filters);
           
           // Process results
           this.results = await Promise.all(
             search.results.slice(0, 10).map(async (result) => {
               const data = await result.data();
-              console.log('Result data:', data);
               return {
                 id: data.url,
                 url: data.url,
@@ -447,7 +443,6 @@
           } else {
             this.availableFilters = this.buildFilters(filterCounts);
           }
-          console.log('Final availableFilters array:', this.availableFilters);
           
           // Set first result as selected for keyboard navigation
           if (this.results.length > 0) {
@@ -466,12 +461,10 @@
         // Pre-load available filters from the full Pagefind index
         try {
           const filterIndex = await this.pagefind.filters();
-          console.log('Available Pagefind filters:', filterIndex);
 
           const filters = this.buildFilters(filterIndex);
           this.allFilters = filters;
           this.availableFilters = filters;
-          console.log('Processed filters:', this.availableFilters);
         } catch (error) {
           console.error('Failed to load filters:', error);
         }

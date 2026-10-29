@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-hugo server --disableFastRender --i18n-warnings
+# Local preview, including future-dated posts.
+hugo server --disableFastRender --printI18nWarnings --buildFuture
