@@ -32,3 +32,7 @@ block_contact_form_message:
   other: "Missatge"
 block_contact_form_submit:
   other: "Enviar missatge"
+on_this_page:
+  other: "En aquesta pàgina"
+languages:
+  other: "Idiomes"
