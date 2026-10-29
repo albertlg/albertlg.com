@@ -1,0 +1,77 @@
+{{- /* llms.txt generated on every build (https://llmstxt.org). Editorial text lives in data/llms/<lang>.yaml. */ -}}
+{{- $d := index site.Data.llms site.Language.Lang -}}
+{{- $posts := where site.RegularPages "Section" "post" -}}
+{{- $since := time.AsTime "2024-01-01T00:00:00+01:00" -}}
+{{- $aiTags := slice "seo" "ia" "ai" "llms" -}}
+{{- $careerKeys := slice -}}
+{{- range $d.career -}}{{- $careerKeys = $careerKeys | append .key -}}{{- end -}}
+{{- $ai := slice -}}
+{{- $personal := slice -}}
+{{- range $posts.ByDate.Reverse -}}
+  {{- if and (ge .Date.Unix $since.Unix) (not (in $careerKeys .Params.translationkey)) -}}
+    {{- $isAI := false -}}
+    {{- range .Params.tags -}}
+      {{- if in $aiTags (lower .) -}}{{- $isAI = true -}}{{- end -}}
+    {{- end -}}
+    {{- if $isAI -}}{{- $ai = $ai | append . -}}{{- else -}}{{- $personal = $personal | append . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $updated := (index $posts.ByLastmod.Reverse 0).Lastmod -}}
+# {{ $d.title }}
+
+> {{ $d.summary }}
+
+{{ $d.intro }}
+
+{{ $d.labels.updated }}: {{ $updated.Format "2006-01-02" }}
+
+## {{ $d.labels.home }}
+
+- [{{ $d.title }}]({{ site.Home.Permalink }}): {{ $d.labels.home_description }}
+
+## {{ $d.labels.ai }}
+
+{{ $d.labels.ai_intro }}
+
+{{ range $ai -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Params.summary | default .Description | plainify | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ end }}
+## {{ $d.labels.personal }}
+
+{{ $d.labels.personal_intro }}
+
+{{ range $personal -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Params.summary | default .Description | plainify | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ end }}
+## {{ $d.labels.career }}
+
+{{ range $d.career -}}
+{{- $desc := .description -}}
+{{- range first 1 (where $posts "Params.translationkey" .key) -}}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "2006" }}): {{ $desc }}
+{{ end -}}
+{{- end }}
+## {{ $d.labels.topics }}
+
+{{ range first 10 site.Taxonomies.tags.ByCount -}}
+- [{{ .Page.Title }}]({{ .Page.Permalink }}): {{ .Count }} {{ $d.labels.posts }}
+{{ end }}
+## {{ $d.labels.archive }}
+
+- [{{ $d.labels.archive }}]({{ (site.GetPage "/post").Permalink }}): {{ replace $d.labels.archive_description "{n}" (string (len $posts)) }}
+
+## {{ $d.labels.instructions }}
+
+{{ range $d.instructions -}}
+- {{ . }}
+{{ end }}
+## {{ $d.labels.crawling }}
+
+- [sitemap.xml]({{ "sitemap.xml" | absURL }}): {{ $d.crawling.sitemap }}
+- [robots.txt]({{ "robots.txt" | absURL }}): {{ $d.crawling.robots }}
+
+## {{ $d.labels.languages }}
+
+{{ range site.Home.Translations -}}
+- [{{ index $d.languages .Lang }}]({{ .Permalink }}){{ with .OutputFormats.Get "llms" }}: {{ .Permalink }}{{ end }}
+{{ end -}}

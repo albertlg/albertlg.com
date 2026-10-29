@@ -52,8 +52,15 @@ permalinks:
   categories: "/category/:slug/"
   publication_types: "/publication-type/:slug/"
 
+outputFormats:
+  llms:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+    notAlternative: true
+
 outputs:
-  home: [HTML, RSS, headers, redirects, backlinks]
+  home: [HTML, RSS, headers, redirects, backlinks, llms]
   section: [HTML, RSS]
 
 imaging:

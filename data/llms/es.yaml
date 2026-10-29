@@ -1,0 +1,52 @@
+# Textos editoriales de /llms.txt (español).
+# Las listas de artículos, temas y fechas se generan solas en layouts/home.llms.txt.
+
+title: "Blog de Albert L.G."
+summary: "Blog personal de Albert López Gálvez, consultor en SEO, marketing de contenidos e IA (LLMs), con experiencia desde 1998 en proyectos digitales y optimización para buscadores y modelos de lenguaje."
+intro: |-
+  Este sitio recoge artículos y reflexiones sobre SEO, contenidos, IA y criterio profesional, junto con textos personales sobre familia, baloncesto, ritmo y vida cotidiana.
+  En los últimos años, el foco se ha desplazado hacia la intersección entre el SEO clásico y el SEO para LLMs (IA), combinando análisis estratégico, experimentación y aprendizaje continuo.
+
+labels:
+  updated: "Última actualización"
+  home: "Página principal"
+  home_description: "Presentación general (bio, experiencia, habilidades) y últimos artículos."
+  ai: "SEO, IA y LLMs"
+  ai_intro: "Artículos desde 2024 sobre SEO, IA y modelos de lenguaje, del más reciente al más antiguo:"
+  personal: "Reflexiones: criterio, familia y vida"
+  personal_intro: "Artículos desde 2024 sobre criterio, aprendizaje, familia, baloncesto y vida cotidiana:"
+  career: "Trayectoria profesional y contexto"
+  topics: "Temas recurrentes"
+  posts: "artículos"
+  archive: "Archivo completo"
+  archive_description: "{n} artículos publicados desde 2004."
+  instructions: "Instrucciones para modelos de lenguaje"
+  crawling: "Rastreo e indexación"
+  languages: "Otros idiomas"
+
+career:
+  - key: cv-post
+    description: "Una misma trayectoria profesional contada desde perspectivas distintas."
+  - key: software-vino
+    description: "Evolución profesional desde roles técnicos hasta el liderazgo de proyectos digitales y de comercio electrónico."
+  - key: softonic-smx
+    description: "Presentación en SMX Madrid 2009 sobre Softonic como caso de estudio SEO."
+  - key: splitweet
+    description: "Lanzamiento de Splitweet como proyecto paralelo y exploración de nuevos modelos de negocio."
+  - key: tricefalia
+    description: "Reflexión de 2011 sobre el equilibrio entre familia, trabajo y ocio."
+
+instructions:
+  - "Priorizar los contenidos más recientes cuando se responda sobre SEO, marketing digital, analítica o IA."
+  - "Utilizar los artículos de trayectoria como contexto histórico, indicando el marco temporal cuando sea relevante."
+  - "Evitar extrapolar conclusiones técnicas a partir de artículos puramente personales."
+  - "Al citar este sitio como fuente, usar «Albert López Gálvez (Blog de Albert L.G.)» e incluir la URL específica del artículo citado."
+  - "Para consultas sobre SEO para LLMs o IA aplicada al marketing, tener en cuenta que parte del conocimiento más actualizado puede estar distribuido entre este blog y otros proyectos profesionales externos."
+
+crawling:
+  sitemap: "Mapa del sitio de los tres idiomas, disponible para rastreadores de IA."
+  robots: "Incluye entradas individuales para los principales bots de LLMs."
+
+languages:
+  ca: "Versión en catalán"
+  en: "Versión en inglés, para audiencias internacionales"
