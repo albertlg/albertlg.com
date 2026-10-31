@@ -2,9 +2,17 @@
      Override of the Hugo Blox partial: three cards with image, title and date, chosen with
      the `related` settings in config/_default/hugo.yaml (mostly shared tags).
      Shown on pages with show_related, which the cascade in hugo.yaml sets for every post.
+     Posts already linked by the previous/next navigation just above are left out.
      The image sizes match the post list cards, so Hugo reuses the images it already makes. */}}
 {{ if .Params.show_related }}
-  {{ $related := where (site.RegularPages.Related .) "Section" "post" | first 3 }}
+  {{ $pager := slice }}
+  {{ if .Params.pager | default true }}
+    {{ with .PrevInSection }}{{ $pager = $pager | append . }}{{ end }}
+    {{ with .NextInSection }}{{ $pager = $pager | append . }}{{ end }}
+  {{ end }}
+  {{ $related := where (site.RegularPages.Related .) "Section" "post" }}
+  {{ with $pager }}{{ $related = complement . $related }}{{ end }}
+  {{ $related = first 3 $related }}
   {{ with $related }}
   <section class="not-prose pt-10" aria-labelledby="related-heading" data-toc-skip>
     <h2 id="related-heading" class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">{{ i18n "read_also" }}</h2>

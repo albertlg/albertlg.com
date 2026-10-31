@@ -7,7 +7,7 @@
 {{ with site.Params.hugoblox.comments.disqus.shortname }}
 {{ $shortname := . }}
 {{ $language := index (dict "es" "es_ES" "ca" "ca" "en" "en") site.Language.Lang | default "es_ES" }}
-<div id="disqus_thread"></div>
+<div id="disqus_thread" class="mt-12"></div>
 <script>
   var disqus_config = function () {
     {{ with $.Params.disqus_identifier }}this.page.identifier = {{ . }};{{ end }}
