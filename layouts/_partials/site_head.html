@@ -43,6 +43,9 @@
   {{/* Generate page description. */}}
   {{ $desc := "" }}
   {{ $desc = partial "functions/get_summary" . }}
+  {{/* Override: one plain-text description for meta, og:description and JSON-LD. Old posts without
+       a summary fall back to .Summary, which carries HTML tags, entities and line breaks. */}}
+  {{ $desc = $desc | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
   {{ if site.Params.hugoblox.identity.description | and (not $desc) }}
     {{ $desc = site.Params.hugoblox.identity.description }}
   {{ end }}
