@@ -21,11 +21,16 @@
     {{/* partial "search.html" */}}
   </div>
   <div class="hb-scrollbar lg:h-[calc(100vh-var(--navbar-height))]">
+    {{/* Override: the small-screen sidebar menu only exists where a sidebar can be opened (docs-style
+         pages). On posts and pages (no_sidebar) nothing opens it, so it was an off-screen list of every
+         page of the site: about 45 KB of HTML per page and 160+ links reachable with the keyboard. */}}
+    {{- if not $no_sidebar }}
     <ul class="flex flex-col gap-1 lg:hidden">
       <!-- Navigation links -->
       {{ template "menu-links" (dict "context" site.Home "pageURL" $page_url "page" $context "toc" true) -}}
       {{ template "custom-menu-links" }}
     </ul>
+    {{- end }}
 
     <!-- Sidebar on large screen -->
     {{- if $no_sidebar -}}
