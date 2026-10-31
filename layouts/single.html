@@ -68,7 +68,7 @@
       {{ $display_date := .Params.event_start | default .Date }}
       <div class="mt-4 mb-16">
       <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2">
-        {{- if $display_date | and (not .Params.hide_date) -}}
+        {{- if $display_date | and (.Params.show_date | default true) -}}
         <span class="mr-1">{{- (time $display_date) | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") -}}</span>
         {{- if .Params.authors }}<span class="mx-1">·</span>{{ end -}}
         {{- end -}}
@@ -76,7 +76,6 @@
         {{/* Set Alpine.js flag if author notes exist */}}
         {{ if isset .Params "author_notes" }}
           {{ .Store.Set "has_alpine" true }}
-          <script>console.log('Author notes detected in single.html, Alpine.js should load');</script>
         {{ end }}
 
         {{ range $i, $slug := .Params.authors }}
@@ -181,8 +180,25 @@
         {{ $sizes_attr = "(max-width: 480px) 100vw, (max-width: 640px) 90vw, (max-width: 720px) 80vw, 720px" }}
       {{end}}
       
-      {{/* Process featured image using utility with placement-specific constraints */}}
-      {{ if ne $featured.MediaType.SubType "gif" }}
+      {{/*
+        Image processing gate:
+        - reflect.IsImageResourceProcessable → false for SVG (not processable by Hugo).
+        - GIF: processable by Hugo but we skip to preserve animation frames.
+      */}}
+      {{ $canProcess := and (reflect.IsImageResourceProcessable $featured) (ne $featured.MediaType.SubType "gif") }}
+      {{ if not $canProcess }}
+        {{/* SVG or GIF: render directly without responsive processing */}}
+        <div class="article-header {{$image_container}} featured-image-wrapper mt-4 mb-16">
+          <div style="position: relative">
+            <img src="{{ $featured.RelPermalink }}"
+                 data-pagefind-meta="image[src]"
+                 alt="{{ with $image_params.alt_text }}{{.}}{{ end }}"
+                 class="featured-image"
+                 fetchpriority="high">
+            {{ with $image_params.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+          </div>
+        </div>
+      {{ else }}
         {{/* Pre-fit image to placement constraints, then apply responsive processing */}}
         {{ $fitted_image := $featured }}
         {{ if eq $placement 2}}
@@ -208,28 +224,6 @@
                  data-pagefind-meta="image[src]"
                  width="{{ $fitted_image.Width }}" 
                  height="{{ $fitted_image.Height }}" 
-                 alt="{{ with $image_params.alt_text }}{{.}}{{ end }}" 
-                 class="featured-image"
-                 fetchpriority="high">
-            {{ with $image_params.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
-          </div>
-        </div>
-      {{ else }}
-        {{/* Handle GIF - apply same placement constraints without responsive processing */}}
-        {{ $image := $featured }}
-        {{ if eq $placement 2}}
-          {{ $image = $featured.Fit "1200x2500" }}
-        {{else if eq $placement 3}}
-          {{ $image = $featured.Fit "2560x2560" }}
-        {{else}}
-          {{ $image = $featured.Fit "720x2500" }}
-        {{end}}
-        <div class="article-header {{$image_container}} featured-image-wrapper mt-4 mb-16" style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;">
-          <div style="position: relative">
-            <img src="{{ $image.RelPermalink }}" 
-                 data-pagefind-meta="image[src]"
-                 width="{{ $image.Width }}" 
-                 height="{{ $image.Height }}" 
                  alt="{{ with $image_params.alt_text }}{{.}}{{ end }}" 
                  class="featured-image"
                  fetchpriority="high">

@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Read Hugo and Node versions from netlify.toml
         id: versions
@@ -28,12 +28,12 @@ jobs:
           echo "hugo=$(sed -n 's/^ *HUGO_VERSION = "\(.*\)"/\1/p' netlify.toml)" >> "$GITHUB_OUTPUT"
           echo "node=$(sed -n 's/^ *NODE_VERSION = "\(.*\)"/\1/p' netlify.toml)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
           cache: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ steps.versions.outputs.node }}
           cache: npm

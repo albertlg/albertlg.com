@@ -1,5 +1,5 @@
 {{- /* llms.txt generated on every build (https://llmstxt.org). Editorial text lives in data/llms/<lang>.yaml. */ -}}
-{{- $d := index site.Data.llms site.Language.Lang -}}
+{{- $d := index hugo.Data.llms site.Language.Lang -}}
 {{- $posts := where site.RegularPages "Section" "post" -}}
 {{- $since := time.AsTime "2024-01-01T00:00:00+01:00" -}}
 {{- $aiTags := slice "seo" "ia" "ai" "llms" -}}

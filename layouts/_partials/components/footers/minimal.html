@@ -5,9 +5,9 @@
     {{- partial "functions/get_icon" (dict "name" "globe-alt" "attributes" `class="inline-block pr-1" style="height: 1em"`) -}}
     {{ i18n "languages" }}:
   </div>
-  <div class="font-bold">{{ index site.Data.languages .Lang }}</div>
+  <div class="font-bold">{{ index hugo.Data.languages .Lang }}</div>
   {{ range .Translations }}
-  <div><a href="{{ .RelPermalink }}">{{ index site.Data.languages .Lang }}</a></div>
+  <div><a href="{{ .RelPermalink }}">{{ index hugo.Data.languages .Lang }}</a></div>
   {{ end }}
 </div>
 {{ end }}

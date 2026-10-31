@@ -20,7 +20,7 @@
 {{ if $authors }}
   {{ range $idx, $slug := $authors }}
     {{ $profile := partial "functions/get_author_profile" $slug }}
-    {{ if $profile }}
+    {{ if $profile.has_data }}
       {{ with site.GetPage (printf "/authors/%s" ($slug | urlize)) }}
         {{ $bio := $profile.bio }}
         {{ with .Params.bio }}{{ $bio = replaceRE `\s*\n\s*\n\s*` " " . }}{{ end }}

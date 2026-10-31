@@ -9,13 +9,15 @@
 {{ $block_type = lower $block_type }}
 
 {{/* Handle block renames/aliases */}}
-{{ range $r := site.Data.blox_aliases.renames }}
+{{ range $r := hugo.Data.blox_aliases.renames }}
   {{ $block_type = cond (eq $block_type $r.old) $r.new $block_type }}
 {{ end }}
 
 {{/* Check if this is a Preact-enabled block by looking for component file */}}
 {{ $component_path := printf "js/hbx/blocks/%s/component.jsx" $block_type }}
-{{ $is_preact := resources.Get $component_path }}
+{{/* Override: a server-rendered block.html in this project wins over the Preact component,
+     so content such as the skills section stays in the static HTML. */}}
+{{ $is_preact := and (resources.Get $component_path) (not (templates.Exists (printf "_partials/hbx/blocks/%s/block.html" $block_type))) }}
 
 {{/* Apply styling wrapper for all blocks (both Preact and traditional) */}}
 {{ $bg := $block.design.background }}
@@ -174,11 +176,13 @@
 {{ if $bg.image.filename }}
   {{ $bg_img := resources.Get (printf "media/%s" $bg.image.filename) }}
   {{ if $bg_img }}
-    {{ if ne $bg_img.MediaType.SubType "svg" }}
+    {{ if reflect.IsImageResourceProcessable $bg_img }}
       {{ $bg_img = $bg_img.Fit "1920x1920 webp" }}
     {{ end }}
     {{ $image_layer := printf "url('%s')" $bg_img.RelPermalink }}
     {{ $background_layers = $background_layers | append $image_layer }}
+  {{ else }}
+    {{ errorf "Couldn't find `%s` in the `assets/media/` folder - please add it." $bg.image.filename }}
   {{ end }}
 {{ end }}
 
@@ -190,6 +194,60 @@
   {{ if $all_layers }}
     {{ $combined_backgrounds := delimit $all_layers ", " }}
     {{ $style_bg = printf "%sbackground-image: %s;" $style_bg $combined_backgrounds }}
+
+    {{/* Background image size/position/repeat properties */}}
+    {{ $layer_count := len $all_layers }}
+    {{ if gt $layer_count 1 }}
+      {{/* Multiple layers: image + gradient */}}
+      {{ $img_size := $bg.image.size | default "cover" }}
+      {{ $img_position := $bg.image.position | default "center" }}
+      {{ $img_repeat := $bg.image.repeat | default "no-repeat" }}
+      {{ if eq $img_position "repeat" }}
+        {{ $img_repeat = "repeat" }}
+        {{ $img_position = "center" }}
+      {{ end }}
+      {{ $style_bg = printf "%sbackground-size: %s, cover;" $style_bg $img_size }}
+      {{ $style_bg = printf "%sbackground-position: %s, center;" $style_bg $img_position }}
+      {{ $style_bg = printf "%sbackground-repeat: %s, no-repeat;" $style_bg $img_repeat }}
+    {{ else }}
+      {{/* Single layer */}}
+      {{ if $background_layers }}
+        {{ with $bg.image.size }}
+          {{ $style_bg = printf "%sbackground-size: %s;" $style_bg . }}
+        {{ end }}
+        {{ with $bg.image.position }}
+          {{ if eq . "repeat" }}
+            {{ $style_bg = printf "%sbackground-position: center;" $style_bg }}
+            {{ $style_bg = printf "%sbackground-repeat: repeat;" $style_bg }}
+          {{ else }}
+            {{ $style_bg = printf "%sbackground-position: %s;" $style_bg . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Background image filters: brightness, blur, contrast, saturate, grayscale */}}
+{{ with $bg.image.filters }}
+  {{ $filter_parts := slice }}
+  {{ with .brightness }}
+    {{ $filter_parts = $filter_parts | append (printf "brightness(%s)" (string .)) }}
+  {{ end }}
+  {{ with .blur }}
+    {{ $filter_parts = $filter_parts | append (printf "blur(%s)" (string .)) }}
+  {{ end }}
+  {{ with .contrast }}
+    {{ $filter_parts = $filter_parts | append (printf "contrast(%s)" (string .)) }}
+  {{ end }}
+  {{ with .saturate }}
+    {{ $filter_parts = $filter_parts | append (printf "saturate(%s)" (string .)) }}
+  {{ end }}
+  {{ with .grayscale }}
+    {{ $filter_parts = $filter_parts | append (printf "grayscale(%s)" (string .)) }}
+  {{ end }}
+  {{ if $filter_parts }}
+    {{ $style_bg = printf "%sfilter: %s;" $style_bg (delimit $filter_parts " ") }}
   {{ end }}
 {{ end }}
 
@@ -202,9 +260,17 @@
   {{ $style = print $style . }}
 {{ end }}
 
+{{/* Support for clip path (design.clip_path) */}}
+{{ with $block.design.clip_path }}
+  {{ $style = printf "%sclip-path: %s;" $style . }}
+{{ end }}
+
 {{ $hash_id := $block.id | default (printf "section-%s" (replace $block_type "." "-")) }}
 {{ $css_classes := $block.design.css_class | default "" }}
-{{ $widget_class := printf "blox-%s" (replace (replace $block_type "." "-") "_" "-") }}
+{{ $widget_class := printf "blox-%s" (strings.ReplacePairs $block_type "." "-" "_" "-") }}
+
+{{/* Extract background-specific CSS classes */}}
+{{ $bg_css_classes := $bg.css_class | default "" }}
 
 {{/* Route to appropriate handler */}}
 {{ if $is_preact }}
@@ -212,7 +278,7 @@
   <section id="{{$hash_id}}" class="relative {{if $has_gradient_mesh}}overflow-hidden{{end}} hbb-section {{$widget_class}} {{if $bg.text_color_light}}dark{{else if (eq $bg.text_color_light false)}}light{{end}} {{with $css_classes}}{{.}}{{end}}" {{with $style}}style="{{. | safeCSS}}"{{end}}>
     {{/* Gradient Mesh Background */}}
     {{ if $has_gradient_mesh }}{{ $gradient_mesh_html }}{{ end }}
-    <div class="home-section-bg {{if $bg.image}} bg-image{{if ($bg.image.parallax | default true) }} parallax{{end}}{{end}}" {{with $style_bg}}style="{{. | safeCSS}}"{{end}}>
+    <div class="home-section-bg {{if $bg.image}} bg-image{{if ($bg.image.parallax | default true) }} parallax{{end}}{{end}}{{with $bg_css_classes}} {{.}}{{end}}" {{with $style_bg}}style="{{. | safeCSS}}"{{end}}>
       {{with $bg_video}}<video class="bg-video {{$bg_video_class}}" playsinline="" preload="auto" loop="" muted autoplay="" tabindex="-1" width="100%" height="100%" src="{{.RelPermalink}}" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;"></video>{{end}}
     </div>
     {{/* Use generic Preact wrapper for content */}}
@@ -240,7 +306,7 @@
   <section id="{{$hash_id}}" class="relative {{if $has_gradient_mesh}}overflow-hidden{{end}} hbb-section {{$widget_class}} {{if $bg.text_color_light}}dark{{else if (eq $bg.text_color_light false)}}light{{end}} {{with $css_classes}}{{.}}{{end}}" {{with $style}}style="{{. | safeCSS}}"{{end}}>
     {{/* Gradient Mesh Background */}}
     {{ if $has_gradient_mesh }}{{ $gradient_mesh_html }}{{ end }}
-    <div class="home-section-bg {{if $bg.image}} bg-image{{if ($bg.image.parallax | default true) }} parallax{{end}}{{end}}" {{with $style_bg}}style="{{. | safeCSS}}"{{end}}>
+    <div class="home-section-bg {{if $bg.image}} bg-image{{if ($bg.image.parallax | default true) }} parallax{{end}}{{end}}{{with $bg_css_classes}} {{.}}{{end}}" {{with $style_bg}}style="{{. | safeCSS}}"{{end}}>
       {{with $bg_video}}<video class="bg-video {{$bg_video_class}}" playsinline="" preload="auto" loop="" muted autoplay="" tabindex="-1" width="100%" height="100%" src="{{.RelPermalink}}" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;"></video>{{end}}
     </div>
     {{ partial $block_path $widget_args }}

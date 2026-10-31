@@ -16,7 +16,7 @@
       <div class="flex items-center gap-2 capitalize">
         {{/* Match theme chooser icon height */}}
         {{- partial "functions/get_icon" (dict "name" "globe-alt" "attributes" "height=18") -}}
-        {{- if not $hide_language_name -}}<span>{{ index site.Data.languages $page.Lang }}</span>{{ end -}}
+        {{- if not $hide_language_name -}}<span>{{ index hugo.Data.languages $page.Lang }}</span>{{ end -}}
       </div>
     </button>
     <ul
@@ -29,7 +29,7 @@
             href="{{ .RelPermalink }}"
             class="relative cursor-pointer text-gray-800 dark:text-gray-100 hover:bg-primary-50 hover:text-primary-600 hover:dark:bg-primary-500/10 hover:dark:text-primary-200 whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
           >
-            {{- index site.Data.languages .Lang -}}
+            {{- index hugo.Data.languages .Lang -}}
           </a>
         </li>
       {{ end -}}

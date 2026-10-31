@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="generator" content="Hugo Blox Builder {{ site.Data.hugoblox.version }}" />
+  <meta name="generator" content="Hugo Blox Kit {{ hugo.Data.hugoblox.version }}" />
 
   {{/* EXTENSIBILITY HOOK: HEAD-START */}}
   {{ partial "functions/get_hook" (dict "hook" "head-start" "context" .) }}
@@ -20,12 +20,13 @@
 {{ $superuser_role := "" }}
 
 {{/* Prefer is_owner flag, fallback to slug 'me' */}}
-{{ range $slug, $data := site.Data.authors }}
+{{ $authors := partialCached "functions/get_authors_data" . site.Language.Lang }}
+{{ range $slug, $data := $authors }}
   {{ if and (not $superuser_slug) ($data.is_owner) }}
     {{ $superuser_slug = $slug }}
   {{ end }}
 {{ end }}
-{{ if and (eq $superuser_slug "") (index site.Data.authors "me") }}
+{{ if and (eq $superuser_slug "") (index $authors "me") }}
   {{ $superuser_slug = "me" }}
 {{ end }}
 
@@ -83,16 +84,6 @@
     {{ partial "css.html" . }}
   {{ end }}
 
-  {{/* Load community blox styles */}}
-  {{ $hb_community_styles := resources.Match "dist/community/blox/**.css" }}
-  {{ with $hb_community_styles }}
-    {{ $hb_community_styles = $hb_community_styles | resources.Concat "css/community-hugo-blox.css" }}
-    {{- if hugo.IsProduction -}}
-      {{- $hb_community_styles = $hb_community_styles | minify | fingerprint "sha256" -}}
-    {{- end -}}
-    <link href="{{ $hb_community_styles.RelPermalink }}" rel="stylesheet" />
-  {{ end }}
-
   {{ if fileExists "assets/css/custom.css" }}
     {{ $styles := resources.Get "css/custom.css" | minify | fingerprint "sha256" }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
@@ -136,7 +127,9 @@
   {{ end }}
 
   <link rel="canonical" href="{{ .Permalink }}" />
-  {{ if not .IsPage }}
+  {{/* rel prev/next on paginated lists. Hugo 0.169+ errors on .Paginator for pages that
+       cannot be paginated (e.g. 404), so only list kinds ask for it. */}}
+  {{ if in (slice "home" "section" "taxonomy" "term") .Kind }}
     {{ with .Paginator }}
       {{ with .Prev }}<link rel="prev" href="{{ .URL | absURL }}" />{{ end }}
       {{ with .Next }}<link rel="next" href="{{ .URL | absURL }}" />{{ end }}
@@ -145,7 +138,7 @@
 
   {{/* Get page image for sharing. */}}
   {{ $sharing_image := resources.GetMatch (path.Join "media" "sharing.*") }}
-  {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
+  {{ $featured_image := partial "functions/get_featured_image" . }}
 {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/media/logo.png" | or (fileExists "assets/media/logo.svg") }}
   {{ $og_image := "" }}
@@ -262,89 +255,16 @@
 
   <title>{{$title}}</title>
 
-  {{/* Load font theme - uses typography config from get_theme_config */}}
-  {{/* Supported values: 'sans' (Inter, default), 'serif' (Roboto Slab), 'native' (system fonts) */}}
-  {{ $font_setting := $theme_config.typography.font | default "sans" }}
-  {{ $use_custom_font := true }}
-  {{ $font_family := "Inter var" }}
-  {{ $font_file := "Inter.var.woff2" }}
-  {{ $font_type := "woff2" }}
-  
-  {{ if eq $font_setting "native" }}
-    {{/* Native system font stack - no custom font loaded */}}
-    {{ $use_custom_font = false }}
-  {{ else if eq $font_setting "serif" }}
-    {{ $font_file = "RobotoSlab-VariableFont_wght.ttf" }}
-    {{ $font_type = "truetype" }}
-  {{ end }}
-  {{/* Default case (sans or any unrecognized value) uses Inter */}}
-  
-  {{/* Map size tokens to CSS custom properties */}}
-  {{ $font_size_base := "1rem" }}
-  {{ $font_size_scale := "1.25" }}
-  {{ if eq $theme_config.typography.size "sm" }}
-    {{ $font_size_base = "0.875rem" }}
-    {{ $font_size_scale = "1.2" }}
-  {{ else if eq $theme_config.typography.size "lg" }}
-    {{ $font_size_base = "1.125rem" }}
-    {{ $font_size_scale = "1.333" }}
-  {{ else if eq $theme_config.typography.size "xl" }}
-    {{ $font_size_base = "1.25rem" }}
-    {{ $font_size_scale = "1.414" }}
-  {{ end }}
-  
-  {{/* Map radius tokens to CSS values */}}
-  {{ $radius_value := "0.5rem" }}
-  {{ if eq $theme_config.layout.radius "none" }}
-    {{ $radius_value = "0" }}
-  {{ else if eq $theme_config.layout.radius "sm" }}
-    {{ $radius_value = "0.25rem" }}
-  {{ else if eq $theme_config.layout.radius "lg" }}
-    {{ $radius_value = "0.75rem" }}
-  {{ else if eq $theme_config.layout.radius "full" }}
-    {{ $radius_value = "9999px" }}
-  {{ end }}
-  
-  {{/* Map spacing tokens to CSS values */}}
-  {{ $spacing_base := "1rem" }}
-  {{ $spacing_section := "4rem" }}
-  {{ if eq $theme_config.layout.spacing "compact" }}
-    {{ $spacing_base = "0.75rem" }}
-    {{ $spacing_section = "2.5rem" }}
-  {{ else if eq $theme_config.layout.spacing "spacious" }}
-    {{ $spacing_base = "1.25rem" }}
-    {{ $spacing_section = "6rem" }}
-  {{ end }}
-  
-  <style>
-    :root {
-      /* Typography tokens */
-      --hb-font-size-base: {{ $font_size_base }};
-      --hb-font-size-scale: {{ $font_size_scale }};
-      
-      /* Layout tokens */
-      --hb-radius: {{ $radius_value }};
-      --hb-spacing-base: {{ $spacing_base }};
-      --hb-spacing-section: {{ $spacing_section }};
-    }
-    {{ if $use_custom_font }}
-    {{ $font_resource := resources.Get (printf "dist/font/%s" $font_file) }}
-    @font-face {
-      font-family: '{{$font_family}}';
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url({{ $font_resource.RelPermalink }}) format({{$font_type}});
-    }
-    {{ end }}
-  </style>
+  {{/* Typography: font loading, font families, and sizes */}}
+  {{ partial "functions/typography.html" $theme_config }}
+  {{/* Layout tokens: radius and spacing */}}
+  {{ partial "functions/layout_tokens.html" $theme_config }}
 
   {{ if .Params.design.background.image.filename }}
     {{/* See Hugo note on linking assets in styles: https://github.com/gohugoio/hugoThemes#common-permalink-issues */}}
     {{ $bg_img := resources.Get (printf "media/%s" .Params.design.background.image.filename) }}
     {{ if $bg_img }}
-      {{/* Exception for SVG as Hugo doesn't yet support image processing on SVG. */}}
-      {{ if ne $bg_img.MediaType.SubType "svg" }}
+      {{ if reflect.IsImageResourceProcessable $bg_img }}
         {{ $bg_img = $bg_img.Fit "1920x1920 webp" }}
       {{ end }}
       <style>
@@ -363,7 +283,7 @@
   {{/* !CACHED! Initialized once at site level and then cached for each page */}}
   {{- partialCached "init.html" . "hb_init_once" -}}
 
-  {{ $js_license := printf "/*! Hugo Blox Builder Tailwind UI v%s | https://hugoblox.com/ */\n" site.Data.hugoblox.version }}
+  {{ $js_license := printf "/*! Hugo Blox Kit Tailwind UI v%s | https://hugoblox.com/ */\n" hugo.Data.hugoblox.version }}
   {{ $js_license := $js_license | printf "%s/*! Copyright 2016-present George Cushen (https://georgecushen.com/) */\n" }}
   {{ $js_license := $js_license | printf "%s/*! License: https://github.com/HugoBlox/kit/blob/main/LICENSE.md */\n" }}
   {{ $js_bundle_head := $js_license | resources.FromString "js/bundle-head.js" }}

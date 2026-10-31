@@ -1,5 +1,5 @@
 es:
-  languageCode: "es"
+  locale: "es"
   contentDir: "content/es"
   weight: 1
   copyright: "Creado con 🧠 y 🎉 por: Albert L.G. &copy; {year}"
@@ -9,7 +9,7 @@ es:
         notice: "Creado con 🧠 y 🎉 por: Albert L.G. © {year}"
 
 ca:
-  languageCode: "ca"
+  locale: "ca"
   contentDir: "content/ca"
   weight: 2
   copyright: "Creat amb 🧠 i 🎉 per: Albert L.G. &copy; {year}"
@@ -19,7 +19,7 @@ ca:
         notice: "Creat amb 🧠 i 🎉 per: Albert L.G. © {year}"
 
 en:
-  languageCode: "en"
+  locale: "en"
   contentDir: "content/en"
   weight: 3
   copyright: "Created with 🧠 & 🎉 by: Albert L.G. &copy; {year}"

@@ -65,9 +65,12 @@ outputs:
 
 imaging:
   resampleFilter: lanczos
-  quality: 82
   anchor: smart
-  hint: picture
+  jpeg:
+    quality: 82
+  webp:
+    quality: 82
+    hint: picture
 
 timeout: 600000
 
@@ -84,6 +87,11 @@ markup:
 
 security:
   _merge: deep
+  # Posts are HTML files with front matter; Hugo 0.169 blocks HTML content by default.
+  allowContent: ['! ^text/org$']
+  # Hugo's default list plus tailwindcss, which Hugo no longer allows by default.
+  exec:
+    allow: ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']
 
 sitemap:
   _merge: deep
@@ -105,7 +113,7 @@ related:
       weight: 20.0
 
 cascade:
-  - _target:
+  - target:
       path: /post/**
     commentable: true
     show_related: true

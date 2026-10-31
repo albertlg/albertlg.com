@@ -1,5 +1,6 @@
 {{- $page := .page }}
 {{ $summary := .summary }}
+{{/* Override: only a page-bundle "featured" image; otherwise the 16:9 social card in .Params.images, same as og:image. */}}
 {{ $featured_image := ($page.Resources.ByType "image").GetMatch "*featured*" }}
 
 {{/* Get schema type. */}}
