@@ -1,0 +1,30 @@
+{{/* Google Analytics 4, loaded only with consent.
+     Override of the Hugo Blox analytics partial: instead of loading gtag.js straight away,
+     it defines window.albertlgLoadAnalytics(), which the consent manager
+     (hooks/head-end/consent.html) calls once the visitor accepts analytics cookies. */}}
+{{ $ga := site.Params.hugoblox.analytics.google.measurement_id | default "" }}
+
+{{ if hugo.IsProduction | and $ga }}
+{{ $gtag_config := cond (site.Params.hugoblox.privacy.anonymize_analytics | default true) "{ 'anonymize_ip': true }" "{}" }}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.albertlgLoadAnalytics = function () {
+    if (window.albertlgAnalyticsLoaded) { return; }
+    window.albertlgAnalyticsLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id={{ $ga }}';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', '{{ $ga }}', {{ $gtag_config | safeJS }});
+    gtag('set', { 'cookie_flags': 'SameSite=None;Secure' });
+    // Outbound link tracking.
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a') : null;
+      if (!link || link.host === window.location.host) { return; }
+      gtag('event', 'click', { 'event_category': 'outbound', 'event_label': link.href, 'transport_type': 'beacon' });
+    }, false);
+  };
+</script>
+{{ end }}

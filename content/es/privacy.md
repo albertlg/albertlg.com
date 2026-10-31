@@ -18,16 +18,16 @@ Web: https://albertlg.com
 
 **Formulario de contacto.** Cuando envías un mensaje a través del formulario de contacto, se recopilan tu nombre, dirección de correo electrónico y el contenido del mensaje. Estos datos se usan exclusivamente para responder a tu consulta y no se ceden a terceros.
 
-**Comentarios (Disqus).** Este sitio utiliza Disqus para gestionar los comentarios de las entradas. Si participas en los comentarios, Disqus recoge y trata los datos de acuerdo con su propia [política de privacidad](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy). Albert López Gálvez no tiene acceso ni control sobre esos datos.
+**Comentarios (Disqus).** Este sitio utiliza Disqus para gestionar los comentarios de las entradas. Si participas en los comentarios, Disqus recoge y trata los datos de acuerdo con su propia [política de privacidad](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy). Albert López Gálvez no tiene acceso ni control sobre esos datos. Disqus solo se carga si aceptas las cookies de comentarios.
 
-**Analítica web (Google Analytics 4).** Se usa Google Analytics 4 para obtener estadísticas de uso anónimas y agregadas (páginas visitadas, origen del tráfico, tipo de dispositivo). Los datos se anonomizan antes de transmitirse a Google y no se utilizan para identificarte personalmente. Puedes desactivar este seguimiento instalando el [complemento de inhabilitación de Google Analytics](https://tools.google.com/dlpage/gaoptout).
+**Analítica web (Google Analytics 4).** Se usa Google Analytics 4 para obtener estadísticas de uso anónimas y agregadas (páginas visitadas, origen del tráfico, tipo de dispositivo). Los datos se anonimizan antes de transmitirse a Google y no se utilizan para identificarte personalmente. Puedes desactivar este seguimiento instalando el [complemento de inhabilitación de Google Analytics](https://tools.google.com/dlpage/gaoptout). Google Analytics solo se activa si aceptas las cookies de analítica.
 
 **Alojamiento (Netlify).** El sitio está alojado en Netlify, Inc. Sus servidores pueden registrar las peticiones HTTP habituales (dirección IP, navegador, fecha y hora). Consulta la [política de privacidad de Netlify](https://www.netlify.com/privacy/).
 
 ## Base legal del tratamiento
 
 - Formulario de contacto: consentimiento explícito al enviar el formulario (art. 6.1.a RGPD).
-- Analítica web: interés legítimo en mejorar el sitio (art. 6.1.f RGPD).
+- Analítica web y comentarios (Disqus): tu consentimiento, que das o retiras en el aviso de cookies (art. 6.1.a RGPD y art. 22.2 LSSI).
 
 ## Conservación de los datos
 
@@ -48,10 +48,18 @@ Para ejercer estos derechos, escribe a albert@albertlg.com. Si consideras que el
 
 ## Cookies
 
-Este sitio usa cookies propias (preferencias de tema y modo oscuro) y cookies de terceros de Disqus y Google Analytics. Puedes gestionar o eliminar las cookies desde la configuración de tu navegador.
+Las cookies de analítica y de comentarios solo se activan si las aceptas en el aviso de cookies. Puedes cambiar tu elección cuando quieras desde el enlace «Configurar cookies» del pie de página.
+
+| Tipo | Servicio | Para qué | Duración |
+| --- | --- | --- | --- |
+| Necesarias | Este sitio (almacenamiento local del navegador, no son cookies) | Recordar tu elección de cookies y el tema claro u oscuro | Elección: 12 meses. Tema: hasta que lo borres |
+| Analítica | Google Analytics 4 (`_ga`, `_ga_*`) | Estadísticas agregadas de visitas | 2 años |
+| Comentarios | Disqus (cookies de terceros) | Leer y publicar comentarios | Según la [política de privacidad de Disqus](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) |
+
+Si retiras tu consentimiento, el sitio deja de cargar estos servicios y borra las cookies de Google Analytics de este dominio. Las cookies de Disqus pertenecen a su propio dominio: puedes eliminarlas desde la configuración de tu navegador.
 
 ## Cambios en esta política
 
 Esta política puede actualizarse ocasionalmente. La fecha de la última revisión aparece al pie de esta página.
 
-*Última actualización: 19 de febrero de 2026*
+*Última actualización: 31 de octubre de 2026*

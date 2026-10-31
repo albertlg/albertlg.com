@@ -62,3 +62,35 @@ read_also:
   other: "Leer también"
 comments_noscript:
   other: "Activa JavaScript para ver los comentarios."
+consent_title:
+  other: "Cookies"
+consent_text:
+  other: "Uso Google Analytics para saber qué se lee en el blog y Disqus para los comentarios. Los dos instalan cookies y solo se activan si las aceptas. Puedes cambiar tu elección cuando quieras desde el pie de página."
+consent_more:
+  other: "Más información"
+consent_accept:
+  other: "Aceptar"
+consent_reject:
+  other: "Rechazar"
+consent_settings:
+  other: "Configurar"
+consent_save:
+  other: "Guardar selección"
+consent_necessary:
+  other: "Necesarias"
+consent_necessary_text:
+  other: "Guardan en tu navegador tu elección de cookies y el tema claro u oscuro. Siempre activas."
+consent_analytics:
+  other: "Analítica"
+consent_analytics_text:
+  other: "Google Analytics: visitas y páginas más leídas, en datos agregados."
+consent_comments:
+  other: "Comentarios"
+consent_comments_text:
+  other: "Disqus: leer y escribir comentarios."
+consent_footer_link:
+  other: "Configurar cookies"
+consent_disqus_text:
+  other: "Los comentarios usan Disqus, un servicio externo que instala sus propias cookies."
+consent_disqus_load:
+  other: "Cargar comentarios"

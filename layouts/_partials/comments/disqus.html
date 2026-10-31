@@ -1,5 +1,7 @@
 {{/* Disqus comments.
      Override of the Hugo Blox partial:
+     - Disqus only loads with consent for comment cookies (see hooks/head-end/consent.html).
+       Without it, a short notice explains why and offers a button that gives that consent.
      - Disqus is shown in the language of the page (this.language).
      - embed.js only loads when the reader gets close to the comments, or straight away
        when the URL points to them (#comments, #disqus_thread or #comment-123).
@@ -8,6 +10,10 @@
 {{ $shortname := . }}
 {{ $language := index (dict "es" "es_ES" "ca" "ca" "en" "en") site.Language.Lang | default "es_ES" }}
 <div id="disqus_thread" class="mt-12"></div>
+<div data-disqus-consent class="rounded-2xl bg-neutral-50 p-6 text-center ring-1 ring-neutral-900/5 dark:bg-white/5 dark:ring-white/10" hidden>
+  <p class="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{{ i18n "consent_disqus_text" }}</p>
+  <button type="button" data-disqus-load class="mt-4 rounded-lg bg-neutral-800 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-neutral-700 dark:hover:bg-neutral-600">{{ i18n "consent_disqus_load" }}</button>
+</div>
 <script>
   var disqus_config = function () {
     {{ with $.Params.disqus_identifier }}this.page.identifier = {{ . }};{{ end }}
@@ -17,6 +23,7 @@
   };
   (function () {
     var thread = document.getElementById('disqus_thread');
+    var notice = document.querySelector('[data-disqus-consent]');
     if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) !== -1) {
       thread.textContent = 'Disqus comments are not loaded when the website is previewed locally.';
       return;
@@ -31,20 +38,40 @@
       s.setAttribute('data-timestamp', +new Date());
       (document.head || document.body).appendChild(s);
     }
-    if (/^#(comments|disqus_thread|comment-\d+)/.test(window.location.hash) || !('IntersectionObserver' in window)) {
-      load();
-      return;
+    function allowed() {
+      var choice = window.albertlgConsent && window.albertlgConsent.get();
+      return !!(choice && choice.comments);
     }
-    var observer = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        if (entries[i].isIntersecting) {
-          observer.disconnect();
-          load();
-          return;
+    function start(now) {
+      notice.hidden = true;
+      if (now || !('IntersectionObserver' in window)) { load(); return; }
+      var observer = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            observer.disconnect();
+            load();
+            return;
+          }
         }
+      }, { rootMargin: '600px 0px' });
+      observer.observe(thread);
+    }
+    var linked = /^#(comments|disqus_thread|comment-\d+)/.test(window.location.hash);
+    if (allowed()) {
+      start(linked);
+    } else {
+      notice.hidden = false;
+    }
+    notice.querySelector('[data-disqus-load]').addEventListener('click', function () {
+      var choice = window.albertlgConsent && window.albertlgConsent.get();
+      if (window.albertlgConsent) {
+        window.albertlgConsent.set({ analytics: !!(choice && choice.analytics), comments: true });
       }
-    }, { rootMargin: '600px 0px' });
-    observer.observe(thread);
+      start(true);
+    });
+    window.addEventListener('albertlg:consent', function (event) {
+      if (event.detail && event.detail.comments) { start(false); }
+    });
   })();
 </script>
 <noscript>{{ i18n "comments_noscript" }}</noscript>

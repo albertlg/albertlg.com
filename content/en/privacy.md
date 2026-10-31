@@ -18,16 +18,16 @@ Website: https://albertlg.com
 
 **Contact form.** When you submit a message through the contact form, your name, email address and message content are collected. This data is used solely to respond to your enquiry and is not shared with third parties.
 
-**Comments (Disqus).** This site uses Disqus to manage post comments. If you participate in the comments, Disqus collects and processes data according to their own [privacy policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy). Albert López Gálvez has no access to or control over that data.
+**Comments (Disqus).** This site uses Disqus to manage post comments. If you participate in the comments, Disqus collects and processes data according to their own [privacy policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy). Albert López Gálvez has no access to or control over that data. Disqus only loads if you accept comment cookies.
 
-**Web analytics (Google Analytics 4).** Google Analytics 4 is used to obtain anonymous, aggregated usage statistics (pages visited, traffic source, device type). Data is anonymised before being sent to Google and is not used to identify you personally. You can opt out by installing the [Google Analytics opt-out browser add-on](https://tools.google.com/dlpage/gaoptout).
+**Web analytics (Google Analytics 4).** Google Analytics 4 is used to obtain anonymous, aggregated usage statistics (pages visited, traffic source, device type). Data is anonymised before being sent to Google and is not used to identify you personally. You can opt out by installing the [Google Analytics opt-out browser add-on](https://tools.google.com/dlpage/gaoptout). Google Analytics only runs if you accept analytics cookies.
 
 **Hosting (Netlify).** This site is hosted by Netlify, Inc. Their servers may log standard HTTP request data (IP address, browser, date and time). See [Netlify's privacy policy](https://www.netlify.com/privacy/).
 
 ## Legal Basis for Processing
 
 - Contact form: explicit consent when submitting the form (Art. 6(1)(a) GDPR).
-- Web analytics: legitimate interest in improving the site (Art. 6(1)(f) GDPR).
+- Web analytics and comments (Disqus): your consent, which you give or withdraw in the cookie notice (Art. 6(1)(a) GDPR and Art. 22(2) of the Spanish LSSI).
 
 ## Data Retention
 
@@ -48,10 +48,18 @@ To exercise these rights, write to albert@albertlg.com. If you believe processin
 
 ## Cookies
 
-This site uses first-party cookies (theme and dark-mode preferences) and third-party cookies from Disqus and Google Analytics. You can manage or delete cookies through your browser settings.
+Analytics and comment cookies only switch on if you accept them in the cookie notice. You can change your choice at any time from the "Cookie settings" link in the footer.
+
+| Type | Service | Purpose | Duration |
+| --- | --- | --- | --- |
+| Necessary | This site (browser local storage, not cookies) | Remember your cookie choice and light or dark theme | Choice: 12 months. Theme: until you clear it |
+| Analytics | Google Analytics 4 (`_ga`, `_ga_*`) | Aggregated visit statistics | 2 years |
+| Comments | Disqus (third-party cookies) | Read and post comments | See [Disqus's privacy policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) |
+
+If you withdraw your consent, the site stops loading these services and deletes the Google Analytics cookies for this domain. Disqus cookies belong to Disqus's own domain: you can delete them in your browser settings.
 
 ## Changes to This Policy
 
 This policy may be updated occasionally. The date of the last revision appears at the bottom of this page.
 
-*Last updated: 19 February 2026*
+*Last updated: 31 October 2026*

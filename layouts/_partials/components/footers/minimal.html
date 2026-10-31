@@ -21,6 +21,8 @@
   {{ if site.GetPage "/privacy.md" }} &middot; {{ end }}
   {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
   {{ end }}
+  {{/* Reopens the cookie banner (hooks/body-end/consent-banner.html). */}}
+  &middot; <button type="button" data-consent-open class="underline-offset-2 hover:underline">{{ i18n "consent_footer_link" }}</button>
 </p>
 {{ end }}
 

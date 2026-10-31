@@ -1,0 +1,93 @@
+{{/* Cookie banner. Shown until the visitor accepts, rejects or saves a choice, and again from
+     the footer link ([data-consent-open]). Accept and reject have the same weight; nothing
+     non-essential loads before a choice (see hooks/head-end/consent.html). */}}
+{{ $privacy := site.GetPage "/privacy.md" }}
+<div id="consent-banner" class="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6 print:hidden" hidden>
+  <section role="region" aria-labelledby="consent-title" class="mx-auto max-w-lg rounded-2xl bg-white p-6 text-neutral-800 shadow-[0_8px_16px_rgb(17_33_45/0.12),0_2px_4px_rgb(17_33_45/0.08)] ring-1 ring-neutral-900/10 dark:bg-neutral-900 dark:text-neutral-200 dark:ring-white/10">
+    <h2 id="consent-title" tabindex="-1" class="text-base font-semibold text-neutral-900 outline-none dark:text-white">{{ i18n "consent_title" }}</h2>
+    <p class="mt-2 text-sm leading-6">
+      {{ i18n "consent_text" }}
+      {{ with $privacy }}<a href="{{ .RelPermalink }}#cookies" class="font-medium underline underline-offset-2 hover:text-primary-700 dark:hover:text-primary-300">{{ i18n "consent_more" }}</a>{{ end }}
+    </p>
+
+    <div data-consent-panel class="mt-4 space-y-4 border-t border-neutral-900/10 pt-4 dark:border-white/10" hidden>
+      <label class="flex gap-3 text-sm leading-6">
+        <input type="checkbox" checked disabled class="mt-1 h-4 w-4 shrink-0 accent-primary-600">
+        <span><span class="font-semibold">{{ i18n "consent_necessary" }}.</span> {{ i18n "consent_necessary_text" }}</span>
+      </label>
+      <label class="flex gap-3 text-sm leading-6">
+        <input type="checkbox" data-consent-option="analytics" class="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-primary-600">
+        <span><span class="font-semibold">{{ i18n "consent_analytics" }}.</span> {{ i18n "consent_analytics_text" }}</span>
+      </label>
+      <label class="flex gap-3 text-sm leading-6">
+        <input type="checkbox" data-consent-option="comments" class="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-primary-600">
+        <span><span class="font-semibold">{{ i18n "consent_comments" }}.</span> {{ i18n "consent_comments_text" }}</span>
+      </label>
+    </div>
+
+    <div class="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:items-center">
+      <div class="text-center sm:mr-auto sm:text-left">
+        <button type="button" data-consent-action="settings" class="rounded-lg px-2 py-2 text-sm font-medium text-neutral-700 underline underline-offset-2 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:text-neutral-300 dark:hover:text-white">{{ i18n "consent_settings" }}</button>
+        <button type="button" data-consent-action="save" class="rounded-lg px-2 py-2 text-sm font-medium text-neutral-700 underline underline-offset-2 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:text-neutral-300 dark:hover:text-white" hidden>{{ i18n "consent_save" }}</button>
+      </div>
+      <div class="grid grid-cols-2 gap-2 sm:flex">
+        <button type="button" data-consent-action="reject" class="rounded-lg sm:min-w-28 bg-neutral-800 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-neutral-700 dark:hover:bg-neutral-600">{{ i18n "consent_reject" }}</button>
+        <button type="button" data-consent-action="accept" class="rounded-lg sm:min-w-28 bg-primary-700 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500">{{ i18n "consent_accept" }}</button>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  (function () {
+    var root = document.getElementById('consent-banner');
+    var consent = window.albertlgConsent;
+    if (!root || !consent) { return; }
+    var panel = root.querySelector('[data-consent-panel]');
+    var settings = root.querySelector('[data-consent-action="settings"]');
+    var save = root.querySelector('[data-consent-action="save"]');
+    var options = {
+      analytics: root.querySelector('[data-consent-option="analytics"]'),
+      comments: root.querySelector('[data-consent-option="comments"]')
+    };
+
+    function show(withPanel, moveFocus) {
+      var current = consent.get();
+      options.analytics.checked = !!(current && current.analytics);
+      options.comments.checked = !!(current && current.comments);
+      panel.hidden = !withPanel;
+      save.hidden = !withPanel;
+      settings.hidden = withPanel;
+      root.hidden = false;
+      if (moveFocus) { document.getElementById('consent-title').focus(); }
+    }
+
+    function choose(choice) {
+      root.hidden = true;
+      consent.set(choice);
+    }
+
+    root.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-consent-action]');
+      if (!button) { return; }
+      var action = button.getAttribute('data-consent-action');
+      if (action === 'accept') { choose({ analytics: true, comments: true }); }
+      if (action === 'reject') { choose({ analytics: false, comments: false }); }
+      if (action === 'save') { choose({ analytics: options.analytics.checked, comments: options.comments.checked }); }
+      if (action === 'settings') { show(true, false); }
+    });
+
+    // Reopened from the footer: Escape closes it again without changing the saved choice.
+    root.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && consent.get()) { root.hidden = true; }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('[data-consent-open]')) { event.preventDefault(); show(true, true); }
+    });
+    window.addEventListener('albertlg:consent-open', function () { show(true, true); });
+    // A choice made elsewhere (e.g. the "load comments" button) also closes the banner.
+    window.addEventListener('albertlg:consent', function () { root.hidden = true; });
+
+    if (!consent.get()) { show(false, false); }
+  })();
+</script>

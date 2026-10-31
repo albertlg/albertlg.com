@@ -1,0 +1,55 @@
+{{/* Consent manager for cookies (Google Analytics and Disqus).
+     Stores the visitor's choice in localStorage ("albertlg-consent") for 12 months and exposes
+     window.albertlgConsent: get(), set({analytics, comments}) and open(). Analytics is loaded
+     here when already accepted; Disqus (comments/disqus.html) and the banner
+     (hooks/body-end/consent-banner.html) listen to the "albertlg:consent" event. */}}
+<script>
+  (function () {
+    var KEY = 'albertlg-consent';
+    var VERSION = 1;
+    var MAX_AGE = 365 * 24 * 60 * 60 * 1000;
+
+    function read() {
+      try {
+        var saved = JSON.parse(localStorage.getItem(KEY));
+        if (saved && saved.v === VERSION && Date.now() - saved.t < MAX_AGE) { return saved; }
+      } catch (e) {}
+      return null;
+    }
+
+    function clearAnalyticsCookies() {
+      var host = window.location.hostname;
+      var domains = ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')];
+      document.cookie.split(';').forEach(function (cookie) {
+        var name = cookie.split('=')[0].trim();
+        if (!/^_ga/.test(name)) { return; }
+        domains.forEach(function (domain) {
+          document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
+        });
+      });
+    }
+
+    var state = read();
+
+    window.albertlgConsent = {
+      get: function () { return state; },
+      set: function (choice) {
+        var previous = state;
+        state = { v: VERSION, t: Date.now(), analytics: !!choice.analytics, comments: !!choice.comments };
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+        var dropAnalytics = previous && previous.analytics && !state.analytics;
+        if (dropAnalytics) { clearAnalyticsCookies(); }
+        // Scripts already running cannot be unloaded: reload so the page starts without them.
+        if ((dropAnalytics && window.albertlgAnalyticsLoaded) || (previous && previous.comments && !state.comments && window.DISQUS)) {
+          window.location.reload();
+          return;
+        }
+        if (state.analytics && window.albertlgLoadAnalytics) { window.albertlgLoadAnalytics(); }
+        window.dispatchEvent(new CustomEvent('albertlg:consent', { detail: state }));
+      },
+      open: function () { window.dispatchEvent(new CustomEvent('albertlg:consent-open')); }
+    };
+
+    if (state && state.analytics && window.albertlgLoadAnalytics) { window.albertlgLoadAnalytics(); }
+  })();
+</script>
