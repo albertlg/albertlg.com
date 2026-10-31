@@ -23,10 +23,10 @@ organizations:
 bio: |-
   Since 1998 I’ve lived at the intersection of technology, content and search. I’ve worked as a designer, developer, SEO and entrepreneur in projects like Solostocks, Softonic, Uvinum and Drinks&Co.
 
-  Today I’m partner and SEO Manager at Mindset Digital, driving SEO for LLMs and exploring new projects. Always learning, always optimizing.
+  Today I’m partner and SEO Manager at Mindset Digital, driving SEO for LLMs and exploring new projects. Always learning, always optimising.
 
 interests:
-- Search Engines Optimization (SEO)
+- Search Engine Optimisation (SEO)
 - Web Analytics
 - Content Management
 - Online Marketplaces
@@ -86,7 +86,7 @@ user_groups:
 
 Around 1998 I stumbled upon the Internet while studying computer engineering, and by 2000 it had already pulled me into the industry. I’ve been a designer, developer, UX specialist, SEO, entrepreneur, executive, mentor, consultant… In short, I’ve probably taken part in 99% of what makes an online business work — always with passion, enthusiasm, and TEAM spirit.
 
-Throughout my career I’ve been lucky to surround myself with people smarter than me. Thanks to endless curiosity and a constant hunger to learn, I’ve always been driven by what’s new, unexplored, optimizable and measurable — especially user experience and content positioning with conversion in mind.
+Throughout my career I’ve been lucky to surround myself with people smarter than me. Thanks to endless curiosity and a constant hunger to learn, I’ve always been driven by what’s new, unexplored, optimisable and measurable — especially user experience and content positioning with conversion in mind.
 
 I’ve worked at Solostocks (Grupo Intercom), Softonic, Uvinum (which I proudly created and co-founded), Drinks&Co Marketplace, and I’ve collaborated with many startups. More recently I was involved in CryptoAdvisor.club and dove deep into the crypto world (cryptocurrencies, crypto assets, NFTs, Web3, metaverse, DeFi, etc.).
 
