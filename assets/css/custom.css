@@ -172,6 +172,8 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
    aria-label), so the menu button fits on the same row instead of wrapping below the logo. */
 @media (max-width: 639px) {
   [data-hb-language-chooser] span { display: none; }
+  /* The narrower button sits closer to the edge: keep the dropdown inside the screen. */
+  [data-hb-language-chooser] + ul { margin-left: -1.5rem; }
 }
 
 /* =====================================================================
@@ -181,23 +183,35 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
    the page in both modes. Menu items and header icons get an accent glow on
    hover (pointer devices only) and on keyboard focus.
    ===================================================================== */
+/* The glass lives on a ::before layer: backdrop-filter on the header itself would make it the
+   containing block of its position:fixed children and push the language dropdown off-screen. */
 #site-header.header {
-  background-color: rgb(244 245 244 / 0.72);        /* neutral-50 */
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  backdrop-filter: saturate(180%) blur(16px);
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
   border-bottom: 1px solid rgb(17 33 45 / 0.08);
   box-shadow: 0 8px 24px rgb(17 33 45 / 0.08);
 }
+#site-header.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: rgb(244 245 244 / 0.72);        /* neutral-50 */
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+}
 .dark #site-header.header {
-  background-color: rgb(17 33 45 / 0.72);            /* neutral-900 */
   border-bottom-color: rgb(204 208 207 / 0.10);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.40);
 }
+.dark #site-header.header::before { background-color: rgb(17 33 45 / 0.72); }   /* neutral-900 */
 /* Mobile menu open: more opaque glass so the menu stays easy to read. */
-#site-header.header:has(#nav-toggle:checked) { background-color: rgb(244 245 244 / 0.94); }
-.dark #site-header.header:has(#nav-toggle:checked) { background-color: rgb(17 33 45 / 0.94); }
+#site-header.header:has(#nav-toggle:checked)::before { background-color: rgb(244 245 244 / 0.94); }
+.dark #site-header.header:has(#nav-toggle:checked)::before { background-color: rgb(17 33 45 / 0.94); }
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  #site-header.header { background-color: var(--hb-color-header-bg); }
+  #site-header.header::before { background-color: var(--hb-color-header-bg); }
 }
 
 .nav-link {
