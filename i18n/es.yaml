@@ -56,3 +56,9 @@ search_modal_filters:
   other: "filtros"
 search_modal_powered_by:
   other: "Con tecnología de Hugo Blox"
+authors:
+  other: "Autor"
+read_also:
+  other: "Leer también"
+comments_noscript:
+  other: "Activa JavaScript para ver los comentarios."

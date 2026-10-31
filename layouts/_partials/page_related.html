@@ -1,0 +1,71 @@
+{{/* Related posts ("Leer también" / "Llegeix també" / "Read next").
+     Override of the Hugo Blox partial: three cards with image, title and date, chosen with
+     the `related` settings in config/_default/hugo.yaml (mostly shared tags).
+     Shown on pages with show_related, which the cascade in hugo.yaml sets for every post.
+     The image sizes match the post list cards, so Hugo reuses the images it already makes. */}}
+{{ if .Params.show_related }}
+  {{ $related := where (site.RegularPages.Related .) "Section" "post" | first 3 }}
+  {{ with $related }}
+  <section class="not-prose pt-10" aria-labelledby="related-heading" data-toc-skip>
+    <h2 id="related-heading" class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">{{ i18n "read_also" }}</h2>
+    <ul class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
+      {{ range . }}
+      {{ $image := partial "functions/get_featured_image.html" . }}
+      {{ $anchor := "Center" }}
+      {{ if and .Params.image (reflect.IsMap .Params.image) }}
+        {{ $anchor = .Params.image.focal_point | default "Center" }}
+      {{ end }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="group grid grid-cols-[7rem_1fr] items-start gap-4 no-underline sm:block">
+          <div class="relative aspect-[16/9] overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+            {{ with $image }}
+              {{ if ne .MediaType.SubType "gif" }}
+                {{ $filled := .Fill (printf "800x450 %s" $anchor) }}
+                {{ $responsive := partial "functions/process_responsive_image.html" (dict
+                    "image" $filled
+                    "mode" "responsive"
+                    "sizes" (slice 400 600 800)
+                    "formats" (slice "avif" "webp" "jpg")
+                ) }}
+                <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                     srcset="{{ $responsive.srcset }}"
+                     sizes="(min-width: 640px) 240px, 112px"
+                     src="{{ $responsive.fallback.RelPermalink }}"
+                     width="{{ $filled.Width }}"
+                     height="{{ $filled.Height }}"
+                     loading="lazy"
+                     decoding="async"
+                     alt="">
+              {{ else }}
+                <img class="absolute inset-0 h-full w-full object-cover"
+                     src="{{ .RelPermalink }}"
+                     width="{{ .Width }}"
+                     height="{{ .Height }}"
+                     loading="lazy"
+                     decoding="async"
+                     alt="">
+              {{ end }}
+            {{ else }}
+              {{/* Same placeholder as the post list cards, for posts without an image. */}}
+              <div class="flex h-full w-full items-center justify-center" aria-hidden="true">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+                  <svg class="h-6 w-6 text-white/60" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+          <div class="sm:mt-3">
+            <div class="text-xs text-neutral-500 dark:text-neutral-400">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format site.Params.hugoblox.locale.date_format }}</time>
+            </div>
+            <div class="mt-1 text-base font-semibold leading-snug text-neutral-800 group-hover:text-primary-700 dark:text-neutral-200 dark:group-hover:text-primary-400">{{ .Title }}</div>
+          </div>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}

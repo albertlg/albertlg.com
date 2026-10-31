@@ -1,0 +1,51 @@
+{{/* Disqus comments.
+     Override of the Hugo Blox partial:
+     - Disqus is shown in the language of the page (this.language).
+     - embed.js only loads when the reader gets close to the comments, or straight away
+       when the URL points to them (#comments, #disqus_thread or #comment-123).
+     - No "comments powered by Disqus" link; the noscript text is translated. */}}
+{{ with site.Params.hugoblox.comments.disqus.shortname }}
+{{ $shortname := . }}
+{{ $language := index (dict "es" "es_ES" "ca" "ca" "en" "en") site.Language.Lang | default "es_ES" }}
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    {{ with $.Params.disqus_identifier }}this.page.identifier = {{ . }};{{ end }}
+    {{ with $.Params.disqus_title }}this.page.title = {{ . }};{{ end }}
+    {{ with $.Params.disqus_url }}this.page.url = {{ . }};{{ end }}
+    this.language = {{ $language }};
+  };
+  (function () {
+    var thread = document.getElementById('disqus_thread');
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) !== -1) {
+      thread.textContent = 'Disqus comments are not loaded when the website is previewed locally.';
+      return;
+    }
+    var loaded = false;
+    function load() {
+      if (loaded) { return; }
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://' + {{ $shortname }} + '.disqus.com/embed.js';
+      s.async = true;
+      s.setAttribute('data-timestamp', +new Date());
+      (document.head || document.body).appendChild(s);
+    }
+    if (/^#(comments|disqus_thread|comment-\d+)/.test(window.location.hash) || !('IntersectionObserver' in window)) {
+      load();
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          observer.disconnect();
+          load();
+          return;
+        }
+      }
+    }, { rootMargin: '600px 0px' });
+    observer.observe(thread);
+  })();
+</script>
+<noscript>{{ i18n "comments_noscript" }}</noscript>
+{{ end }}

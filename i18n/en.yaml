@@ -24,3 +24,9 @@ search_modal_powered_by:
   other: "Powered by Hugo Blox"
 posts:
   other: "articles"
+authors:
+  other: "Author"
+read_also:
+  other: "Read next"
+comments_noscript:
+  other: "Please enable JavaScript to view the comments."

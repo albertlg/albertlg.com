@@ -108,6 +108,7 @@ cascade:
   - _target:
       path: /post/**
     commentable: true
+    show_related: true
 
 frontmatter:
   lastmod: ["lastmod", ":git", "date"]

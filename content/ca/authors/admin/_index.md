@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: SEO, Content Marketing & Web Analytics Advisor
+role: SEO, Content Marketing & LLMs (IA) Advisor
 
 # Organizations/Affiliations
 organizations:
