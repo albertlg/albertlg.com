@@ -185,12 +185,23 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
    ===================================================================== */
 /* The glass lives on a ::before layer: backdrop-filter on the header itself would make it the
    containing block of its position:fixed children and push the language dropdown off-screen. */
+/* Floating capsule: the sticky wrapper leaves a gap around the bar (16px, 8px on mobile) and
+   the bar gets rounded corners, a full hairline border and a soft shadow. The gap lets clicks
+   through to the page; the wrapper's real height still sets the anchor scroll offset. */
+.page-header { padding: 1rem 1rem 0; pointer-events: none; }
+.page-header > * { pointer-events: auto; }
+@media (max-width: 639px) {
+  .page-header { padding: 0.5rem 0.5rem 0; }
+}
 #site-header.header {
   position: relative;
   isolation: isolate;
+  max-width: 80rem;
+  margin-inline: auto;
+  border-radius: 1rem;
   background-color: transparent;
-  border-bottom: 1px solid rgb(17 33 45 / 0.08);
-  box-shadow: 0 8px 24px rgb(17 33 45 / 0.08);
+  border: 1px solid rgb(17 33 45 / 0.10);
+  box-shadow: 0 8px 24px rgb(17 33 45 / 0.10);
 }
 #site-header.header::before {
   content: "";
@@ -201,9 +212,10 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
   background-color: rgb(244 245 244 / 0.72);        /* neutral-50 */
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   backdrop-filter: saturate(180%) blur(16px);
+  border-radius: inherit;
 }
 .dark #site-header.header {
-  border-bottom-color: rgb(204 208 207 / 0.10);
+  border-color: rgb(204 208 207 / 0.12);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.40);
 }
 .dark #site-header.header::before { background-color: rgb(17 33 45 / 0.72); }   /* neutral-900 */
@@ -249,3 +261,8 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
 @media (prefers-reduced-motion: reduce) {
   .nav-link { transition: none; }
 }
+
+/* Sidebar table of contents: stick below the floating header instead of at a fixed 64px. */
+.hb-toc > .sticky { top: calc(var(--navbar-height, 4rem) + 0.5rem); }
+/* Headings reached from the table of contents or a #link land 16px below the header, not flush. */
+article .prose :where(h2, h3) { scroll-margin-top: 1rem; }
