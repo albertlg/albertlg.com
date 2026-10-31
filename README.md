@@ -32,8 +32,8 @@ hugo --gc --minify    # production build into public/
 
 ## Automation
 
-- **Build check** (`.github/workflows/build-check.yml`): builds the site on every push with the same versions as Netlify and fails on duplicate URLs, missing key files or broken links in `llms.txt`. It does not deploy.
-- **Daily Netlify Scheduled Build** (`.github/workflows/netlify-scheduled-build.yml`): triggers a Netlify build every day at 10:00 UTC so that future-dated posts get published.
+- **Build check** (`.github/workflows/build-check.yml`): builds the site on every push with the same versions as Netlify and fails on duplicate URLs, missing key files, broken internal links or broken links in `llms.txt` (`.github/scripts/check_links.py`). It does not deploy.
+- **Publish scheduled posts** (`.github/workflows/netlify-scheduled-build.yml`): every hour, checks whether a post dated in the last 7 days is still missing from the live site and, only then, triggers a Netlify build (`.github/scripts/due_posts.py`). Running it by hand always triggers a build.
 
 ## Legacy
 

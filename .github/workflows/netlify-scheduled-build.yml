@@ -1,22 +1,37 @@
-name: Daily Netlify Scheduled Build
+name: Publish scheduled posts
+
+# Netlify only publishes a future-dated post when the site is rebuilt after its date.
+# Every hour this checks whether a post dated in the last 7 days is still missing
+# from albertlg.com and, only then, asks Netlify to rebuild, so no build minutes are
+# spent when there is nothing to publish. Running it by hand always rebuilds.
 
 on:
   schedule:
-    # Cron en UTC: "0 10 * * *" = todos los días a las 10:00 UTC.
-    # Con Europe/Madrid:
-    # - invierno: 11:00 local
-    # - verano: 12:00 local
-    - cron: "0 10 * * *"
-
-  # Opcional: para poder lanzarlo a mano desde GitHub si quieres probarlo
+    # Every hour at minute 17 (UTC). GitHub delays scheduled runs when it is busy,
+    # especially on the hour, so a post may take a little longer to appear.
+    - cron: "17 * * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  trigger-netlify-build:
+  publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            content
+            .github/scripts
+
+      - name: Look for scheduled posts that are not live yet
+        id: due
+        if: github.event_name == 'schedule'
+        run: python3 .github/scripts/due_posts.py --days 7 >> "$GITHUB_OUTPUT"
+
       - name: Call Netlify build hook
-        run: |
-          curl -X POST -d '{}' "$NETLIFY_BUILD_HOOK"
+        if: github.event_name == 'workflow_dispatch' || steps.due.outputs.missing == 'true'
+        run: curl -fsS -X POST -d '{}' "$NETLIFY_BUILD_HOOK"
         env:
           NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
