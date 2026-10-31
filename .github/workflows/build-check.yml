@@ -82,3 +82,8 @@ jobs:
           done
 
           exit $status
+
+      - name: Check internal links
+        # Fails on links to pages or files that do not exist; warns about links that
+        # only work through a redirect.
+        run: python3 .github/scripts/check_links.py public netlify.toml
