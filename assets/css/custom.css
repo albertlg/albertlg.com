@@ -56,3 +56,182 @@ button[aria-label="Search"],
   min-width: 44px;
   min-height: 44px;
 }
+
+/* =====================================================================
+   Design tokens (2026 review)
+   Neutral scale built from the albertlg palette: #06141B #11212D #253745
+   #4A5C6A #9BA8AB #CCD0CF (slots 950/900/800/600/400/200; the rest are
+   interpolated in OKLab, 500 darkened to reach 4.5:1 on white).
+   It replaces Tailwind's gray/slate/zinc/neutral, so every grey in the theme
+   follows the same palette. Accent (10%): the existing indigo primary.
+   ===================================================================== */
+html:root {
+  --color-neutral-50: #F4F5F4;
+  --color-neutral-100: #E5E7E7;
+  --color-neutral-200: #CCD0CF;
+  --color-neutral-300: #B3BCBD;
+  --color-neutral-400: #9BA8AB;
+  --color-neutral-500: #687882;
+  --color-neutral-600: #4A5C6A;
+  --color-neutral-700: #374957;
+  --color-neutral-800: #253745;
+  --color-neutral-900: #11212D;
+  --color-neutral-950: #06141B;
+  --color-gray-50: #F4F5F4;
+  --color-gray-100: #E5E7E7;
+  --color-gray-200: #CCD0CF;
+  --color-gray-300: #B3BCBD;
+  --color-gray-400: #9BA8AB;
+  --color-gray-500: #687882;
+  --color-gray-600: #4A5C6A;
+  --color-gray-700: #374957;
+  --color-gray-800: #253745;
+  --color-gray-900: #11212D;
+  --color-gray-950: #06141B;
+  --color-slate-50: #F4F5F4;
+  --color-slate-100: #E5E7E7;
+  --color-slate-200: #CCD0CF;
+  --color-slate-300: #B3BCBD;
+  --color-slate-400: #9BA8AB;
+  --color-slate-500: #687882;
+  --color-slate-600: #4A5C6A;
+  --color-slate-700: #374957;
+  --color-slate-800: #253745;
+  --color-slate-900: #11212D;
+  --color-slate-950: #06141B;
+  --color-zinc-50: #F4F5F4;
+  --color-zinc-100: #E5E7E7;
+  --color-zinc-200: #CCD0CF;
+  --color-zinc-300: #B3BCBD;
+  --color-zinc-400: #9BA8AB;
+  --color-zinc-500: #687882;
+  --color-zinc-600: #4A5C6A;
+  --color-zinc-700: #374957;
+  --color-zinc-800: #253745;
+  --color-zinc-900: #11212D;
+  --color-zinc-950: #06141B;
+  --hb-color-background: #FFFFFF;
+  --hb-color-foreground: #06141B;
+  --hb-color-header-bg: #F4F5F4;
+  --hb-color-header-fg: #06141B;
+  --hb-color-footer-bg: #F4F5F4;
+  --hb-color-footer-fg: #253745;
+}
+html.dark {
+  --hb-color-background: #06141B;
+  --hb-color-foreground: #E5E7E7;
+  --hb-color-header-bg: #06141B;
+  --hb-color-header-fg: #E5E7E7;
+  --hb-color-footer-bg: #11212D;
+  --hb-color-footer-fg: #CCD0CF;
+}
+
+/* Tinted shadows: palette navy (#11212D) at low opacity instead of pure black. */
+*, ::before, ::after { --tw-shadow-color: rgb(17 33 45 / 0.08); }
+.dark *, .dark ::before, .dark ::after { --tw-shadow-color: rgb(0 0 0 / 0.35); }
+
+/* =====================================================================
+   Reading typography (post body)
+   Major Third scale (x1.25) on the body size, line-height 1.6 for text and
+   1.2 for headings, vertical rhythm in multiples of 8px.
+   Mobile: body 17px -> h3 21 / h2 27 / h1 33. Desktop: 20px -> 25 / 31 / 39.
+   ===================================================================== */
+article .prose { font-size: 1.0625rem; line-height: 1.6; }
+article .prose :where(p, ul, ol, blockquote, figure, pre):not(:where(.not-prose, .not-prose *)) { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+article .prose :where(li):not(:where(.not-prose, .not-prose *)) { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+article .prose :where(h2):not(:where(.not-prose, .not-prose *)) { font-size: 1.5625em; line-height: 1.2; margin-top: 3rem; margin-bottom: 1rem; }
+article .prose :where(h3):not(:where(.not-prose, .not-prose *)) { font-size: 1.25em; line-height: 1.3; margin-top: 2rem; margin-bottom: 0.5rem; }
+article h1[data-pagefind-meta="title"] { font-size: 2.0625rem; line-height: 1.15; }
+@media (min-width: 1024px) {
+  article .prose.lg\:prose-xl { font-size: 1.25rem; line-height: 1.6; }
+  article h1[data-pagefind-meta="title"] { font-size: 2.4375rem; }
+}
+
+/* Links in the text use the accent so they read as links (10% accent). */
+article .prose :where(a):not(:where(.not-prose, .not-prose *, [class*="no-underline"])) {
+  color: var(--color-primary-700);
+  text-decoration-color: color-mix(in oklab, var(--color-primary-700) 35%, transparent);
+  text-underline-offset: 0.2em;
+}
+article .prose :where(a):not(:where(.not-prose, .not-prose *, [class*="no-underline"])):hover { text-decoration-color: currentColor; }
+.dark article .prose :where(a):not(:where(.not-prose, .not-prose *, [class*="no-underline"])) {
+  color: var(--color-primary-300);
+  text-decoration-color: color-mix(in oklab, var(--color-primary-300) 40%, transparent);
+}
+
+/* 8px rhythm for the remaining em-based spacings in posts (quotes, FAQ list, tag chips). */
+article .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) { padding-inline-start: 1rem; }
+article .prose :where(dt):not(:where(.not-prose, .not-prose *)) { margin-top: 1.5rem; }
+article .prose :where(dd):not(:where(.not-prose, .not-prose *)) { margin-top: 0.5rem; }
+a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem; }
+@media (min-width: 1024px) {
+  a.bg-primary-100[href*="/tag/"] { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Mobile header: show only the globe icon for the language switcher (the button keeps its
+   aria-label), so the menu button fits on the same row instead of wrapping below the logo. */
+@media (max-width: 639px) {
+  [data-hb-language-chooser] span { display: none; }
+}
+
+/* =====================================================================
+   Main navigation: glass bar + glow on hover
+   The sticky header becomes translucent with a blur of what scrolls under
+   it, a hairline border and a soft tinted shadow, so it stands apart from
+   the page in both modes. Menu items and header icons get an accent glow on
+   hover (pointer devices only) and on keyboard focus.
+   ===================================================================== */
+#site-header.header {
+  background-color: rgb(244 245 244 / 0.72);        /* neutral-50 */
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid rgb(17 33 45 / 0.08);
+  box-shadow: 0 8px 24px rgb(17 33 45 / 0.08);
+}
+.dark #site-header.header {
+  background-color: rgb(17 33 45 / 0.72);            /* neutral-900 */
+  border-bottom-color: rgb(204 208 207 / 0.10);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.40);
+}
+/* Mobile menu open: more opaque glass so the menu stays easy to read. */
+#site-header.header:has(#nav-toggle:checked) { background-color: rgb(244 245 244 / 0.94); }
+.dark #site-header.header:has(#nav-toggle:checked) { background-color: rgb(17 33 45 / 0.94); }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  #site-header.header { background-color: var(--hb-color-header-bg); }
+}
+
+.nav-link {
+  border-radius: 0.5rem;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
+}
+@media (min-width: 1024px) {
+  .nav-link { padding: 0.5rem 0.75rem; }
+}
+@media (hover: hover) {
+  .nav-link:hover {
+    color: var(--color-primary-700);
+    background-color: color-mix(in oklab, var(--color-primary-500) 10%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-primary-500) 22%, transparent),
+                0 0 16px color-mix(in oklab, var(--color-primary-500) 35%, transparent);
+  }
+  .dark .nav-link:hover {
+    color: var(--color-primary-200);
+    background-color: color-mix(in oklab, var(--color-primary-400) 14%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-primary-400) 30%, transparent),
+                0 0 24px color-mix(in oklab, var(--color-primary-400) 45%, transparent);
+    text-shadow: 0 0 12px color-mix(in oklab, var(--color-primary-300) 60%, transparent);
+  }
+  #site-header [data-search-toggle]:hover svg,
+  #site-header .theme-toggle:hover svg,
+  #site-header [data-hb-language-chooser]:hover svg {
+    filter: drop-shadow(0 0 6px color-mix(in oklab, var(--color-primary-500) 70%, transparent));
+  }
+}
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  box-shadow: 0 0 16px color-mix(in oklab, var(--color-primary-500) 35%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-link { transition: none; }
+}
