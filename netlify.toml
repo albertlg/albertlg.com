@@ -196,9 +196,22 @@
   status = 301
   force = false
 
+# The home page tag cloud used to link to /tags/<slug>/; tag pages live at /tag/<slug>/.
 [[redirects]]
-  from = "/tags/cuerpo/"
-  to = "/tag/cuerpo/"
+  from = "/tags/*"
+  to = "/tag/:splat"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/tags/*"
+  to = "/ca/tag/:splat"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/tags/*"
+  to = "/en/tag/:splat"
   status = 301
   force = false
 
