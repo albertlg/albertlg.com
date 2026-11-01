@@ -50,6 +50,12 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
+      - name: Scheduled posts list and function
+        # Same first step as the Netlify build; then make sure the scheduled function loads.
+        run: |
+          node netlify/scheduled-posts.mjs
+          node -e "import('./netlify/functions/publish-scheduled.mjs').then(m => console.log('publish-scheduled schedule:', m.config.schedule))"
+
       - name: Build (same command as Netlify)
         run: |
           hugo --gc --minify -b https://albertlg.com/ --printPathWarnings 2>&1 | tee hugo.log

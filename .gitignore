@@ -10,6 +10,9 @@ hugo_stats.json
 # Node
 node_modules/
 
+# Dates of future posts, generated at build time for the scheduled Netlify function
+netlify/generated/
+
 # Pagefind (generated at build time)
 static/pagefind/
 
