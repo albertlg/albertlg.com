@@ -37,9 +37,9 @@ consent_text:
 consent_more:
   other: "More information"
 consent_accept:
-  other: "Accept"
+  other: "Accept all"
 consent_reject:
-  other: "Reject"
+  other: "Reject all"
 consent_settings:
   other: "Settings"
 consent_save:
@@ -64,3 +64,13 @@ consent_disqus_load:
   other: "Load comments"
 experience_more:
   other: "See full career history"
+not_found_title:
+  other: "You're lost in the maze"
+not_found_text:
+  other: "This page doesn't exist or has moved. Search for what you wanted or go back to the home page."
+not_found_home:
+  other: "Back to the home page"
+not_found_search:
+  other: "Search the blog"
+not_found_latest:
+  other: "My latest writing"

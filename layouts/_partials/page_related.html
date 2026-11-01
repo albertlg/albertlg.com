@@ -15,6 +15,7 @@
   {{ $related = first 3 $related }}
   {{ with $related }}
   <section class="not-prose pt-10" aria-labelledby="related-heading" data-toc-skip>
+    <div class="alg-divider mb-10" aria-hidden="true"></div>
     <h2 id="related-heading" class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">{{ i18n "read_also" }}</h2>
     <ul class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
       {{ range . }}

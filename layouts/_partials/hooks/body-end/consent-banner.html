@@ -1,6 +1,7 @@
 {{/* Cookie banner. Shown until the visitor accepts, rejects or saves a choice, and again from
      the footer link ([data-consent-open]). Accept and reject have the same weight; nothing
-     non-essential loads before a choice (see hooks/head-end/consent.html). */}}
+     non-essential loads before a choice (see hooks/head-end/consent.html). Rejecting keeps
+     only the necessary storage, so there is no separate "only necessary" button. */}}
 {{ $privacy := site.GetPage "/privacy.md" }}
 <div id="consent-banner" class="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6 print:hidden" hidden>
   <section role="region" aria-labelledby="consent-title" class="mx-auto max-w-lg rounded-2xl bg-white p-6 text-neutral-800 shadow-[0_8px_16px_rgb(17_33_45/0.12),0_2px_4px_rgb(17_33_45/0.08)] ring-1 ring-neutral-900/10 dark:bg-neutral-900 dark:text-neutral-200 dark:ring-white/10">
@@ -31,8 +32,8 @@
         <button type="button" data-consent-action="save" class="rounded-lg px-2 py-2 text-sm font-medium text-neutral-700 underline underline-offset-2 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:text-neutral-300 dark:hover:text-white" hidden>{{ i18n "consent_save" }}</button>
       </div>
       <div class="grid grid-cols-2 gap-2 sm:flex">
-        <button type="button" data-consent-action="reject" class="rounded-lg sm:min-w-28 bg-neutral-800 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-neutral-700 dark:hover:bg-neutral-600">{{ i18n "consent_reject" }}</button>
-        <button type="button" data-consent-action="accept" class="rounded-lg sm:min-w-28 bg-primary-700 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500">{{ i18n "consent_accept" }}</button>
+        <button type="button" data-consent-action="reject" class="rounded-lg sm:min-w-36 bg-neutral-800 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-neutral-700 dark:hover:bg-neutral-600">{{ i18n "consent_reject" }}</button>
+        <button type="button" data-consent-action="accept" class="rounded-lg sm:min-w-36 bg-primary-700 px-4 py-3 sm:py-2 text-sm font-semibold text-white hover:bg-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500">{{ i18n "consent_accept" }}</button>
       </div>
     </div>
   </section>

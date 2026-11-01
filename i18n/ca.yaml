@@ -73,9 +73,9 @@ consent_text:
 consent_more:
   other: "Més informació"
 consent_accept:
-  other: "Accepta"
+  other: "Accepta-les totes"
 consent_reject:
-  other: "Rebutja"
+  other: "Rebutja-les totes"
 consent_settings:
   other: "Configura"
 consent_save:
@@ -100,3 +100,13 @@ consent_disqus_load:
   other: "Carrega els comentaris"
 experience_more:
   other: "Veure la trajectòria completa"
+not_found_title:
+  other: "T'has perdut al laberint"
+not_found_text:
+  other: "Aquesta pàgina no existeix o ha canviat de lloc. Busca el que volies o torna a l'inici."
+not_found_home:
+  other: "Torna a l'inici"
+not_found_search:
+  other: "Cerca al bloc"
+not_found_latest:
+  other: "El més recent que he escrit"

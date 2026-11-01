@@ -69,9 +69,9 @@ consent_text:
 consent_more:
   other: "Más información"
 consent_accept:
-  other: "Aceptar"
+  other: "Aceptar todas"
 consent_reject:
-  other: "Rechazar"
+  other: "Rechazar todas"
 consent_settings:
   other: "Configurar"
 consent_save:
@@ -96,3 +96,13 @@ consent_disqus_load:
   other: "Cargar comentarios"
 experience_more:
   other: "Ver trayectoria completa"
+not_found_title:
+  other: "Te has perdido en el laberinto"
+not_found_text:
+  other: "Esta página no existe o ha cambiado de sitio. Busca lo que querías o vuelve al inicio."
+not_found_home:
+  other: "Volver al inicio"
+not_found_search:
+  other: "Buscar en el blog"
+not_found_latest:
+  other: "Lo último que he escrito"

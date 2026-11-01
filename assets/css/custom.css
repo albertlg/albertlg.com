@@ -650,7 +650,93 @@ html:root, html.dark {
 }
 .dark .hbb-section:not(#section-hero) + .hbb-section::after { background: var(--color-primary-300); opacity: 0.6; }
 
+/* =====================================================================
+   Divider with the logo mark (posts before "Read next", 404 page). Same look as the separator
+   between home sections; the line opens out and the mark turns into place as it scrolls in.
+   ===================================================================== */
+.alg-divider { position: relative; width: min(32rem, 76%); height: 1.375rem; margin-left: auto; margin-right: auto; view-timeline-name: --alg-divider; }
+.alg-divider::before, .alg-divider::after { content: ""; position: absolute; pointer-events: none; }
+.alg-divider::before {
+  left: 0; right: 0; top: 50%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(13 148 136 / 0.35) 30%, rgb(13 148 136 / 0.35) 44%, transparent 46%, transparent 54%, rgb(13 148 136 / 0.35) 56%, rgb(13 148 136 / 0.35) 70%, transparent);
+}
+.alg-divider::after {
+  top: 0; left: 50%; width: 1.375rem; height: 1.375rem; margin-left: -0.6875rem; opacity: 0.7;
+  background: var(--color-primary-600);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5 5 50 50'%3E%3Cpath d='M8.5%2052%20V8.5%20H50.5%20V52%20M7%2016.5%20H52%20M16.5%2023%20V50.5%20H44%20M44%2024.5%20H24.5%20V42.5%20H42.5%20V32.5%20H32' fill='none' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5 5 50 50'%3E%3Cpath d='M8.5%2052%20V8.5%20H50.5%20V52%20M7%2016.5%20H52%20M16.5%2023%20V50.5%20H44%20M44%2024.5%20H24.5%20V42.5%20H42.5%20V32.5%20H32' fill='none' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.dark .alg-divider::before {
+  background: linear-gradient(90deg, transparent, rgb(45 212 191 / 0.3) 30%, rgb(45 212 191 / 0.3) 44%, transparent 46%, transparent 54%, rgb(45 212 191 / 0.3) 56%, rgb(45 212 191 / 0.3) 70%, transparent);
+}
+.dark .alg-divider::after { background: var(--color-primary-300); opacity: 0.6; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .alg-divider::before { animation: alg-divider-line linear both; animation-timeline: --alg-divider; animation-range: entry 10% cover 40%; }
+    .alg-divider::after { animation: alg-divider-mark linear both; animation-timeline: --alg-divider; animation-range: entry 10% cover 40%; }
+  }
+}
+@keyframes alg-divider-line { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+@keyframes alg-divider-mark { from { transform: rotate(-90deg) scale(0.5); opacity: 0; } }
+
+/* =====================================================================
+   404 page (layouts/404.html): a dead end in the logo maze.
+   ===================================================================== */
+.alg-404 { max-width: 48rem; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+.alg-404-hero { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-bottom: 3rem; text-align: center; }
+.alg-404-maze { width: 9.5rem; height: auto; overflow: visible; }
+@media (min-width: 640px) { .alg-404-maze { width: 11.5rem; } }
+.alg-404-walls { fill: none; stroke: var(--color-neutral-800, #253745); stroke-width: 4; stroke-linejoin: miter; }
+.dark .alg-404-walls { stroke: var(--color-neutral-200, #ccd0cf); }
+.alg-404-trail {
+  fill: none; stroke: var(--color-primary-500); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 100; filter: drop-shadow(0 0 2px rgb(45 212 191 / 0.6));
+}
+.dark .alg-404-trail { stroke: var(--color-primary-300); }
+.alg-404-dot { fill: var(--color-primary-500); transform-box: fill-box; transform-origin: center; }
+.dark .alg-404-dot { fill: var(--color-primary-300); }
+@media (prefers-reduced-motion: no-preference) {
+  .alg-404-trail { animation: alg-404-walk 3.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.4s both; }
+  .alg-404-dot { animation: alg-404-arrive 0.4s ease-out 3.5s both, alg-404-pulse 1.6s ease-in-out 3.9s infinite; }
+}
+@keyframes alg-404-walk { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes alg-404-arrive { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+@keyframes alg-404-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.7); } }
+.alg-404-eyebrow { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary-700); }
+.dark .alg-404-eyebrow { color: var(--color-primary-300); }
+.alg-404-title {
+  margin-top: 0.5rem; font-size: clamp(2rem, 1.4rem + 2.6vw, 3rem); font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.025em; text-wrap: balance; color: var(--color-neutral-900, #11212d);
+}
+.dark .alg-404-title { color: #fff; }
+.alg-404-text { margin: 1rem auto 0; max-width: 32rem; font-size: 1.125rem; line-height: 1.6; color: var(--color-neutral-600, #4a5c6a); text-wrap: pretty; }
+.dark .alg-404-text { color: var(--color-neutral-300, #9ba8ab); }
+.alg-404-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1rem; }
+.alg-404-search {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.625rem 1.25rem; border-radius: 0.75rem;
+  font-size: 1rem; font-weight: 600; line-height: 1.25; cursor: pointer;
+  color: var(--color-neutral-900, #11212d); box-shadow: inset 0 0 0 1px rgb(17 33 45 / 0.2);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.dark .alg-404-search { color: #fff; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.3); }
+.alg-404-search:hover { background: rgb(13 148 136 / 0.08); box-shadow: inset 0 0 0 1px rgb(13 148 136 / 0.45); }
+.alg-404-search:focus-visible { outline: 2px solid var(--color-primary-600); outline-offset: 3px; }
+.alg-404-latest { margin-top: 2.5rem; }
+.alg-404-latest h2 { text-align: center; font-size: 1.25rem; font-weight: 700; color: var(--color-neutral-900, #11212d); }
+.dark .alg-404-latest h2 { color: #fff; }
+.alg-404-latest ul { margin-top: 1.25rem; display: grid; gap: 0.25rem; }
+.alg-404-latest a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.75rem 1rem; border-radius: 0.75rem;
+  font-weight: 500; color: var(--color-neutral-900, #11212d); text-decoration: none; transition: background-color 0.2s ease;
+}
+.dark .alg-404-latest a { color: var(--color-neutral-100, #e6e9e8); }
+.alg-404-latest a:hover { background: rgb(13 148 136 / 0.08); color: var(--color-primary-700); }
+.dark .alg-404-latest a:hover { color: var(--color-primary-300); }
+.alg-404-latest time { flex-shrink: 0; font-size: 0.875rem; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--color-neutral-500, #687882); }
+@media (max-width: 639px) { .alg-404-latest a { flex-direction: column; gap: 0.25rem; } }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-alg-maze path { animation: none; }
+  .alg-404-trail, .alg-404-dot { animation: none; }
   .skill-card, .skill-icon, .hero-alg-btn { transition: none; }
 }
