@@ -31,7 +31,10 @@
   <div class="max-w-2xl mx-auto mb-12">
     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
       <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ i18n "block_contact_form_title" | default "Send us a Message" }}</h3>
-      <form name="contact" action="{{ $block.content.form_action | default "#" }}" method="POST" data-netlify="true" class="space-y-6">
+      <form name="contact" action="{{ $block.content.form_action | default "#" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+        {{/* Netlify Forms: form-name routes the POST to this form; bot-field is a honeypot that people never see. */}}
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ i18n "block_contact_form_name" | default "Name" }}</label>

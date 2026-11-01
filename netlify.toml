@@ -352,3 +352,22 @@
 #  to = ""
 #  status = 301
 #  force = false
+
+# Old copies of the home page (/page/2/ to /page/17/ in each language), no longer generated.
+[[redirects]]
+  from = "/page/*"
+  to = "/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ca/page/*"
+  to = "/ca/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/en/page/*"
+  to = "/en/"
+  status = 301
+  force = false

@@ -131,8 +131,9 @@
 
   <link rel="canonical" href="{{ .Permalink }}" />
   {{/* rel prev/next on paginated lists. Hugo 0.169+ errors on .Paginator for pages that
-       cannot be paginated (e.g. 404), so only list kinds ask for it. */}}
-  {{ if in (slice "home" "section" "taxonomy" "term") .Kind }}
+       cannot be paginated (e.g. 404), so only list kinds ask for it. The home page is left out:
+       asking for its paginator made Hugo write copies of the landing page at /page/2/ to /page/17/. */}}
+  {{ if in (slice "section" "taxonomy" "term") .Kind }}
     {{ with .Paginator }}
       {{ with .Prev }}<link rel="prev" href="{{ .URL | absURL }}" />{{ end }}
       {{ with .Next }}<link rel="next" href="{{ .URL | absURL }}" />{{ end }}
