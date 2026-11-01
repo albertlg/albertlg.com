@@ -775,6 +775,14 @@ html:root, html.dark {
   .group:hover .alg-cover-photo { transform: rotate(0deg) scale(1.04); }
 }
 
+/* Disqus reads the text and link colours around its box to match the page, and only understands
+   rgb or hex: with oklch() (Tailwind v4 and the teal accent) its script stops and nothing shows.
+   Same colours as the rest of the page, written in hex. */
+#disqus_thread { color: #334155; }
+#disqus_thread a { color: #115e59; }
+.dark #disqus_thread { color: #cbd5e1; }
+.dark #disqus_thread a { color: #5eead4; }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-alg-maze path { animation: none; }
   .alg-cover-maze, .alg-cover-photo { transition: none; }
