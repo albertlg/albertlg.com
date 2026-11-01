@@ -100,31 +100,31 @@ sections:
       title: "Habilitats"
       subtitle: "Com em defineixo (o em defineixen)"
       items:
-        - icon: hero/hand-raised
+        - icon: fa/hand-fist
           name: Tenaç
           description: "101%"
-        - icon: hero/sparkles
+        - icon: fa/asterisk
           name: Orientat al detall
           description: "99,99%"
-        - icon: hero/face-smile
+        - icon: fa/champagne-glasses
           name: Actitud convivial
           description: "98%"
-        - icon: hero/user-group
+        - icon: fa/basketball
           name: Compromís amb l'equip
           description: "99%"
-        - icon: hero/academic-cap
+        - icon: fa/brain
           name: Aprenentatge
           description: "10%"
-        - icon: hero/globe-europe-africa
+        - icon: fa/seedling
           name: Respectuós amb el medi ambient
           description: "80%"
-        - icon: hero/cake
+        - icon: fa/utensils
           name: Gastrònom
           description: "100%"
-        - icon: hero/musical-note
+        - icon: fa/heart-pulse
           name: Música
           description: "78%"
-        - icon: hero/camera
+        - icon: fa/camera-retro
           name: Fotografia
           description: "42,8%"
 

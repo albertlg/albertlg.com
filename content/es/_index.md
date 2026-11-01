@@ -100,31 +100,31 @@ sections:
       title: "Habilidades"
       subtitle: "Cómo me defino (o me definen)"
       items:
-        - icon: hero/hand-raised
+        - icon: fa/hand-fist
           name: Tenaz
           description: "101%"
-        - icon: hero/sparkles
+        - icon: fa/asterisk
           name: Orientado al detalle
           description: "99,99%"
-        - icon: hero/face-smile
+        - icon: fa/champagne-glasses
           name: Actitud convivial
           description: "98%"
-        - icon: hero/user-group
+        - icon: fa/basketball
           name: Compromiso con el equipo
           description: "99%"
-        - icon: hero/academic-cap
+        - icon: fa/brain
           name: Aprendizaje
           description: "10%"
-        - icon: hero/globe-europe-africa
+        - icon: fa/seedling
           name: Amigable con el medio ambiente
           description: "80%"
-        - icon: hero/cake
+        - icon: fa/utensils
           name: Gastrónomo
           description: "100%"
-        - icon: hero/musical-note
+        - icon: fa/heart-pulse
           name: Música
           description: "78%"
-        - icon: hero/camera
+        - icon: fa/camera-retro
           name: Fotografía
           description: "42,8%"
 

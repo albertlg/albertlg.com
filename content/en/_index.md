@@ -100,31 +100,31 @@ sections:
       title: "Skills"
       subtitle: "How I define myself (or how others define me)"
       items:
-        - icon: hero/hand-raised
+        - icon: fa/hand-fist
           name: Tenacious
           description: "101%"
-        - icon: hero/sparkles
+        - icon: fa/asterisk
           name: Detail oriented
           description: "99,99%"
-        - icon: hero/face-smile
+        - icon: fa/champagne-glasses
           name: Convivial attitude
           description: "98%"
-        - icon: hero/user-group
+        - icon: fa/basketball
           name: Team engagement
           description: "99%"
-        - icon: hero/academic-cap
+        - icon: fa/brain
           name: Apprenticeship
           description: "10%"
-        - icon: hero/globe-europe-africa
+        - icon: fa/seedling
           name: Eco friendly
           description: "80%"
-        - icon: hero/cake
+        - icon: fa/utensils
           name: Gourmand
           description: "100%"
-        - icon: hero/musical-note
+        - icon: fa/heart-pulse
           name: Music
           description: "78%"
-        - icon: hero/camera
+        - icon: fa/camera-retro
           name: Photography
           description: "42,8%"
 

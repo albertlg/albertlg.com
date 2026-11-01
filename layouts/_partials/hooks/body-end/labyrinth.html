@@ -1,0 +1,26 @@
+{{/* Decorative background: the ALG logo maze, nested at decreasing sizes, on both sides of the
+     page. It sits behind the content, only shows in the side margins and zooms slowly with the
+     scroll where the browser supports scroll-driven animations. Styles in assets/css/custom.css
+     (.alg-labyrinth). No images: about 1 KB of inline SVG. */}}
+<div class="alg-labyrinth" aria-hidden="true">
+  <div class="alg-fluid"></div>
+  <svg width="0" height="0" class="absolute">
+    <defs>
+      <symbol id="alg-mark" viewBox="5 5 50 50">
+        <path d="M8.5 52 V8.5 H50.5 V52 M8.5 16.5 H50.5 M16.5 23 V50.5 H44 M44 24.5 H24.5 V42.5 H42.5 V32.5 H32" />
+      </symbol>
+    </defs>
+  </svg>
+  {{ range $side := slice "left" "right" }}
+  <div class="alg-wall alg-wall-{{ $side }}">
+    <svg class="alg-maze" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid meet">
+      <g class="alg-zoom">
+        {{/* Each level is the logo at 62% of the previous one, turned a quarter. */}}
+        {{ range $i, $size := slice 200 124 77 48 30 18.5 }}
+        <use href="#alg-mark" x="{{ div $size -2.0 }}" y="{{ div $size -2.0 }}" width="{{ $size }}" height="{{ $size }}" transform="rotate({{ mul $i 90 }})" />
+        {{ end }}
+      </g>
+    </svg>
+  </div>
+  {{ end }}
+</div>

@@ -1,26 +1,3 @@
-/* Hero banner: adaptive background opacity per theme mode */
-
-/* Dark mode — darken the background image for better contrast */
-.dark .blox-hero .home-section-bg.bg-image {
-  filter: brightness(0.25);
-}
-
-/* Light mode — lighten the background so text can be dark */
-:root:not(.dark) .blox-hero .home-section-bg.bg-image {
-  filter: brightness(0.55);
-}
-
-/* Light mode — override hero text colors for readability on lighter bg */
-:root:not(.dark) .blox-hero h1 {
-  color: #fff !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-:root:not(.dark) .blox-hero p {
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-
 /* M4: Ensure minimum 44x44px touch targets for mobile accessibility */
 
 /* Dark mode toggle button */
@@ -267,10 +244,6 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
 /* Headings reached from the table of contents or a #link land 16px below the header, not flush. */
 article .prose :where(h2, h3) { scroll-margin-top: 1rem; }
 
-/* Home hero: shorter than the theme default (224px of padding above and below on desktop). */
-.hero-block-container .py-32 { padding-top: 5rem; padding-bottom: 5rem; }
-@media (min-width: 640px) { .hero-block-container .sm\:py-48 { padding-top: 6rem; padding-bottom: 6rem; } }
-@media (min-width: 1024px) { .hero-block-container .lg\:py-56 { padding-top: 8rem; padding-bottom: 8rem; } }
 
 /* =====================================================================
    Accent (10%): teal instead of indigo.
@@ -300,4 +273,214 @@ html:root, html.dark {
 .hbb-section:not(#section-hero) { padding-top: 4rem; padding-bottom: 4rem; }
 @media (max-width: 639px) {
   .hbb-section:not(#section-hero) { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* =====================================================================
+   Home hero (layouts/_partials/hbx/blocks/hero/block.html)
+   ===================================================================== */
+/* The hero runs under the floating header: it is pulled up by the header's height (84px, 70px on
+   mobile, then the exact value the theme's script writes to --navbar-height). */
+#section-hero {
+  --hero-pull: var(--navbar-height, 84px);
+  margin-top: calc(-1 * var(--hero-pull));
+  padding-top: 0; padding-bottom: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+@media (max-width: 639px) { #section-hero { --hero-pull: var(--navbar-height, 70px); } }
+/* Soft fade into the page instead of a hard edge. */
+#section-hero::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 5rem; z-index: -1; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgb(6 20 27 / 0.55));
+}
+.hero-alg {
+  display: flex; align-items: center;
+  min-height: clamp(30rem, 70svh, 42rem);
+  padding: calc(var(--hero-pull) + 2.5rem) 1.5rem 8.5rem;
+  color: #fff;
+}
+.hero-alg-inner { position: relative; width: 100%; max-width: 72rem; margin: 0 auto; display: grid; align-items: center; gap: 3rem; }
+@media (min-width: 1024px) {
+  .hero-alg { padding-left: 2rem; padding-right: 2rem; }
+  .hero-alg-inner { grid-template-columns: minmax(0, 1fr) 19rem; gap: 4rem; }
+}
+.hero-alg-copy { max-width: 44rem; }
+.hero-alg-title { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-alg-name {
+  font-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.25rem); font-weight: 800; line-height: 0.95;
+  letter-spacing: -0.035em; color: #fff;
+}
+.hero-alg-tagline {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.875rem); font-weight: 600; line-height: 1.25;
+  letter-spacing: -0.01em; color: var(--color-primary-200); max-width: 28ch; text-wrap: balance;
+}
+.hero-alg-text { margin-top: 1.5rem; max-width: 36rem; font-size: 1.125rem; line-height: 1.6; color: rgb(255 255 255 / 0.82); text-wrap: pretty; }
+.hero-alg-text strong { color: #fff; font-weight: 600; }
+.hero-alg-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; }
+.hero-alg-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem; font-size: 1rem; font-weight: 600; line-height: 1.25; text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hero-alg-btn-primary { background: var(--color-primary-600); color: #fff; box-shadow: 0 8px 24px rgb(0 0 0 / 0.28); }
+.hero-alg-btn-ghost { color: #fff; background: rgb(255 255 255 / 0.06); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.35); }
+.hero-alg-btn:focus-visible { outline: 2px solid var(--color-primary-300); outline-offset: 3px; }
+@media (hover: hover) {
+  .hero-alg-btn:hover { transform: translateY(-1px); }
+  .hero-alg-btn-primary:hover { background: var(--color-primary-700); box-shadow: 0 0 0 4px rgb(45 212 191 / 0.18), 0 0 28px rgb(45 212 191 / 0.35); }
+  .hero-alg-btn-ghost:hover { background: rgb(255 255 255 / 0.12); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6); }
+}
+/* The logo maze in 3D: drawn bar by bar on load, tilted in perspective and swaying slowly.
+   Beside the text on large screens; small and faint in the bottom corner, below the buttons,
+   on smaller ones. */
+.hero-alg-mark {
+  position: absolute; z-index: -1; right: 0; bottom: -7.25rem; width: 7rem; opacity: 0.5;
+  perspective: 50rem;
+}
+.hero-alg-maze {
+  display: block; width: 100%; height: auto; overflow: visible; fill: none;
+  stroke-width: 4; stroke-linecap: butt; stroke-linejoin: miter;
+  transform: rotateY(-24deg) rotateX(12deg); transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 10px rgb(45 212 191 / 0.35));
+}
+.hero-alg-depth { stroke: var(--color-primary-800); }
+.hero-alg-maze path { stroke-dasharray: 100; animation: alg-draw 2.2s cubic-bezier(0.65, 0, 0.35, 1) both; }
+.hero-alg-maze g > path:nth-child(2) { animation-delay: 0.35s; }
+.hero-alg-maze g > path:nth-child(3) { animation-delay: 0.7s; }
+.hero-alg-maze g > path:nth-child(4) { animation-delay: 1.05s; }
+@media (min-width: 1024px) {
+  .hero-alg-mark { position: static; z-index: auto; width: 100%; opacity: 0.95; }
+  .hero-alg { padding-bottom: 4rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-alg-maze { animation: alg-sway 12s ease-in-out 2.4s infinite; will-change: transform; }
+}
+@keyframes alg-sway {
+  0%, 100% { transform: rotateY(-24deg) rotateX(12deg); }
+  50% { transform: rotateY(-12deg) rotateX(6deg) translateY(-0.5rem); }
+}
+@keyframes alg-draw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+
+/* =====================================================================
+   Skills (layouts/_partials/hbx/blocks/features/block.html)
+   ===================================================================== */
+.skill-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem;
+  padding: 1.5rem 0.75rem; border-radius: 1rem;
+  background: rgb(255 255 255 / 0.7); box-shadow: inset 0 0 0 1px rgb(17 33 45 / 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.dark .skill-card { background: rgb(255 255 255 / 0.03); box-shadow: inset 0 0 0 1px rgb(204 208 207 / 0.10); }
+.skill-icon {
+  display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 0.5rem; border-radius: 1.25rem;
+  color: var(--color-primary-700); background: var(--color-primary-50);
+  box-shadow: inset 0 0 0 1px rgb(13 148 136 / 0.15);
+  transition: color 0.25s ease, background 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+.dark .skill-icon { color: var(--color-primary-300); background: rgb(45 212 191 / 0.08); box-shadow: inset 0 0 0 1px rgb(45 212 191 / 0.18); }
+@media (min-width: 640px) { .skill-icon { width: 5.5rem; height: 5.5rem; border-radius: 1.5rem; } }
+.skill-name { font-size: 1rem; font-weight: 600; line-height: 1.3; color: var(--color-neutral-900, #11212d); text-wrap: balance; }
+.dark .skill-name { color: #fff; }
+@media (min-width: 640px) { .skill-name { font-size: 1.125rem; } }
+.skill-value { font-size: 0.875rem; font-variant-numeric: tabular-nums; color: var(--color-neutral-600, #4a5c6a); }
+.dark .skill-value { color: var(--color-neutral-300, #9ba8ab); }
+.skill-bar { width: 100%; max-width: 8rem; height: 0.375rem; border-radius: 999px; background: rgb(17 33 45 / 0.08); overflow: hidden; }
+.dark .skill-bar { background: rgb(255 255 255 / 0.08); }
+.skill-bar > span {
+  display: block; height: 100%; width: var(--skill); border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-primary-400), var(--color-primary-600));
+}
+@media (hover: hover) {
+  .skill-card:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px rgb(13 148 136 / 0.30), 0 12px 28px rgb(17 33 45 / 0.10); }
+  .dark .skill-card:hover { box-shadow: inset 0 0 0 1px rgb(45 212 191 / 0.35), 0 12px 28px rgb(0 0 0 / 0.35); }
+  .skill-card:hover .skill-icon {
+    color: #fff; background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    transform: scale(1.08) rotate(-6deg); box-shadow: 0 0 24px rgb(45 212 191 / 0.45);
+  }
+}
+/* The bars fill in as the cards scroll into view (browsers with scroll-driven animations). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .skill-bar > span { animation: skill-fill linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+  }
+}
+@keyframes skill-fill { from { width: 0; } }
+
+/* =====================================================================
+   Labyrinth background (layouts/_partials/hooks/body-end/labyrinth.html)
+   The logo maze, nested, on both sides of the page; behind everything and faded out towards
+   the text column. It zooms in and turns a quarter over the length of the page, which brings
+   it back to the same picture at the end (each level is the next one, 62% smaller).
+   ===================================================================== */
+.alg-labyrinth {
+  --alg-line: rgb(15 118 110 / 0.16);
+  position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+}
+.dark .alg-labyrinth { --alg-line: rgb(94 234 212 / 0.10); }
+.alg-fluid {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(38% 32% at 0% 18%, rgb(20 184 166 / 0.10), transparent 70%),
+    radial-gradient(34% 38% at 100% 72%, rgb(37 99 235 / 0.08), transparent 70%),
+    radial-gradient(28% 30% at 100% 8%, rgb(34 197 94 / 0.07), transparent 70%),
+    radial-gradient(30% 34% at 0% 96%, rgb(37 99 235 / 0.06), transparent 70%);
+}
+.dark .alg-fluid {
+  background:
+    radial-gradient(38% 32% at 0% 18%, rgb(20 184 166 / 0.14), transparent 70%),
+    radial-gradient(34% 38% at 100% 72%, rgb(37 99 235 / 0.13), transparent 70%),
+    radial-gradient(28% 30% at 100% 8%, rgb(34 197 94 / 0.10), transparent 70%),
+    radial-gradient(30% 34% at 0% 96%, rgb(37 99 235 / 0.10), transparent 70%);
+}
+.alg-wall { position: absolute; top: 50%; width: 44rem; height: 44rem; margin-top: -22rem; perspective: 60rem; }
+.alg-wall-left { left: -22rem; -webkit-mask-image: linear-gradient(to right, #000 50%, transparent 82%); mask-image: linear-gradient(to right, #000 50%, transparent 82%); }
+.alg-wall-right { right: -22rem; -webkit-mask-image: linear-gradient(to left, #000 50%, transparent 82%); mask-image: linear-gradient(to left, #000 50%, transparent 82%); }
+.alg-maze { width: 100%; height: 100%; overflow: visible; fill: none; stroke: var(--alg-line); stroke-width: 1.25; }
+.alg-labyrinth symbol path { vector-effect: non-scaling-stroke; }
+.alg-wall-left .alg-maze { transform: rotateY(32deg); }
+.alg-wall-right .alg-maze { transform: rotateY(-32deg) scaleX(-1); }
+@media (max-width: 1023px) {
+  .alg-wall { width: 24rem; height: 24rem; margin-top: -12rem; }
+  .alg-wall-left { left: -20.5rem; }
+  .alg-wall-right { right: -20.5rem; }
+  .alg-labyrinth { --alg-line: rgb(15 118 110 / 0.12); }
+  .dark .alg-labyrinth { --alg-line: rgb(94 234 212 / 0.08); }
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .alg-zoom { animation: alg-zoom linear both; animation-timeline: scroll(root); }
+    .alg-wall-left .alg-maze { animation: alg-tilt-left linear both; animation-timeline: scroll(root); }
+    .alg-wall-right .alg-maze { animation: alg-tilt-right linear both; animation-timeline: scroll(root); }
+    .alg-fluid { animation: alg-flow linear both; animation-timeline: scroll(root); }
+  }
+}
+@keyframes alg-zoom { from { transform: scale(1) rotate(0deg); } to { transform: scale(1.613) rotate(-90deg); } }
+@keyframes alg-tilt-left { from { transform: rotateY(32deg) rotateX(6deg); } to { transform: rotateY(22deg) rotateX(-6deg); } }
+@keyframes alg-tilt-right { from { transform: rotateY(-32deg) rotateX(6deg) scaleX(-1); } to { transform: rotateY(-22deg) rotateX(-6deg) scaleX(-1); } }
+@keyframes alg-flow { from { transform: translateY(0) scale(1); } to { transform: translateY(-6%) scale(1.08); } }
+
+/* =====================================================================
+   Separator between home sections: a fading line with the logo mark in the middle.
+   ===================================================================== */
+.hbb-section:not(#section-hero) + .hbb-section::before,
+.hbb-section:not(#section-hero) + .hbb-section::after { content: ""; position: absolute; left: 50%; pointer-events: none; }
+.hbb-section:not(#section-hero) + .hbb-section::before {
+  top: 0; width: min(32rem, 76%); height: 1px; transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgb(13 148 136 / 0.35) 30%, rgb(13 148 136 / 0.35) 44%, transparent 46%, transparent 54%, rgb(13 148 136 / 0.35) 56%, rgb(13 148 136 / 0.35) 70%, transparent);
+}
+.hbb-section:not(#section-hero) + .hbb-section::after {
+  top: -0.6875rem; width: 1.375rem; height: 1.375rem; transform: translateX(-50%);
+  background: var(--color-primary-600);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5 5 50 50'%3E%3Cpath d='M8.5%2052%20V8.5%20H50.5%20V52%20M7%2016.5%20H52%20M16.5%2023%20V50.5%20H44%20M44%2024.5%20H24.5%20V42.5%20H42.5%20V32.5%20H32' fill='none' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='5 5 50 50'%3E%3Cpath d='M8.5%2052%20V8.5%20H50.5%20V52%20M7%2016.5%20H52%20M16.5%2023%20V50.5%20H44%20M44%2024.5%20H24.5%20V42.5%20H42.5%20V32.5%20H32' fill='none' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.7;
+}
+.dark .hbb-section:not(#section-hero) + .hbb-section::before {
+  background: linear-gradient(90deg, transparent, rgb(45 212 191 / 0.3) 30%, rgb(45 212 191 / 0.3) 44%, transparent 46%, transparent 54%, rgb(45 212 191 / 0.3) 56%, rgb(45 212 191 / 0.3) 70%, transparent);
+}
+.dark .hbb-section:not(#section-hero) + .hbb-section::after { background: var(--color-primary-300); opacity: 0.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-alg-maze path { animation: none; }
+  .skill-card, .skill-icon, .hero-alg-btn { transition: none; }
 }

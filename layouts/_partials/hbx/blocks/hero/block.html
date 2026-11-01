@@ -1,0 +1,66 @@
+{{/* Override: server-rendered hero (Blox 0.12 renders it in the browser with Preact).
+     The title is split at " - " into the name and the tagline; the background image runs under
+     the floating header and the logo maze is drawn on the right on large screens.
+     Styles in assets/css/custom.css (.hero-alg). */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $title := $block.content.title | default "" }}
+{{ $name := $title }}
+{{ $tagline := "" }}
+{{ with findRESubmatch `^(.+?)\s+[-–—]\s+(.+)$` $title 1 }}
+  {{ $name = index (index . 0) 1 }}
+  {{ $tagline = index (index . 0) 2 }}
+{{ end }}
+
+<div class="hero-alg">
+  <div class="hero-alg-inner">
+    <div class="hero-alg-copy">
+      <h1 class="hero-alg-title">
+        <span class="hero-alg-name">{{ $name | $page.RenderString }}</span>
+        {{- with $tagline }}<span class="sr-only"> – </span><span class="hero-alg-tagline">{{ . | $page.RenderString }}</span>{{ end -}}
+      </h1>
+      {{ with $block.content.text }}
+        {{ $lines := slice }}
+        {{ range split . "<br>" }}{{ $lines = $lines | append ($page.RenderString (trim . " ")) }}{{ end }}
+        <p class="hero-alg-text">{{ delimit $lines "<br>" | safeHTML }}</p>
+      {{ end }}
+      {{ if or $block.content.primary_action.url $block.content.secondary_action.url }}
+      <div class="hero-alg-actions">
+        {{ range $i, $action := slice $block.content.primary_action $block.content.secondary_action }}
+          {{ with $action.url }}
+            {{ $external := hasPrefix . "http" }}
+            <a href="{{ if $external }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}"
+               class="hero-alg-btn {{ if eq $i 0 }}hero-alg-btn-primary{{ else }}hero-alg-btn-ghost{{ end }}"
+               {{ if $external }}target="_blank" rel="noopener"{{ end }}>
+              {{ $action.text | $page.RenderString }}{{ if ne $i 0 }} <span aria-hidden="true">→</span>{{ end }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="hero-alg-mark" aria-hidden="true">
+      <svg class="hero-alg-maze" viewBox="3 3 54 54" focusable="false">
+        <defs>
+          <linearGradient id="hero-alg-face" gradientUnits="userSpaceOnUse" x1="7" y1="7" x2="52" y2="52">
+            <stop offset="0" style="stop-color: var(--color-primary-200)" />
+            <stop offset="1" style="stop-color: var(--color-primary-400)" />
+          </linearGradient>
+        </defs>
+        {{/* The logo drawn with its own bar width (4 of 46 units); a darker copy behind it gives depth. */}}
+        <g class="hero-alg-depth" transform="translate(1.4 1.4)">
+        <path pathLength="100" d="M8.5 52 V8.5 H50.5 V52" />
+        <path pathLength="100" d="M7 16.5 H52" />
+        <path pathLength="100" d="M16.5 23 V50.5 H44" />
+        <path pathLength="100" d="M44 24.5 H24.5 V42.5 H42.5 V32.5 H32" />
+        </g>
+        <g class="hero-alg-face" stroke="url(#hero-alg-face)">
+        <path pathLength="100" d="M8.5 52 V8.5 H50.5 V52" />
+        <path pathLength="100" d="M7 16.5 H52" />
+        <path pathLength="100" d="M16.5 23 V50.5 H44" />
+        <path pathLength="100" d="M44 24.5 H24.5 V42.5 H42.5 V32.5 H32" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>

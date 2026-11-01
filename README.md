@@ -12,6 +12,7 @@ Writing in Spanish, Catalan and English about SEO, AI and LLMs, professional jud
 - ⬆️ [Netlify](https://www.netlify.com) builds and publishes the site on every push to `master` (`netlify.toml`).
 - 🔎 [Pagefind](https://pagefind.app) search, generated at build time.
 - 🤖 `llms.txt` for each language, generated on every build (`layouts/home.llms.txt`, editorial text in `data/llms/`).
+- 🌀 Design touches in `assets/css/custom.css`: the logo maze in the home hero, in the background of every page (`layouts/_partials/hooks/body-end/labyrinth.html`) and between home sections. Skill icons from [Font Awesome Free](https://fontawesome.com) (CC BY 4.0) in `assets/media/icons/fa/`.
 
 ## Content
 
