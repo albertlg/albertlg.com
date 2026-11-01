@@ -20,18 +20,22 @@
       <p class="text-lg text-gray-600 dark:text-gray-400">{{.}}</p>
       {{ end }}
     </div>
-    {{/* Override: large icons in a tile, hover/focus effect and a bar for percentage values
-         (styles in assets/css/custom.css, .skill-card). */}}
+    {{/* Override: large icons in a tile, a bar for percentage values and a small animation per
+         skill (class skill-<icon name>) on hover, or once on touch screens (script below).
+         Values over 100% get skill-over: the bar overshoots its end. Styles in custom.css (.skill-card). */}}
     <ul class="skill-grid grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8" role="list">
       {{ range $block.content.items }}
         {{ $value := "" }}
+        {{ $over := false }}
         {{ with .description }}
           {{ $raw := replace (trim (string .) " ") "," "." }}
           {{ if findRE `^[0-9]+(\.[0-9]+)?%$` $raw }}
-            {{ $value = math.Min 100 (float (strings.TrimSuffix "%" $raw)) }}
+            {{ $number := float (strings.TrimSuffix "%" $raw) }}
+            {{ $value = math.Min 100 $number }}
+            {{ $over = gt $number 100 }}
           {{ end }}
         {{ end }}
-        <li class="skill-card group">
+        <li class="skill-card{{ with .icon }} skill-{{ path.Base . }}{{ end }}{{ if $over }} skill-over{{ end }}">
           {{ with .icon }}
           <div class="skill-icon" aria-hidden="true">
             {{ partial "functions/get_icon" (dict "name" . "attributes" `class="w-9 h-9 sm:w-10 sm:h-10"`) }}
@@ -47,3 +51,21 @@
     </ul>
   </div>
 </section>
+<script>
+  /* Touch screens have no hover: play each skill's animation once when it scrolls into view, and again on tap. */
+  (() => {
+    const cards = document.querySelectorAll('.skill-card');
+    if (!cards.length || !('IntersectionObserver' in window) || matchMedia('(hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const play = (card) => {
+      card.classList.remove('is-playing');
+      void card.offsetWidth;
+      card.classList.add('is-playing');
+      clearTimeout(card.skillTimer);
+      card.skillTimer = setTimeout(() => card.classList.remove('is-playing'), 1800);
+    };
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { observer.unobserve(entry.target); setTimeout(() => play(entry.target), 200); }
+    }), { threshold: 0.75 });
+    cards.forEach((card) => { observer.observe(card); card.addEventListener('click', () => play(card)); });
+  })();
+</script>

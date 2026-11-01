@@ -406,6 +406,176 @@ html:root, html.dark {
 }
 @keyframes skill-fill { from { width: 0; } }
 
+/* ---------------------------------------------------------------------
+   Skills: one small animation per skill, on hover (or once on touch screens via the block's
+   script, which adds .is-playing). Each one uses the icon and the tile's ::before/::after.
+   --------------------------------------------------------------------- */
+.skill-card.is-playing .skill-icon {
+  color: #fff; background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+  box-shadow: 0 0 24px rgb(45 212 191 / 0.45);
+}
+.skill-icon { position: relative; }
+.skill-icon::before, .skill-icon::after { content: ""; position: absolute; pointer-events: none; opacity: 0; }
+.skill-bar { position: relative; }
+.skill-bar > span { position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  /* The bar fills up to its value. */
+  .skill-card:is(:hover, .is-playing) .skill-bar > span { animation: skill-fill 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both; animation-timeline: auto; animation-range: normal; }
+
+  /* Tenaz: wind-up, punch and two impact rings. Its bar (101%) overshoots the end and lets out a spark. */
+  .skill-hand-fist .skill-icon::before, .skill-hand-fist .skill-icon::after { inset: 0; border-radius: inherit; box-shadow: 0 0 0 2px var(--color-primary-300); }
+  .skill-hand-fist:is(:hover, .is-playing) .skill-icon > svg { animation: sk-punch 0.8s cubic-bezier(0.3, 0, 0.2, 1) both; }
+  .skill-hand-fist:is(:hover, .is-playing) .skill-icon::before { animation: sk-impact 0.8s ease-out both; }
+  .skill-hand-fist:is(:hover, .is-playing) .skill-icon::after { animation: sk-impact 0.8s ease-out 0.12s both; }
+  .skill-over .skill-bar { overflow: visible; }
+  .skill-over:is(:hover, .is-playing) .skill-bar > span { animation: skill-fill-over 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both; animation-timeline: auto; animation-range: normal; }
+  .skill-over .skill-bar > span::after {
+    content: ""; position: absolute; right: -4px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%;
+    background: #fff; box-shadow: 0 0 8px 3px var(--color-primary-300); opacity: 0;
+  }
+  .skill-over:is(:hover, .is-playing) .skill-bar > span::after { animation: sk-escape 1.3s ease-out 0.15s both; }
+
+  /* Orientado al detalle: the asterisk turns in exact 30-degree clicks while focus brackets close in. */
+  .skill-asterisk .skill-icon::before {
+    --l: 10px; inset: 8px; border: 2px solid var(--color-primary-200); border-radius: 6px;
+    -webkit-mask: conic-gradient(at var(--l) var(--l), #0000 75%, #000 0) 0 0 / calc(100% - var(--l)) calc(100% - var(--l));
+    mask: conic-gradient(at var(--l) var(--l), #0000 75%, #000 0) 0 0 / calc(100% - var(--l)) calc(100% - var(--l));
+  }
+  .skill-asterisk:is(:hover, .is-playing) .skill-icon > svg { animation: sk-dial 1.1s steps(6) both; }
+  .skill-asterisk:is(:hover, .is-playing) .skill-icon::before { animation: sk-focus 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  /* Actitud convivial: the glasses clink and two bubbles rise. */
+  .skill-champagne-glasses .skill-icon > svg { transform-origin: 50% 90%; }
+  .skill-champagne-glasses .skill-icon::before, .skill-champagne-glasses .skill-icon::after {
+    left: 50%; top: 30%; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%;
+    background: var(--color-primary-200); box-shadow: 0 0 6px var(--color-primary-300);
+  }
+  .skill-champagne-glasses:is(:hover, .is-playing) .skill-icon > svg { animation: sk-cheers 1s ease-in-out both; }
+  .skill-champagne-glasses:is(:hover, .is-playing) .skill-icon::before { animation: sk-bubble-left 1.1s ease-out 0.25s both; }
+  .skill-champagne-glasses:is(:hover, .is-playing) .skill-icon::after { animation: sk-bubble-right 1.1s ease-out 0.4s both; }
+
+  /* Compromiso con el equipo: the ball bounces and spins, squashing as it lands, with its shadow. */
+  .skill-basketball .skill-icon::after {
+    left: 50%; bottom: 12%; width: 28px; height: 5px; margin-left: -14px; border-radius: 50%; background: rgb(6 20 27 / 0.35);
+  }
+  .skill-basketball:is(:hover, .is-playing) .skill-icon > svg { animation: sk-bounce 1.2s cubic-bezier(0.3, 0, 0.3, 1) both; }
+  .skill-basketball:is(:hover, .is-playing) .skill-icon::after { animation: sk-shadow 1.2s cubic-bezier(0.3, 0, 0.3, 1) both; }
+
+  /* Aprendizaje: the brain pulses and sends out waves. */
+  .skill-brain .skill-icon::before, .skill-brain .skill-icon::after { inset: 18%; border-radius: 50%; border: 2px solid var(--color-primary-200); }
+  .skill-brain:is(:hover, .is-playing) .skill-icon > svg { animation: sk-think 1.2s ease-in-out both; }
+  .skill-brain:is(:hover, .is-playing) .skill-icon::before { animation: sk-wave 1.1s ease-out both; }
+  .skill-brain:is(:hover, .is-playing) .skill-icon::after { animation: sk-wave 1.1s ease-out 0.35s both; }
+
+  /* Amigable con el medio ambiente: a drop falls and the seedling sprouts and sways. */
+  .skill-seedling .skill-icon > svg { transform-origin: 50% 95%; }
+  .skill-seedling .skill-icon::before {
+    left: 50%; top: 10%; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 0 50% 50% 50%;
+    background: var(--color-primary-200); transform: rotate(45deg);
+  }
+  .skill-seedling:is(:hover, .is-playing) .skill-icon::before { animation: sk-drop 0.5s ease-in both; }
+  .skill-seedling:is(:hover, .is-playing) .skill-icon > svg { animation: sk-grow 1.2s cubic-bezier(0.3, 1.4, 0.5, 1) 0.4s both; }
+
+  /* Gastrónomo: the cutlery moves to the beat and steam rises. */
+  .skill-utensils .skill-icon::before, .skill-utensils .skill-icon::after {
+    top: -0.25rem; width: 8px; height: 18px; border-left: 2px solid var(--color-primary-400); border-radius: 50%;
+  }
+  .skill-utensils .skill-icon::before { left: 38%; }
+  .skill-utensils .skill-icon::after { left: 56%; }
+  .skill-utensils:is(:hover, .is-playing) .skill-icon > svg { animation: sk-chef 1s ease-in-out both; }
+  .skill-utensils:is(:hover, .is-playing) .skill-icon::before { animation: sk-steam 1.2s ease-out 0.2s both; }
+  .skill-utensils:is(:hover, .is-playing) .skill-icon::after { animation: sk-steam 1.2s ease-out 0.45s both; }
+
+  /* Música: the heart beats (lub-dub, twice) and two notes float out. */
+  .skill-heart-pulse .skill-icon::before, .skill-heart-pulse .skill-icon::after {
+    top: 0.25rem; font-size: 1.125rem; font-weight: 700; line-height: 1; color: var(--color-primary-400);
+  }
+  .skill-heart-pulse .skill-icon::before { content: "\266A"; right: 0.25rem; }
+  .skill-heart-pulse .skill-icon::after { content: "\266B"; left: 0.25rem; }
+  .skill-heart-pulse:is(:hover, .is-playing) .skill-icon > svg { animation: sk-beat 1.2s ease-in-out both; }
+  .skill-heart-pulse:is(:hover, .is-playing) .skill-icon::before { animation: sk-note-right 1.3s ease-out 0.1s both; }
+  .skill-heart-pulse:is(:hover, .is-playing) .skill-icon::after { animation: sk-note-left 1.3s ease-out 0.5s both; }
+
+  /* Fotografía: the camera fires, the flash lights the tile and a sparkle pops. */
+  .skill-camera-retro .skill-icon::after {
+    inset: 0; border-radius: inherit;
+    background: radial-gradient(circle at 62% 42%, #fff 0 12%, rgb(255 255 255 / 0.75) 30%, rgb(255 255 255 / 0) 70%);
+  }
+  .skill-camera-retro .skill-icon::before {
+    top: -0.5rem; right: -0.5rem; width: 1.5rem; height: 1.5rem; background: #fff;
+    filter: drop-shadow(0 0 4px var(--color-primary-300));
+    clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  }
+  .skill-camera-retro:is(:hover, .is-playing) .skill-icon > svg { animation: sk-shutter 0.9s ease-out both; }
+  .skill-camera-retro:is(:hover, .is-playing) .skill-icon::after { animation: sk-flash 0.9s ease-out both; }
+  .skill-camera-retro:is(:hover, .is-playing) .skill-icon::before { animation: sk-sparkle 0.9s ease-out both; }
+}
+@keyframes skill-fill-over {
+  0% { width: 0; }
+  70% { width: 100%; box-shadow: none; }
+  84% { width: calc(100% + 8px); box-shadow: 0 0 12px 2px var(--color-primary-300); }
+  100% { width: calc(100% + 4px); box-shadow: 0 0 8px 1px var(--color-primary-300); }
+}
+@keyframes sk-escape {
+  0%, 70% { opacity: 0; transform: translateX(0) scale(0.5); }
+  80% { opacity: 1; transform: translateX(2px) scale(1.3); }
+  100% { opacity: 0; transform: translateX(28px) scale(0.4); }
+}
+@keyframes sk-punch {
+  0% { transform: none; }
+  30% { transform: translate(-3px, 3px) scale(0.82) rotate(10deg); }
+  50% { transform: translate(2px, -2px) scale(1.4) rotate(-6deg); }
+  70% { transform: scale(1.12); }
+  100% { transform: none; }
+}
+@keyframes sk-impact { 0%, 45% { opacity: 0; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 0; transform: scale(1.7); } }
+@keyframes sk-dial { from { transform: rotate(0deg); } to { transform: rotate(180deg); } }
+@keyframes sk-focus { 0% { opacity: 0; transform: scale(1.6); } 45% { opacity: 1; transform: scale(1); } 55% { transform: scale(1.06); } 65% { transform: scale(1); } 85% { opacity: 1; } 100% { opacity: 0; transform: scale(1); } }
+@keyframes sk-cheers {
+  0% { transform: none; } 15% { transform: rotate(-14deg); } 30% { transform: rotate(10deg) scale(1.08); }
+  45% { transform: rotate(-7deg); } 60% { transform: rotate(4deg); } 75% { transform: rotate(-2deg); } 100% { transform: none; }
+}
+@keyframes sk-bubble-left { 0% { opacity: 0; transform: translate(0, 0) scale(0.4); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(-12px, -46px) scale(1.1); } }
+@keyframes sk-bubble-right { 0% { opacity: 0; transform: translate(0, 0) scale(0.4); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(14px, -52px) scale(0.8); } }
+/* Spins around its centre; on landing it squashes and drops a little so it still touches the floor. */
+@keyframes sk-bounce {
+  0% { transform: none; }
+  18% { transform: translateY(-22px) rotate(-90deg); }
+  36% { transform: translateY(3px) scale(1.15, 0.85) rotate(-160deg); }
+  50% { transform: translateY(-11px) scale(0.96, 1.04) rotate(-220deg); }
+  64% { transform: translateY(1.5px) scale(1.08, 0.92) rotate(-280deg); }
+  76% { transform: translateY(-4px) rotate(-320deg); }
+  88%, 100% { transform: translateY(0) rotate(-360deg); }
+}
+@keyframes sk-shadow {
+  0% { opacity: 0.5; transform: scale(1); } 18% { opacity: 0.15; transform: scale(0.5); } 36% { opacity: 0.55; transform: scale(1.2); }
+  50% { opacity: 0.25; transform: scale(0.7); } 64% { opacity: 0.5; transform: scale(1.1); } 76% { opacity: 0.4; transform: scale(0.9); } 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes sk-think { 0% { transform: none; } 20% { transform: scale(1.14); } 35% { transform: scale(0.96); } 50% { transform: scale(1.1); } 65% { transform: scale(0.98); } 100% { transform: none; } }
+@keyframes sk-wave { 0% { opacity: 0.9; transform: scale(0.6); } 100% { opacity: 0; transform: scale(1.8); } }
+@keyframes sk-drop {
+  0% { opacity: 0; transform: translateY(-14px) rotate(45deg); } 30% { opacity: 1; }
+  90% { opacity: 1; transform: translateY(24px) rotate(45deg); } 100% { opacity: 0; transform: translateY(28px) rotate(45deg) scale(0.4); }
+}
+@keyframes sk-grow {
+  0% { transform: scale(0.15, 0.1); } 55% { transform: scale(1.05, 1.18) rotate(-5deg); }
+  75% { transform: scale(1) rotate(4deg); } 90% { transform: rotate(-2deg); } 100% { transform: none; }
+}
+@keyframes sk-chef {
+  0% { transform: none; } 15% { transform: translateY(-4px) rotate(-12deg); } 30% { transform: none; }
+  45% { transform: translateY(-4px) rotate(12deg); } 60%, 100% { transform: none; }
+}
+@keyframes sk-steam { 0% { opacity: 0; transform: translateY(10px) scaleY(0.6); } 30% { opacity: 0.9; } 100% { opacity: 0; transform: translateY(-16px) scaleY(1.1) skewX(-12deg); } }
+@keyframes sk-beat {
+  0% { transform: none; } 10% { transform: scale(1.25); } 20% { transform: none; } 30% { transform: scale(1.16); } 45% { transform: none; }
+  55% { transform: scale(1.25); } 65% { transform: none; } 75% { transform: scale(1.16); } 90%, 100% { transform: none; }
+}
+@keyframes sk-note-right { 0% { opacity: 0; transform: translate(0, 10px) rotate(0deg); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(16px, -30px) rotate(18deg); } }
+@keyframes sk-note-left { 0% { opacity: 0; transform: translate(0, 10px) rotate(0deg); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(-14px, -34px) rotate(-14deg); } }
+@keyframes sk-shutter { 0% { transform: none; } 18% { transform: translateY(2px) scale(0.92); } 30% { transform: scale(1.06); } 45%, 100% { transform: none; } }
+@keyframes sk-flash { 0%, 16% { opacity: 0; } 22% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes sk-sparkle { 0%, 18% { opacity: 0; transform: scale(0.2) rotate(0deg); } 28% { opacity: 1; transform: scale(1.1) rotate(25deg); } 100% { opacity: 0; transform: scale(0.6) rotate(70deg); } }
+
 /* =====================================================================
    Labyrinth background (layouts/_partials/hooks/body-end/labyrinth.html)
    The logo maze, nested, on both sides of the page; behind everything and faded out towards
