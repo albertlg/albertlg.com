@@ -1,0 +1,33 @@
+{{/* Cover for posts without a featured image (mostly 2004–2011): the hero's colours with the
+     logo maze in faint lines, turned differently per post. If the post body has its own photo
+     (a local image of at least 120 × 80 px), it is shown in the middle at its real size, like a
+     polaroid, instead of being enlarged; otherwise the year is shown large.
+     Used by views/card.html and page_related.html. Styles in assets/css/custom.css (.alg-cover). */}}
+{{ $page := . }}
+{{ $photo := dict }}
+{{ range findRESubmatch `<img[^>]+src="(/[^"?#]+\.(?:jpe?g|png|gif|webp))"` $page.RawContent 5 }}
+  {{ if not $photo }}
+    {{ $src := index . 1 }}
+    {{ $file := printf "static%s" $src }}
+    {{ if fileExists $file }}
+      {{ $config := imageConfig $file }}
+      {{ if and (ge $config.Width 120) (ge $config.Height 80) }}
+        {{ $photo = dict "src" $src "width" $config.Width "height" $config.Height }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $turn := mul (mod (len $page.Title) 4) 90 }}
+<div class="alg-cover{{ if not $photo }} alg-cover-plain{{ end }}" aria-hidden="true">
+  <svg class="alg-cover-maze" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <g transform="rotate({{ $turn }})">
+      {{ range $i, $size := slice 260 161 100 62 38 }}
+      <use href="#alg-mark" x="{{ div $size -2.0 }}" y="{{ div $size -2.0 }}" width="{{ $size }}" height="{{ $size }}" transform="rotate({{ mul $i 90 }})" />
+      {{ end }}
+    </g>
+  </svg>
+  {{ with $photo }}
+  <img class="alg-cover-photo" src="{{ .src | relURL }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async" alt="">
+  {{ end }}
+  <span class="alg-cover-year">{{ $page.Date.Year }}</span>
+</div>
