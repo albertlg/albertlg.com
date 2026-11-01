@@ -15,6 +15,12 @@ sections:
     content:
       title: "Albert L.G. - SEO, Content Marketing & AI Expert"
       text: "🔎 Nothing is found if nothing is sought.<br>I am **Albert López Gálvez** and you are not."
+      primary_action:
+        text: Read the blog
+        url: /en/post/
+      secondary_action:
+        text: Contact
+        url: /en/contact/
     design:
       background:
         image:
@@ -26,7 +32,35 @@ sections:
           position: bottom
       css_class: dark
 
-  # 2 — Bio
+  # 2 — Posts
+  - block: collection
+    id: posts
+    content:
+      title: Latest articles
+      subtitle: My latest writing
+      page_type: post
+      count: 6
+      offset: 0
+      order: desc
+      filters:
+        author: ''
+        category: ''
+        tag: ''
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+    design:
+      view: article-grid
+      columns: 3
+      fill_image: true
+
+  # 3 — Tag Cloud
+  - block: tag-cloud
+    id: tags
+    content:
+      title: "Popular topics"
+      subtitle: "Based on my blog post tags"
+  # 4 — Bio
   - block: resume-biography-3
     id: about
     content:
@@ -38,7 +72,7 @@ sections:
 
         I've worked at Solostocks (Grupo Intercom), Softonic, Uvinum (which I proudly created and co-founded), Drinks&Co Marketplace, and I've collaborated with many startups. More recently I was involved in CryptoAdvisor.club and dove deep into the crypto world (cryptocurrencies, crypto assets, NFTs, Web3, metaverse, DeFi, etc.).
 
-        Today my professional journey keeps evolving. Since 2022 I've combined my experience with the rise of AI, joining Mindset Digital as partner and SEO Manager — a boutique digital growth agency in Barcelona. Together with Hugo Palomar and the team (Iván González, Jordi Gost…), we're expanding the horizons of marketing and digital presence through SEO for LLMs. On top of that, I'm also immersed in several side projects that I'm truly excited about: VinomadaWine (with Juan Manuel Gonzalvo), Logoteo (with Miquel Pascual) and LeGoodAnfitrión, a mobile app we're building with huge enthusiasm.
+        Today my professional journey keeps evolving. Since 2022 I've combined my experience with the rise of AI, joining Mindset Digital as partner and SEO Manager — a boutique digital growth agency in Barcelona. Together with Hugo Palomar and the team (Iván González, Jordi Gost…), we're expanding the horizons of marketing and digital presence through SEO for LLMs. On top of that, I'm also immersed in several side projects that I'm truly excited about: VinomadaWine (with Juan Manuel Gonzalvo), Logoteo, TheHowlerMonkeys.club and LeGoodAnfitrión, a mobile app we're building with huge enthusiasm.
 
         Always moving, always exploring new opportunities and challenges to keep growing and learning in this dynamic digital world. If you're looking for innovation, creativity and experience, here I am!
 
@@ -48,15 +82,18 @@ sections:
         education: Education
         interests: Interests
 
-  # 3 — Experience
+  # 5 — Experience
   - block: resume-experience
     id: experience
     content:
-      title: Work experience and education
+      title: Work experience
       subtitle: My career (or part of it)
       username: admin
+    design:
+      experience_limit: 4
+      show_education: false
 
-  # 4 — Skills
+  # 6 — Skills
   - block: features
     id: skills
     content:
@@ -91,33 +128,16 @@ sections:
           name: Photography
           description: "42,8%"
 
-  # 5 — Posts
-  - block: collection
-    id: posts
+  # 7 — Contact
+  - block: contact-cta
+    id: contact
     content:
-      title: Latest articles
-      subtitle: My latest blog posts (as you can see, I write little often)
-      page_type: post
-      count: 4
-      offset: 0
-      order: desc
-      filters:
-        author: ''
-        category: ''
-        tag: ''
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-    design:
-      view: article-grid
-      columns: 2
-      fill_image: true
-
-  # 6 — Tag Cloud
-  - block: tag-cloud
-    id: tags
-    content:
-      title: "Popular topics"
-      subtitle: "Based on my blog post tags"
+      title: "Let's talk"
+      text: "If you'd like to discuss an SEO, content or AI project, get in touch."
+      buttons:
+        - text: Get in touch
+          url: /en/contact/
+        - text: LinkedIn
+          url: https://www.linkedin.com/in/albertlg/
 
 ---

@@ -1,0 +1,26 @@
+{{- /* Localise an author profile from data/authors/<slug>.yaml (written in Spanish) with the author
+       page of the current language, content/<lang>/authors/<slug>/_index.md:
+       - role, bio and interests from that page when it has them;
+       - experience summaries from its `experience_summaries` map (lowercase organisation name ->
+         text), so roles and dates stay in the data file only.
+       Input: dict "profile" "slug". Returns the profile. */ -}}
+{{- $profile := .profile -}}
+{{- with site.GetPage (printf "/authors/%s" (.slug | urlize)) -}}
+  {{- $p := .Params -}}
+  {{- $changes := dict -}}
+  {{- with $p.role }}{{ $changes = merge $changes (dict "role" .) }}{{ end -}}
+  {{- with $p.bio }}{{ $changes = merge $changes (dict "bio" .) }}{{ end -}}
+  {{- with $p.interests }}{{ $changes = merge $changes (dict "interests" .) }}{{ end -}}
+  {{- with $p.experience_summaries -}}
+    {{- $summaries := . -}}
+    {{- $experience := slice -}}
+    {{- range $profile.experience -}}
+      {{- $item := . -}}
+      {{- with index $summaries (lower .org) }}{{ $item = merge $item (dict "summary" .) }}{{ end -}}
+      {{- $experience = $experience | append $item -}}
+    {{- end -}}
+    {{- $changes = merge $changes (dict "experience" $experience) -}}
+  {{- end -}}
+  {{- $profile = merge $profile $changes -}}
+{{- end -}}
+{{- return $profile -}}

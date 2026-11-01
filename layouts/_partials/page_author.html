@@ -21,11 +21,8 @@
   {{ range $idx, $slug := $authors }}
     {{ $profile := partial "functions/get_author_profile" $slug }}
     {{ if $profile.has_data }}
-      {{ with site.GetPage (printf "/authors/%s" ($slug | urlize)) }}
-        {{ $bio := $profile.bio }}
-        {{ with .Params.bio }}{{ $bio = replaceRE `\s*\n\s*\n\s*` " " . }}{{ end }}
-        {{ $profile = merge $profile (dict "bio" $bio "role" (.Params.role | default $profile.role)) }}
-      {{ end }}
+      {{ $profile = partial "functions/localize_profile" (dict "profile" $profile "slug" $slug) }}
+      {{ with $profile.bio }}{{ $profile = merge $profile (dict "bio" (replaceRE `\s*\n\s*\n\s*` " " .)) }}{{ end }}
       {{ partial "page_author_card" (dict "profile" $profile "page" .) }}
     {{ end }}
   {{ end }}

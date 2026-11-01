@@ -266,3 +266,38 @@ a.bg-primary-100[href*="/tag/"] { padding-left: 0.75rem; padding-right: 0.75rem;
 .hb-toc > .sticky { top: calc(var(--navbar-height, 4rem) + 0.5rem); }
 /* Headings reached from the table of contents or a #link land 16px below the header, not flush. */
 article .prose :where(h2, h3) { scroll-margin-top: 1rem; }
+
+/* Home hero: shorter than the theme default (224px of padding above and below on desktop). */
+.hero-block-container .py-32 { padding-top: 5rem; padding-bottom: 5rem; }
+@media (min-width: 640px) { .hero-block-container .sm\:py-48 { padding-top: 6rem; padding-bottom: 6rem; } }
+@media (min-width: 1024px) { .hero-block-container .lg\:py-56 { padding-top: 8rem; padding-bottom: 8rem; } }
+
+/* =====================================================================
+   Accent (10%): teal instead of indigo.
+   Tailwind's teal scale shifted one step darker from 500 up (500 = teal-600,
+   600 = teal-700, ...) so accent text and buttons keep 4.5:1 or more on white.
+   Purple/violet/indigo used directly in theme templates follow the accent too.
+   ===================================================================== */
+html:root, html.dark {
+  --color-primary-50: oklch(0.984 0.014 180.72);
+  --color-primary-100: oklch(0.953 0.051 180.801);
+  --color-primary-200: oklch(0.91 0.096 180.426);
+  --color-primary-300: oklch(0.855 0.138 181.071);
+  --color-primary-400: oklch(0.777 0.152 181.912);
+  --color-primary-500: oklch(0.6 0.118 184.704);
+  --color-primary-600: oklch(0.511 0.096 186.391);
+  --color-primary-700: oklch(0.437 0.078 188.216);
+  --color-primary-800: oklch(0.386 0.063 188.416);
+  --color-primary-900: oklch(0.277 0.046 192.524);
+  --color-primary-950: oklch(0.22 0.04 195);
+  --hb-primary-500-rgb: 13 148 136;
+  --color-purple-500: var(--color-primary-400);
+  --color-violet-500: var(--color-primary-400);
+  --color-indigo-500: var(--color-primary-500);
+}
+
+/* Home sections: 64px above and below (48px on mobile) instead of the theme's 96px. */
+.hbb-section:not(#section-hero) { padding-top: 4rem; padding-bottom: 4rem; }
+@media (max-width: 639px) {
+  .hbb-section:not(#section-hero) { padding-top: 3rem; padding-bottom: 3rem; }
+}

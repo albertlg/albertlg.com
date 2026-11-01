@@ -1,0 +1,24 @@
+{{/* Contact call to action (custom block for albertlg.com).
+     content.title, content.text (markdown) and content.buttons [{text, url}]; the first button is
+     the primary one. Server-rendered, no JavaScript. */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+<div class="mx-auto max-w-3xl px-6">
+  <div class="rounded-2xl bg-neutral-50 px-6 py-12 text-center ring-1 ring-neutral-900/5 sm:px-12 dark:bg-white/5 dark:ring-white/10">
+    {{ with $block.content.title }}
+    <h2 class="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl dark:text-white">{{ . }}</h2>
+    {{ end }}
+    {{ with $block.content.text }}
+    <div class="mx-auto mt-4 max-w-xl text-lg leading-8 text-neutral-600 dark:text-neutral-300">{{ . | emojify | $page.RenderString }}</div>
+    {{ end }}
+    {{ with $block.content.buttons }}
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      {{ range $i, $button := . }}
+        {{ $external := hasPrefix $button.url "http" }}
+        <a href="{{ if $external }}{{ $button.url }}{{ else }}{{ $button.url | relLangURL }}{{ end }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}
+           class="{{ if eq $i 0 }}bg-primary-700 text-white hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-500{{ else }}text-neutral-900 ring-1 ring-neutral-900/15 hover:bg-neutral-100 dark:text-white dark:ring-white/20 dark:hover:bg-white/10{{ end }} rounded-lg px-6 py-3 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">{{ $button.text }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>

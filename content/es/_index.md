@@ -15,6 +15,12 @@ sections:
     content:
       title: "Albert L.G. - Experto SEO, Content Marketing e IA"
       text: "🔎 No se encuentra nada si no se busca algo.<br>Yo soy **Albert López Gálvez** y tú no."
+      primary_action:
+        text: Leer el blog
+        url: /post/
+      secondary_action:
+        text: Contacto
+        url: /contacto/
     design:
       background:
         image:
@@ -26,7 +32,35 @@ sections:
           position: bottom
       css_class: dark
 
-  # 2 — Bio
+  # 2 — Posts
+  - block: collection
+    id: posts
+    content:
+      title: Artículos recientes
+      subtitle: Lo último que he escrito
+      page_type: post
+      count: 6
+      offset: 0
+      order: desc
+      filters:
+        author: ''
+        category: ''
+        tag: ''
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+    design:
+      view: article-grid
+      columns: 3
+      fill_image: true
+
+  # 3 — Tag Cloud
+  - block: tag-cloud
+    id: tags
+    content:
+      title: "Temas populares"
+      subtitle: "Basado en los tags de mis posts"
+  # 4 — Bio
   - block: resume-biography-3
     id: about
     content:
@@ -38,7 +72,7 @@ sections:
 
         Por el momento, he trabajado en Solostocks (Grupo Intercom), Softonic, Uvinum (marca de la que fui orgulloso creador y co-fundador), Drinks&Co Marketplace, y he colaborado con muuuuchas startups. Recientemente he estado implicado en CryptoAdvisor.club y he buceado en el nuevo mundo cripto (criptomonedas, criptoactivos, NFTs, Web3, metaverso, DeFi, etc).
 
-        Hoy, mi aventura profesional continúa evolucionando. Desde 2022 he unido mi experiencia a la eclosión de la IA (inteligencia artificial), y entré como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y equipo (Iván González, Jordi Gost…), estamos expandiendo los horizontes del marketing y la presencia digital gracias al SEO para LLMs. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine (con Juan Manuel Gonzalvo), Logoteo (con Miquel Pascual) y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo.
+        Hoy, mi aventura profesional continúa evolucionando. Desde 2022 he unido mi experiencia a la eclosión de la IA (inteligencia artificial), y entré como socio y SEO Manager de Mindset Digital, la agencia boutique de crecimiento digital en Barcelona. Junto a Hugo Palomar y equipo (Iván González, Jordi Gost…), estamos expandiendo los horizontes del marketing y la presencia digital gracias al SEO para LLMs. Y por si fuera poco, también estoy inmerso en varios 'side projects' que prometen ser emocionantes. Entre ellos se encuentran VinomadaWine (con Juan Manuel Gonzalvo), Logoteo, TheHowlerMonkeys.club y LeGoodAnfitrión, una app móvil que estamos desarrollando con gran entusiasmo.
 
         Siempre en movimiento, buscando constantemente nuevas oportunidades y desafíos que me permitan seguir creciendo y aprendiendo en este mundo digital tan dinámico. Si buscas innovación, creatividad y experiencia, ¡aquí me tienes!
 
@@ -48,15 +82,18 @@ sections:
         education: Formación
         interests: Intereses
 
-  # 3 — Experience
+  # 5 — Experience
   - block: resume-experience
     id: experience
     content:
-      title: Experiencia laboral y formación
+      title: Experiencia laboral
       subtitle: Mi carrera (o parte de ella)
       username: admin
+    design:
+      experience_limit: 4
+      show_education: false
 
-  # 4 — Skills
+  # 6 — Skills
   - block: features
     id: skills
     content:
@@ -91,33 +128,16 @@ sections:
           name: Fotografía
           description: "42,8%"
 
-  # 5 — Posts
-  - block: collection
-    id: posts
+  # 7 — Contact
+  - block: contact-cta
+    id: contact
     content:
-      title: Artículos recientes
-      subtitle: Últimos posts de mi blog (como ves, escribo poco)
-      page_type: post
-      count: 4
-      offset: 0
-      order: desc
-      filters:
-        author: ''
-        category: ''
-        tag: ''
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-    design:
-      view: article-grid
-      columns: 2
-      fill_image: true
-
-  # 6 — Tag Cloud
-  - block: tag-cloud
-    id: tags
-    content:
-      title: "Temas populares"
-      subtitle: "Basado en los tags de mis posts"
+      title: "¿Hablamos?"
+      text: "Si quieres comentar un proyecto de SEO, contenidos o IA, escríbeme."
+      buttons:
+        - text: Escríbeme
+          url: /contacto/
+        - text: LinkedIn
+          url: https://www.linkedin.com/in/albertlg/
 
 ---

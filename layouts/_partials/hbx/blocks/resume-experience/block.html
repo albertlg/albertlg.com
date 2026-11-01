@@ -9,7 +9,13 @@
 
 {{ $author := $block.content.username | default "me" }}
 {{ $profile := partial "functions/get_author_profile" $author }}
+{{/* Override: role, interests and experience summaries in the language of the page. */}}
+{{ $profile = partial "functions/localize_profile" (dict "profile" $profile "slug" $author) }}
 {{ $is_education_first := $block.design.is_education_first | default false }}
+{{/* Override: design.experience_limit shows the latest N roles and folds the rest into a native
+     <details>; design.show_education: false hides education (already shown in the bio block). */}}
+{{ $limit := int ($block.design.experience_limit | default 0) }}
+{{ $show_education := ne $block.design.show_education false }}
 
 <div class="flex flex-col items-center mx-auto w-full max-w-prose justify-center">
   {{ if or $block.content.title $block.content.subtitle }}
@@ -29,9 +35,18 @@
 {{ $experience := or $profile.experience $profile.work }}
 {{ if $experience }}
 <div class="w-full">
-  <h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ i18n "experience" | default "Experience" }}</h3>
+  {{ if $show_education }}<h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ i18n "experience" | default "Experience" }}</h3>{{ end }}
   <ol class="relative w-full border-s border-gray-200 dark:border-gray-700">
     {{ range $idx, $key := $experience }}
+    {{ if and (gt $limit 0) (eq $idx $limit) }}
+  </ol>
+  <details class="group">
+    <summary class="mx-auto mb-10 flex w-fit cursor-pointer list-none items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-primary-700 ring-1 ring-primary-700/20 hover:bg-primary-50 dark:text-primary-300 dark:ring-primary-300/30 dark:hover:bg-primary-400/10 [&::-webkit-details-marker]:hidden">
+      {{ i18n "experience_more" }} (+{{ sub (len $experience) $limit }})
+      <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+    </summary>
+  <ol class="relative w-full border-s border-gray-200 dark:border-gray-700">
+    {{ end }}
     <li class="mb-10 ms-6">
         <span class="absolute flex items-center justify-center w-6 h-6 bg-primary-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
             {{ if .icon }}
@@ -45,13 +60,14 @@
       </h3>
       <span class="block mb-2 text-sm font-normal leading-none text-gray-500 dark:text-gray-300">{{ .org | default .company_name }}</span>
       <time class="block mb-3 text-sm font-normal leading-none text-gray-500 dark:text-gray-300">
+        {{/* Override: Catalan month names come as "de setembre" / "d’octubre"; drop the article so it reads "setembre 2022". */}}
         {{ $start := or .start .date_start }}
         {{ $end := or .end .date_end }}
         {{ if $start }}
-          {{ (time $start) | time.Format ($block.design.date_format | default "January 2006") }} –
+          {{ (time $start) | time.Format ($block.design.date_format | default "January 2006") | replaceRE `^d(e |’|')` "" }} –
         {{ end }}
         {{ if $end }}
-          {{ (time $end) | time.Format ($block.design.date_format | default "January 2006") }}
+          {{ (time $end) | time.Format ($block.design.date_format | default "January 2006") | replaceRE `^d(e |’|')` "" }}
         {{ else }}
           {{ i18n "present" | default "Present" }}
         {{end}}
@@ -70,10 +86,11 @@
     </li>
     {{ end }}
   </ol>
+  {{ if and (gt $limit 0) (gt (len $experience) $limit) }}</details>{{ end }}
 </div>
 {{ end }}
 
-{{ if $profile.education }}
+{{ if and $show_education $profile.education }}
 <div class="w-full">
   <h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ i18n "education" }}</h3>
     <ol class="relative w-full border-s border-gray-200 dark:border-gray-700">
@@ -94,10 +111,10 @@
           {{ $start := or .start .date_start }}
           {{ $end := or .end .date_end }}
           {{ if $start }}
-            {{ (time $start) | time.Format ($block.design.date_format | default "January 2006") }} –
+            {{ (time $start) | time.Format ($block.design.date_format | default "January 2006") | replaceRE `^d(e |’|')` "" }} –
           {{ end }}
           {{ if $end }}
-            {{ (time $end) | time.Format ($block.design.date_format | default "January 2006") }}
+            {{ (time $end) | time.Format ($block.design.date_format | default "January 2006") | replaceRE `^d(e |’|')` "" }}
           {{ else }}
             {{ i18n "present" | default "Present" }}
           {{end}}

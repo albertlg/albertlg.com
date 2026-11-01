@@ -1,6 +1,7 @@
 {{/* Person + ProfilePage schema for homepage — generates Knowledge Panel signals */}}
 {{ if .IsHome }}
 {{ $profile := partial "functions/get_author_profile" "admin" }}
+{{ $profile = partial "functions/localize_profile" (dict "profile" $profile "slug" "admin") }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

@@ -14,7 +14,7 @@ hugoblox:
     mode: system
     pack: "default"
     colors:
-      primary: "indigo"
+      primary: "teal"
       secondary: ""
       neutral: ""
 

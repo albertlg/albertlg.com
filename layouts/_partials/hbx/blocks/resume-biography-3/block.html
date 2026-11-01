@@ -8,6 +8,8 @@
 
 {{ $author := $block.content.username | default "me" }}
 {{ $profile := partial "functions/get_author_profile" $author }}
+{{/* Override: role, interests and experience summaries in the language of the page. */}}
+{{ $profile = partial "functions/localize_profile" (dict "profile" $profile "slug" $author) }}
 {{ $avatar := $profile.avatar }}
 
 {{/* Avatar customization parameters */}}

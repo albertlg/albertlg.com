@@ -94,3 +94,5 @@ consent_disqus_text:
   other: "Los comentarios usan Disqus, un servicio externo que instala sus propias cookies."
 consent_disqus_load:
   other: "Cargar comentarios"
+experience_more:
+  other: "Ver trayectoria completa"
