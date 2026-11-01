@@ -31,7 +31,7 @@ Web: https://albertlg.com
 
 ## Conservación de los datos
 
-Los mensajes del formulario de contacto se conservan el tiempo necesario para gestionar la consulta y, como máximo, 2 años. Los datos de analítica se conservan según la configuración de retención de Google Analytics (por defecto, 14 meses).
+Los mensajes del formulario de contacto se conservan el tiempo necesario para gestionar la consulta y, como máximo, 2 años. En Google Analytics, los datos de eventos vinculados a cookies o identificadores se conservan 2 meses, y los datos de usuario, 14 meses desde la última actividad. Los informes con datos agregados no dependen de estos plazos.
 
 ## Tus derechos
 
@@ -62,4 +62,4 @@ Si retiras tu consentimiento, el sitio deja de cargar estos servicios y borra la
 
 Esta política puede actualizarse ocasionalmente. La fecha de la última revisión aparece al pie de esta página.
 
-*Última actualización: 31 de octubre de 2026*
+*Última actualización: 1 de noviembre de 2026*

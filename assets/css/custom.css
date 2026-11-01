@@ -288,6 +288,11 @@ html:root, html.dark {
   overflow: hidden;
 }
 @media (max-width: 639px) { #section-hero { --hero-pull: var(--navbar-height, 70px); } }
+/* The theme's parallax uses background-attachment: fixed, which iOS and most mobile browsers do not
+   support: the image is sized to the whole page and only a dark corner shows. Plain background there. */
+@media (hover: none), (max-width: 1023px) {
+  #section-hero .home-section-bg.parallax { background-attachment: scroll; }
+}
 /* Soft fade into the page instead of a hard edge. */
 #section-hero::after {
   content: ""; position: absolute; inset: auto 0 0; height: 5rem; z-index: -1; pointer-events: none;

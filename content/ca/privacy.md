@@ -31,7 +31,7 @@ Web: https://albertlg.com
 
 ## Conservació de les dades
 
-Els missatges del formulari de contacte es conserven el temps necessari per gestionar la consulta i, com a màxim, 2 anys. Les dades d'analítica es conserven segons la configuració de retenció de Google Analytics (per defecte, 14 mesos).
+Els missatges del formulari de contacte es conserven el temps necessari per gestionar la consulta i, com a màxim, 2 anys. A Google Analytics, les dades d'esdeveniments vinculades a galetes o identificadors es conserven 2 mesos, i les dades d'usuari, 14 mesos des de la darrera activitat. Els informes amb dades agregades no depenen d'aquests terminis.
 
 ## Els teus drets
 
@@ -62,4 +62,4 @@ Si retires el consentiment, el lloc deixa de carregar aquests serveis i esborra 
 
 Aquesta política pot actualitzar-se ocasionalment. La data de l'última revisió apareix al peu d'aquesta pàgina.
 
-*Darrera actualització: 31 d'octubre de 2026*
+*Darrera actualització: 1 de novembre de 2026*

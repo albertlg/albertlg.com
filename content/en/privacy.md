@@ -31,7 +31,7 @@ Website: https://albertlg.com
 
 ## Data Retention
 
-Contact form messages are kept for as long as needed to handle your enquiry and no longer than 2 years. Analytics data is retained according to Google Analytics retention settings (14 months by default).
+Contact form messages are kept for as long as needed to handle your enquiry and no longer than 2 years. In Google Analytics, event data linked to cookies or identifiers is kept for 2 months, and user data for 14 months from the last activity. Reports based on aggregated data do not depend on these periods.
 
 ## Your Rights
 
@@ -62,4 +62,4 @@ If you withdraw your consent, the site stops loading these services and deletes 
 
 This policy may be updated occasionally. The date of the last revision appears at the bottom of this page.
 
-*Last updated: 31 October 2026*
+*Last updated: 1 November 2026*
