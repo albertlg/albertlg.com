@@ -106,3 +106,5 @@ not_found_search:
   other: "Buscar en el blog"
 not_found_latest:
   other: "Lo último que he escrito"
+comments_failed:
+  other: "No se han podido cargar los comentarios. Si usas un bloqueador de anuncios o de rastreo, prueba a permitir Disqus en este sitio."

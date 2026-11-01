@@ -5,11 +5,14 @@
      - Disqus is shown in the language of the page (this.language).
      - embed.js only loads when the reader gets close to the comments, or straight away
        when the URL points to them (#comments, #disqus_thread or #comment-123).
-     - No "comments powered by Disqus" link; the noscript text is translated. */}}
+     - No "comments powered by Disqus" link; the noscript text is translated.
+     - If embed.js is blocked or no thread appears after 15 s, a translated message says so
+       instead of leaving an empty space (usually an ad or tracking blocker). */}}
 {{ with site.Params.hugoblox.comments.disqus.shortname }}
 {{ $shortname := . }}
 {{ $language := index (dict "es" "es_ES" "ca" "ca" "en" "en") site.Language.Lang | default "es_ES" }}
 <div id="disqus_thread" class="mt-12"></div>
+<p data-disqus-failed class="mt-12 rounded-2xl bg-neutral-50 p-6 text-center text-sm leading-6 text-neutral-700 ring-1 ring-neutral-900/5 dark:bg-white/5 dark:text-neutral-300 dark:ring-white/10" hidden>{{ i18n "comments_failed" }}</p>
 <div data-disqus-consent class="rounded-2xl bg-neutral-50 p-6 text-center ring-1 ring-neutral-900/5 dark:bg-white/5 dark:ring-white/10" hidden>
   <p class="text-sm leading-6 text-neutral-700 dark:text-neutral-300">{{ i18n "consent_disqus_text" }}</p>
   <button type="button" data-disqus-load class="mt-4 rounded-lg bg-neutral-800 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-neutral-700 dark:hover:bg-neutral-600">{{ i18n "consent_disqus_load" }}</button>
@@ -35,6 +38,17 @@
       var s = document.createElement('script');
       s.src = 'https://' + {{ $shortname }} + '.disqus.com/embed.js';
       s.async = true;
+      var failed = document.querySelector('[data-disqus-failed]');
+      s.onerror = function () { failed.hidden = false; };
+      setTimeout(function () {
+        if (!thread.querySelector('iframe')) {
+          failed.hidden = false;
+          // If Disqus shows up later after all, hide the message again.
+          new MutationObserver(function (changes, observer) {
+            if (thread.querySelector('iframe')) { failed.hidden = true; observer.disconnect(); }
+          }).observe(thread, { childList: true, subtree: true });
+        }
+      }, 15000);
       s.setAttribute('data-timestamp', +new Date());
       (document.head || document.body).appendChild(s);
     }

@@ -110,3 +110,5 @@ not_found_search:
   other: "Cerca al bloc"
 not_found_latest:
   other: "El més recent que he escrit"
+comments_failed:
+  other: "No s'han pogut carregar els comentaris. Si fas servir un bloquejador d'anuncis o de rastreig, prova de permetre Disqus en aquest lloc."

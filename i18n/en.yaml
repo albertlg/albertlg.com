@@ -74,3 +74,5 @@ not_found_search:
   other: "Search the blog"
 not_found_latest:
   other: "My latest writing"
+comments_failed:
+  other: "The comments could not be loaded. If you use an ad or tracking blocker, try allowing Disqus on this site."
