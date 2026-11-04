@@ -372,6 +372,13 @@
   status = 301
   force = false
 
+# English tag renamed from "resume" to "cv" (British English, as in Spanish).
+[[redirects]]
+  from = "/en/tag/resume/*"
+  to = "/en/tag/cv/"
+  status = 301
+  force = false
+
 # Not-found page in the language of the URL (the Spanish /404.html is Netlify's default).
 # They only apply when no file matches, and must stay after every other /ca/ and /en/ rule.
 [[redirects]]
